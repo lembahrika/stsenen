@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>{{title}} // PASAR SENEN</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Gunakan Flexbox untuk menarik footer ke bawah */
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: #001220;
+    }
+
+    /* Main akan mengambil sisa ruang yang ada */
+    main {
+      flex: 1;
+    }
+
+    .bg-accent { background-color: #FF851B; }
+    .text-accent { color: #FF851B; }
+
+    .nav-link {
+      position: relative;
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      padding: 0.5rem 0;
+      color: #ffffff;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 2px;
+      background-color: #FF851B;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after { width: 100%; }
+
+    #nav-screen {
+      transition: transform 0.5s ease-in-out;
+      transform: translateY(-100%);
+    }
+    .menu-active #nav-screen { transform: translateY(0); }
+
+    .content-area p { margin-bottom: 1.5rem; line-height: 1.8; font-size: 1.125rem; color: #334155; }
+    .content-area h2 { 
+      font-weight: 900; 
+      text-transform: uppercase; 
+      font-size: 2rem; 
+      margin-top: 2.5rem; 
+      margin-bottom: 1rem; 
+      letter-spacing: -0.05em; 
+      font-style: italic; 
+    }
+    .content-area blockquote { border-left: 8px solid #FF851B; padding-left: 1.5rem; font-style: italic; font-weight: 700; margin: 2rem 0; font-size: 1.5rem; }
+    
+    .content-area img {
+      width: 100%;
+      height: auto;
+      border-bottom: 4px solid #FF851B;
+      margin: 2rem 0;
+    }
+
+    .content-area a {
+      color: #FF851B;
+      font-weight: 700;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+<header class="fixed top-0 w-full z-[100] bg-[#001220]/90 backdrop-blur-lg border-b border-white/5">
+  <div class="max-w-7xl mx-auto flex justify-between items-center h-24 px-6">
+    <a href="https://stasiunpasarsenen.com" class="flex items-center gap-3 no-underline group">
+      <div class="w-10 h-10 bg-white flex items-center justify-center border-2 border-navy-900 group-hover:bg-[#FF851B] transition-colors">
+        <i class="fas fa-train-subway text-[#001220] text-xl"></i>
+      </div>
+      <div class="flex flex-col">
+        <span class="text-lg font-black uppercase tracking-tighter leading-none italic">PASAR SENEN</span>
+        <span class="text-[8px] font-mono text-[#FF851B] font-bold tracking-[0.2em] uppercase mt-0.5">Stasiun Kereta</span>
+      </div>
+    </a>
+    
+    <nav class="hidden lg:flex items-center gap-8">
+      <a href="https://stasiunpasarsenen.com/kereta/" class="nav-link">Tiket Kereta</a>
+                <a href="https://stasiunpasarsenen.com/kereta/commuter-line/navigasi-krl-jabodetabek" class="nav-link">Commuter Line</a>
+                <a href="#" class="nav-link">Tiket Bus</a>
+                <a href="#" class="nav-link">Sewa Motor</a>
+                <a href="#" class="nav-link">Sewa Mobil</a>
+                <a href="#" class="nav-link">Wisata</a>
+                <a href="#" class="nav-link">Blog</a>
+    </nav>
+
+    <button id="btn-menu" class="lg:hidden text-accent text-2xl">
+      <i class="fas fa-bars-staggered"></i>
+    </button>
+  </div>
+</header>
+
+<div id="nav-screen" class="fixed inset-0 z-[150] flex flex-col justify-center bg-[#001220] p-8">
+  <button id="btn-close" class="absolute top-6 right-6 text-white text-2xl font-black"><i class="fas fa-xmark"></i></button>
+  <nav class="flex flex-col w-full max-w-sm text-white space-y-4">
+    <a href="https://stasiunpasarsenen.com" class="dropdown-link">Beranda</a>
+<a href="https://stasiunpasarsenen.com/kereta/" class="dropdown-link">Tiket Kereta</a>
+<a href="https://stasiunpasarsenen.com/jadwal-kereta/" class="dropdown-link">Jadwal Kereta</a>
+<a href="https://stasiunpasarsenen.com/kereta/commuter-line/navigasi-krl-jabodetabek" class="dropdown-link">Commuter Line</a>
+<a href="#" class="dropdown-link">Tiket Bus</a>
+<a href="#" class="dropdown-link">Sewa Motor</a>
+<a href="#" class="dropdown-link">Sewa Mobil</a>
+<a href="#" class="dropdown-link">Wisata</a>
+<a href="#" class="dropdown-link">Kuliner</a>
+<a href="#" class="dropdown-link">Blog</a>
+<a href="#" class="dropdown-link">Kontak</a>
+  </nav>
+</div>
+
+<main class="pt-32 pb-20">
+  <article class="max-w-4xl mx-auto px-6">
+    
+    <nav class="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-orange-600 mb-6 italic">
+      <a href="/">Home</a> <span>/</span> <a href="/blog">Blog</a> <span>/</span> <span>{{category}}</span>
+    </nav>
+
+    <header class="mb-12">
+      <h1 class="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9] italic mb-8">
+        {{title}}
+      </h1>
+      <div class="flex flex-wrap items-center gap-6 border-y-2 border-[#001220] py-4 text-[10px] font-black uppercase tracking-widest">
+        <span><i class="far fa-calendar mr-2"></i> {{date}}</span>
+        <span><i class="far fa-user mr-2"></i> Tim Editorial</span>
+        <span class="bg-black text-white px-2 py-1 italic">// {{category}}</span>
+      </div>
+    </header>
+
+    <div class="content-area">
+      {{content}}
+    </div>
+
+    <footer class="mt-16 pt-8 border-t-4 border-[#001220]">
+      <div class="flex justify-between items-center text-[#001220]">
+        <span class="text-[10px] font-black uppercase tracking-[0.3em]">Share This Expedition_</span>
+        <div class="flex gap-4">
+          <a href="#" class="w-10 h-10 border-2 border-black flex items-center justify-center hover:bg-orange-600 hover:text-white transition-all"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="w-10 h-10 border-2 border-black flex items-center justify-center hover:bg-orange-600 hover:text-white transition-all"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" class="w-10 h-10 border-2 border-black flex items-center justify-center hover:bg-orange-600 hover:text-white transition-all"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </footer>
+
+  </article>
+</main>
+
+<footer class="bg-[#FF851B] text-[#001220] pt-24 pb-12 px-6">
+  <div class="max-w-7xl mx-auto text-center">
+     <p class="text-[10px] font-black uppercase tracking-widest">© 2026 PASAR SENEN. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const body = document.body;
+  const btnMenu = document.getElementById('btn-menu');
+  const btnClose = document.getElementById('btn-close');
+  btnMenu.onclick = () => body.classList.add('menu-active');
+  btnClose.onclick = () => body.classList.remove('menu-active');
+</script>
+
+</body>
+</html>
