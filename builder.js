@@ -31,7 +31,7 @@ async function buildBlog() {
         }
 
         // 4. Baca Template HTML
-        const templatePath = path.join(__dirname, 'blog-post-template.html');
+        const templatePath = path.join(__dirname, 'blog', 'blog-post-template.html');
         if (!fs.existsSync(templatePath)) {
             throw new Error("File 'blog-post-template.html' tidak ditemukan di GitHub!");
         }
