@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>PASAR SENEN // Stasiun Kereta Jakarta</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        html,
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            /* Deep Navy */
+            color: #ffffff;
+        }
+
+        .title-manifesto {
+            font-size: clamp(3.5rem, 18vw, 12rem);
+            font-weight: 900;
+            line-height: 0.8;
+            letter-spacing: -0.08em;
+            text-transform: uppercase;
+        }
+
+        .bg-accent {
+            background-color: #FF851B;
+        }
+
+        /* Orange */
+        .text-accent {
+            color: #FF851B;
+        }
+
+        /* Underline Nav */
+        .nav-link {
+            position: relative;
+            font-size: 10px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            padding: 0.5rem 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #FF851B;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .diagonal-cut {
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+
+        #nav-screen {
+            transition: transform 0.5s ease-in-out;
+            transform: translateY(-100%);
+            text-align: left;
+        }
+
+        .menu-active #nav-screen {
+            transform: translateY(0);
+        }
+
+        .dropdown-link {
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: white;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.068);
+            transition: color 0.3s, background 0.3s;
+            text-align: left;
+        }
+
+        .dropdown-link:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-link:hover {
+            color: #FF851B;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        #nav-screen button {
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <header class="fixed top-0 w-full z-[100] bg-[#001220]/90 backdrop-blur-lg border-b border-white/5">
+        <div class="max-w-7xl mx-auto flex justify-between items-center h-24 px-6">
+            <a href="https://stasiunpasarsenen.com" class="flex items-center gap-3 no-underline group">
+                <div
+                    class="w-10 h-10 bg-white flex items-center justify-center border-2 border-navy-900 group-hover:bg-[#FF851B] transition-colors">
+                    <i class="fas fa-train-subway text-[#001220] text-xl"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-lg font-black uppercase tracking-tighter leading-none italic">PASAR SENEN</span>
+                    <span
+                        class="text-[8px] font-mono text-[#FF851B] font-bold tracking-[0.2em] uppercase mt-0.5">Stasiun
+                        Kereta</span>
+                </div>
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-8">
+                <a href="https://stasiunpasarsenen.com/kereta/" class="nav-link">Tiket Kereta</a>
+                <a href="https://stasiunpasarsenen.com/kereta/commuter-line/navigasi-krl-jabodetabek" class="nav-link">Commuter Line</a>
+                <a href="#" class="nav-link">Tiket Bus</a>
+                <a href="#" class="nav-link">Sewa Motor</a>
+                <a href="#" class="nav-link">Sewa Mobil</a>
+                <a href="#" class="nav-link">Wisata</a>
+                <a href="#" class="nav-link">Blog</a>
+            </nav>
+
+            <button id="btn-menu" class="lg:hidden text-accent text-2xl">
+                <i class="fas fa-bars-staggered"></i>
+            </button>
+        </div>
+    </header>
+
+    <div id="nav-screen" class="fixed inset-0 z-[150] flex flex-col justify-center bg-[#001220] p-8">
+        <button id="btn-close" class="absolute top-6 right-6 text-white text-2xl font-black">
+            <i class="fas fa-xmark"></i>
+        </button>
+        <nav class="flex flex-col w-full max-w-sm">
+              <a href="https://stasiunpasarsenen.com" class="dropdown-link">Beranda</a>
+<a href="https://stasiunpasarsenen.com/kereta/" class="dropdown-link">Tiket Kereta</a>
+<a href="https://stasiunpasarsenen.com/jadwal-kereta/" class="dropdown-link">Jadwal Kereta</a>
+<a href="https://stasiunpasarsenen.com/kereta/commuter-line/navigasi-krl-jabodetabek" class="dropdown-link">Commuter Line</a>
+<a href="#" class="dropdown-link">Tiket Bus</a>
+<a href="#" class="dropdown-link">Sewa Motor</a>
+<a href="#" class="dropdown-link">Sewa Mobil</a>
+<a href="#" class="dropdown-link">Wisata</a>
+<a href="#" class="dropdown-link">Kuliner</a>
+<a href="#" class="dropdown-link">Blog</a>
+<a href="#" class="dropdown-link">Kontak</a>
+        </nav>
+    </div>
+
+    <main class="max-w-6xl mx-auto px-4 md:px-8 pt-40 pb-12 bg-white text-[#001220]">
+
+        <section class="bg-[#001220] rounded-xl p-8 md:p-12 mb-12 text-white relative overflow-hidden">
+            <div class="relative z-10">
+                <div class="flex items-center gap-3 mb-6">
+                    <span
+                        class="bg-orange-600 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded">Rute
+                        Utama Jawa</span>
+                    <span class="text-slate-400 text-xs font-medium italic">Update: Maret 2026</span>
+                </div>
+
+                <h1 class="text-3xl md:text-5xl font-bold mb-4 tracking-tight">Tiket Kereta Api Jakarta ke Malang</h1>
+                <p class="text-slate-300 text-lg max-w-2xl leading-relaxed">
+                    Perjalanan nyaman dari Ibu Kota menuju Kota Apel. Temukan jadwal kereta ekonomi Matarmaja,
+                    Majapahit, hingga eksekutif Brawijaya dan Gajayana New Generation untuk rute Jakarta - Malang.
+                </p>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10 pt-10 border-t border-white/10">
+                    <div>
+                        <p class="text-slate-400 text-xs uppercase font-bold mb-1">Durasi</p>
+                        <p class="text-xl font-semibold">± 11-14j</p>
+                    </div>
+                    <div>
+                        <p class="text-slate-400 text-xs uppercase font-bold mb-1">Harga Mulai</p>
+                        <p class="text-xl font-semibold text-orange-500">IDR 350.000</p>
+                    </div>
+                    <div>
+                        <p class="text-slate-400 text-xs uppercase font-bold mb-1">Stasiun Asal</p>
+                        <p class="text-xl font-semibold">Pasar Senen / Gambir</p>
+                    </div>
+                    <div>
+                        <p class="text-slate-400 text-xs uppercase font-bold mb-1">Stasiun Tujuan</p>
+                        <p class="text-xl font-semibold">Malang (ML / MLK)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+
+            <div class="lg:col-span-2 space-y-12">
+
+                <div class="border-l-4 border-orange-600 pl-6 mb-10">
+                    <h2 class="text-3xl font-black text-[#001220] uppercase tracking-tighter leading-none mb-2">
+                        Panduan Tiket Kereta <br><span class="text-orange-600">Jakarta Malang</span>
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose">
+                    <div
+                        class="bg-slate-50 border border-slate-200 p-6 rounded-lg hover:border-[#001220] transition-colors">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-2 h-2 rounded-full bg-orange-600"></div>
+                            <h3 class="font-black uppercase tracking-tight text-sm">Pilihan Cepat: Brawijaya</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Menjadi opsi utama bagi yang mengejar waktu. Berangkat sore hari (15:45) dari Stasiun
+                            Gambir,
+                            menempuh perjalanan sekitar 11 jam 53 menit untuk sampai di Malang saat fajar.
+                        </p>
+                    </div>
+
+                    <div
+                        class="bg-slate-50 border border-slate-200 p-6 rounded-lg hover:border-[#001220] transition-colors">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-2 h-2 rounded-full bg-[#001220]"></div>
+                            <h3 class="font-black uppercase tracking-tight text-sm">Pilihan Hemat: Matarmaja</h3>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Opsi paling ekonomis dengan harga tiket tetap IDR 350.000. Sangat populer di kalangan
+                            pelancong dengan keberangkatan siang hari (11:25) dari Stasiun Pasar Senen.
+                        </p>
+                    </div>
+                </div>
+
+                <section>
+                    <h2 class="text-xl font-bold mb-6 flex items-center gap-2">
+                        <span class="w-1.5 h-6 bg-orange-600 rounded-full"></span>
+                        Jadwal Keberangkatan Terpopuler
+                    </h2>
+
+                    <div class="space-y-4">
+
+                        <div class="border border-slate-200 rounded-lg p-6 hover:shadow-md transition-shadow bg-white">
+                            <div class="flex flex-col md:flex-row justify-between md:items-center gap-4">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <h3 class="font-bold text-lg">Matarmaja</h3>
+                                        <span
+                                            class="text-[10px] bg-green-100 text-green-700 px-2 py-0.5 font-bold rounded uppercase">Terlaris</span>
+                                        <span
+                                            class="text-[10px] bg-orange-600 text-white px-2 py-0.5 font-bold rounded uppercase">New
+                                            Generation</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-slate-600 gap-4 font-medium">
+                                        <span>11:25 (PSE)</span>
+                                        <span class="text-slate-300">→</span>
+                                        <span class="text-slate-300">02:17 (ML)</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-row md:flex-col items-center md:items-end gap-4 md:gap-1">
+                                    <p class="text-xs text-slate-400 font-bold uppercase">Harga Mulai</p>
+                                    <p class="text-xl font-bold text-[#001220]">IDR 350.000</p>
+                                </div>
+                                <div class="flex gap-2">
+                                    <a href="https://traveloka.com" rel="nofollow noopener" target="_blank"
+                                        class="bg-orange-600 text-white text-xs font-bold px-4 py-2 rounded hover:bg-orange-700 transition-colors">Traveloka</a>
+                                    <a href="https://tiket.com" rel="nofollow noopener" target="_blank"
+                                        class="border border-slate-300 text-slate-600 text-xs font-bold px-4 py-2 rounded hover:bg-slate-50 transition-colors">Tiket.com</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border border-slate-200 rounded-lg p-6 hover:shadow-md transition-shadow bg-white">
+                            <div class="flex flex-col md:flex-row justify-between md:items-center gap-4">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <h3 class="font-bold text-lg">Brawijaya</h3>
+                                        <span
+                                            class="text-[10px] bg-blue-100 text-blue-700 px-2 py-0.5 font-bold rounded uppercase">Eksekutif</span>
+                                        <span
+                                            class="text-[10px] bg-orange-600 text-white px-2 py-0.5 font-bold rounded uppercase">Tercepat</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-slate-600 gap-4 font-medium">
+                                        <span>15:45 (GMR)</span>
+                                        <span class="text-slate-300">→</span>
+                                        <span class="text-slate-300">03:38 (ML)</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-row md:flex-col items-center md:items-end gap-4 md:gap-1">
+                                    <p class="text-xs text-slate-400 font-bold uppercase">Harga</p>
+                                    <p class="text-xl font-bold text-[#001220]">IDR 710.000</p>
+                                </div>
+                                <div class="flex gap-2">
+                                    <a href="https://traveloka.com" rel="nofollow noopener" target="_blank"
+                                        class="bg-orange-600 text-white text-xs font-bold px-4 py-2 rounded hover:bg-orange-700 transition-colors">Traveloka</a>
+                                    <a href="https://tiket.com" rel="nofollow noopener" target="_blank"
+                                        class="border border-slate-300 text-slate-600 text-xs font-bold px-4 py-2 rounded hover:bg-slate-50 transition-colors">Tiket.com</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="border border-orange-200 rounded-lg p-6 hover:shadow-md transition-shadow bg-orange-50/30">
+                            <div class="flex flex-col md:flex-row justify-between md:items-center gap-4">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <h3 class="font-bold text-lg">Majapahit</h3>
+                                        <span
+                                            class="text-[10px] bg-orange-600 text-white px-2 py-0.5 font-bold rounded uppercase">Favorit
+                                            Malam</span>
+                                        <span
+                                            class="text-[10px] bg-green-100 text-green-700 px-2 py-0.5 font-bold rounded uppercase">Ekonomis</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-slate-600 gap-4 font-medium">
+                                        <span>17:40 (PSE)</span>
+                                        <span class="text-slate-300">→</span>
+                                        <span class="text-slate-300">06:28 (ML)</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-row md:flex-col items-center md:items-end gap-4 md:gap-1">
+                                    <p class="text-xs text-slate-400 font-bold uppercase">Harga</p>
+                                    <p class="text-xl font-bold text-[#001220]">IDR 350.000</p>
+                                </div>
+                                <div class="flex gap-2">
+                                    <a href="https://traveloka.com" rel="nofollow noopener" target="_blank"
+                                        class="bg-orange-600 text-white text-xs font-bold px-4 py-2 rounded hover:bg-orange-700 transition-colors">Traveloka</a>
+                                    <a href="https://tiket.com" rel="nofollow noopener" target="_blank"
+                                        class="border border-slate-300 text-slate-600 text-xs font-bold px-4 py-2 rounded hover:bg-slate-50 transition-colors">Tiket.com</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border border-slate-200 rounded-lg p-6 hover:shadow-md transition-shadow bg-white">
+                            <div class="flex flex-col md:flex-row justify-between md:items-center gap-4">
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <h3 class="font-bold text-lg">Gajayana</h3>
+                                        <span
+                                            class="text-[10px] bg-orange-600 text-white px-2 py-0.5 font-bold rounded uppercase">New
+                                            Generation</span>
+                                    </div>
+                                    <div class="flex items-center text-sm text-slate-600 gap-4 font-medium">
+                                        <span>18:50 (GMR)</span>
+                                        <span class="text-slate-300">→</span>
+                                        <span class="text-slate-300">07:11 (ML)</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-row md:flex-col items-center md:items-end gap-4 md:gap-1">
+                                    <p class="text-xs text-slate-400 font-bold uppercase">Harga</p>
+                                    <p class="text-xl font-bold text-[#001220]">IDR 760.000</p>
+                                </div>
+                                <div class="flex gap-2">
+                                    <a href="https://traveloka.com" rel="nofollow noopener" target="_blank"
+                                        class="bg-orange-600 text-white text-xs font-bold px-4 py-2 rounded hover:bg-orange-700 transition-colors">Traveloka</a>
+                                    <a href="https://tiket.com" rel="nofollow noopener" target="_blank"
+                                        class="border border-slate-300 text-slate-600 text-xs font-bold px-4 py-2 rounded hover:bg-slate-50 transition-colors">Tiket.com</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><br>
+                    <article class="prose prose-slate max-w-none">
+
+                        <div class="text-slate-600 leading-relaxed space-y-4">
+                            <p>Perjalanan kereta api dari Jakarta menuju Malang menawarkan pengalaman melintasi pulau
+                                Jawa dengan pemandangan yang memukau. Rata-rata waktu tempuh berkisar antara 11 hingga
+                                14 jam tergantung pada jenis kereta yang Anda pilih. Anda bisa berangkat melalui Stasiun
+                                Gambir untuk kelas eksekutif atau Stasiun Pasar Senen untuk kelas ekonomi.</p>
+
+                            <p>Jika Anda mengutamakan kecepatan dan kenyamanan maksimal, kereta Brawijaya dan Gajayana
+                                adalah pilihan terbaik. Dengan waktu perjalanan sekitar 12 jam, Anda akan dimanjakan
+                                dengan fasilitas kelas eksekutif. Namun, bagi Anda yang mencari opsi paling hemat,
+                                Matarmaja dan Majapahit menawarkan harga yang sangat bersahabat yakni sekitar 350 ribu
+                                rupiah dengan kualitas layanan yang terus ditingkatkan.</p>
+
+                            <p>Saat ini sebagian besar armada rute Jakarta Malang telah diperbarui menjadi sarana New
+                                Generation. Keunggulan utamanya terletak pada kursi yang lebih ergonomis, ruang kaki
+                                yang lebih luas, serta keberadaan stop kontak dan port USB di setiap kursi. Toilet dan
+                                area restorasi pun kini tampil lebih modern sehingga perjalanan jauh tidak terasa
+                                melelahkan.</p>
+
+                          
+                        </div>
+                    </article>
+                </section>
+            </div>
+
+            <div class="space-y-8">
+
+                <section class="bg-slate-50 rounded-xl p-6 border border-slate-100">
+                    <h3 class="text-lg font-bold mb-6 text-[#001220]">Eksplorasi Malang</h3>
+                    <div class="space-y-6">
+
+                        <a href="#" class="group block no-underline">
+                            <div
+                                class="overflow-hidden rounded-lg mb-3 aspect-video bg-slate-200 border border-slate-200">
+                                <img src="https://images.pexels.com/photos/1005456/pexels-photo-1005456.jpeg"
+                                    alt="Gunung Bromo"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            </div>
+                            <h4
+                                class="font-bold text-sm uppercase mb-1 text-[#001220] group-hover:text-orange-600 transition-colors">
+                                Gunung Bromo</h4>
+                            <p class="text-xs text-slate-500 leading-snug">
+                                Destinasi wisata alam paling ikonik di Jawa Timur. Nikmati momen matahari terbit dan
+                                hamparan lautan pasir. Tersedia banyak paket tur dari Kota Malang.
+                            </p>
+                        </a>
+
+                        <a href="#" class="group block no-underline">
+                            <div
+                                class="overflow-hidden rounded-lg mb-3 aspect-video bg-slate-200 border border-slate-200">
+                                <img src="https://images.pexels.com/photos/2034373/pexels-photo-2034373.jpeg"
+                                    alt="Jatim Park"
+                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            </div>
+                            <h4
+                                class="font-bold text-sm uppercase mb-1 text-[#001220] group-hover:text-orange-600 transition-colors">
+                                Jatim Park Group</h4>
+                            <p class="text-xs text-slate-500 leading-snug">
+                                Pusat hiburan keluarga terbesar di Batu, Malang. Menawarkan edukasi, museum satwa,
+                                hingga wahana permainan ekstrem yang seru.
+                            </p>
+                        </a>
+
+                    </div>
+                    <a href="#"
+                        class="block w-full mt-6 py-3 border-2 border-[#001220] text-[#001220] text-xs font-black uppercase tracking-widest hover:bg-[#001220] hover:text-white transition-all rounded text-center">Selengkapnya</a>
+                </section>
+
+                <div class="bg-orange-50 border border-orange-100 rounded-xl p-6">
+                    <h3 class="text-sm font-black uppercase text-orange-800 mb-3">Tips Perjalanan</h3>
+                    <ul class="text-xs text-orange-900 space-y-3 font-medium">
+                        
+                        <li class="flex gap-2"><span>•</span> Perhatikan stasiun asal: Stasiun Gambir (GMR) untuk kereta
+                            eksekutif, Pasar Senen (PSE) untuk ekonomi.</li>
+                        <li class="flex gap-2"><span>•</span> Siapkan kartu identitas asli (e-KTP) untuk proses boarding
+                            yang lancar di stasiun.</li>
+                        <li class="flex gap-2"><span>•</span> Manfaatkan fasilitas Kereta New Generation untuk
+                            kenyamanan maksimal selama 12 jam perjalanan.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-6">
+                    <h3 class="text-sm font-black uppercase text-[#001220] mb-3">Alternatif Transportasi</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                        Jika tiket kereta habis, tersedia layanan bus AKAP mewah (Sleeper Bus) rute Jakarta - Malang via
+                        Tol
+                        Trans Jawa dengan estimasi waktu 10-12 jam.
+                    </p>
+                    <a href="#"
+                        class="block w-full py-3 bg-orange-600 text-white text-xs font-black uppercase tracking-widest hover:bg-orange-700 transition-all rounded text-center">Cari
+                        Bus & Travel</a>
+                </div>
+
+            </div>
+        </div>
+
+        <section class="mt-16 pt-12 border-t border-slate-100">
+            <h2 class="text-xl font-bold mb-8 flex items-center gap-2 text-[#001220]">
+                <span class="w-1.5 h-6 bg-orange-600 rounded-full"></span>
+                Rute Favorit Lainnya
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <a href="https://stasiunpasarsenen.com/kereta/tiket-kereta-jakarta-jogja"
+                    class="group flex items-center justify-between p-3.5 border border-slate-200 rounded-xl hover:border-[#001220] hover:shadow-sm transition-all bg-white">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-8 h-8 bg-slate-50 rounded-full flex items-center justify-center group-hover:bg-orange-50 transition-colors shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="w-4 h-4 text-slate-400 group-hover:text-orange-600" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-[9px] font-bold uppercase tracking-widest text-slate-400 mb-0.5">Kereta Api
+                            </p>
+                            <p class="text-sm font-bold text-[#001220] leading-tight">Jakarta - Yogyakarta</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-1 shrink-0 ml-2">
+                        <span
+                            class="text-[10px] font-black uppercase tracking-tighter text-orange-600 group-hover:underline decoration-orange-600/30 decoration-2 underline-offset-4 transition-all">
+                            Lihat Jadwal
+                        </span>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="w-3 h-3 text-orange-600 group-hover:translate-x-0.5 transition-transform" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </a>
+
+                <a href="https://stasiunpasarsenen.com/kereta/tiket-kereta-jakarta-surabaya"
+                    class="group flex items-center justify-between p-3.5 border border-slate-200 rounded-xl hover:border-[#001220] hover:shadow-sm transition-all bg-white">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-8 h-8 bg-slate-50 rounded-full flex items-center justify-center group-hover:bg-orange-50 transition-colors shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="w-4 h-4 text-slate-400 group-hover:text-orange-600" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-[9px] font-bold uppercase tracking-widest text-slate-400 mb-0.5">Kereta Api
+                            </p>
+                            <p class="text-sm font-bold text-[#001220] leading-tight">Jakarta - Surabaya</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-1 shrink-0 ml-2">
+                        <span
+                            class="text-[10px] font-black uppercase tracking-tighter text-orange-600 group-hover:underline decoration-orange-600/30 decoration-2 underline-offset-4 transition-all">
+                            Lihat Jadwal
+                        </span>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="w-3 h-3 text-orange-600 group-hover:translate-x-0.5 transition-transform" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </a>
+
+                <a href="https://stasiunpasarsenen.com/kereta/tiket-kereta-bandung-malang"
+                    class="group flex items-center justify-between p-3.5 border border-slate-200 rounded-xl hover:border-[#001220] hover:shadow-sm transition-all bg-white">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-8 h-8 bg-slate-50 rounded-full flex items-center justify-center group-hover:bg-orange-50 transition-colors shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="w-4 h-4 text-slate-400 group-hover:text-orange-600" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-[9px] font-bold uppercase tracking-widest text-slate-400 mb-0.5">Kereta Api
+                            </p>
+                            <p class="text-sm font-bold text-[#001220] leading-tight">Bandung - Malang</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-1 shrink-0 ml-2">
+                        <span
+                            class="text-[10px] font-black uppercase tracking-tighter text-orange-600 group-hover:underline decoration-orange-600/30 decoration-2 underline-offset-4 transition-all">
+                            Lihat Jadwal
+                        </span>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="w-3 h-3 text-orange-600 group-hover:translate-x-0.5 transition-transform" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </a>
+
+                <a href="https://stasiunpasarsenen.com/kereta/tiket-kereta-malang-jakarta"
+                    class="group flex items-center justify-between p-3.5 border border-slate-200 rounded-xl hover:border-[#001220] hover:shadow-sm transition-all bg-white">
+                    <div class="flex items-center gap-3">
+                        <div
+                            class="w-8 h-8 bg-slate-50 rounded-full flex items-center justify-center group-hover:bg-orange-50 transition-colors shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="w-4 h-4 text-slate-400 group-hover:text-orange-600" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-[9px] font-bold uppercase tracking-widest text-slate-400 mb-0.5">Kereta Api
+                            </p>
+                            <p class="text-sm font-bold text-[#001220] leading-tight">Malang - Jakarta</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-1 shrink-0 ml-2">
+                        <span
+                            class="text-[10px] font-black uppercase tracking-tighter text-orange-600 group-hover:underline decoration-orange-600/30 decoration-2 underline-offset-4 transition-all">
+                            Lihat Jadwal
+                        </span>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="w-3 h-3 text-orange-600 group-hover:translate-x-0.5 transition-transform" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!--FOOTER-->
+
+    <footer class="bg-[#FF851B] text-[#001220] pt-24 pb-12 px-6">
+        <div
+            class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 border-b border-[#001220]/10 pb-20">
+
+            <div class="space-y-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-[#001220] flex items-center justify-center text-white italic font-black">PS
+                    </div>
+                    <span class="font-black text-xl italic uppercase leading-none">PASAR SENEN</span>
+                </div>
+                <p class="text-xs font-bold uppercase leading-relaxed opacity-80">
+                    Portal navigasi transportasi dan kurasi wisata untuk mobilitas wisatawan.
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <h5 class="font-black text-[10px] uppercase tracking-[0.2em] border-b border-[#001220]/20 pb-2">Rute
+                    Populer_</h5>
+                <ul class="text-[11px] font-bold uppercase space-y-2">
+                    <li><a href="https://stasiunpasarsenen.com/kereta/tiket-kereta-jakarta-malang" class="hover:underline decoration-2">Jakarta
+                            Malang</a></li>
+                    <li><a href="https://stasiunpasarsenen.com/kereta/tiket-kereta-jakarta-semarang" class="hover:underline decoration-2">Jakarta
+                            Semarang</a></li>
+                    <li><a href="https://stasiunpasarsenen.com/kereta/tiket-kereta-jakarta-solo" class="hover:underline decoration-2">Jakarta
+                            Solo</a></li>
+                    <li><a href="https://stasiunpasarsenen.com/kereta/tiket-kereta-jakarta-yogyakarta" class="hover:underline decoration-2">Jakarta
+                            Yogyakarta</a></li>
+                    <li><a href="https://stasiunpasarsenen.com/kereta/tiket-kereta-bandung-malang" class="hover:underline decoration-2">Bandung
+                            Malang</a></li>
+                    <li><a href="https://stasiunpasarsenen.com/kereta-tiket-kereta-bandung-surabaya" class="hover:underline decoration-2">Bandung
+                            Surabaya</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h5 class="font-black text-[10px] uppercase tracking-[0.2em] border-b border-[#001220]/20 pb-2">
+                    Destinasi_</h5>
+                <ul class="text-[11px] font-bold uppercase space-y-2">
+                    <li><a href="#" class="hover:underline decoration-2">Wisata Jakarta</a></li>
+                    <li><a href="#" class="hover:underline decoration-2">Wisata Bandung</a></li>
+                    <li><a href="#" class="hover:underline decoration-2">Wisata Semarang</a></li>
+                    <li><a href="#" class="hover:underline decoration-2">Wisata Surabaya</a></li>
+                    <li><a href="#" class="hover:underline decoration-2">Wisata Malang</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h5 class="font-black text-[10px] uppercase tracking-[0.2em] border-b border-[#001220]/20 pb-2">Social_
+                </h5>
+                <ul class="text-[11px] font-bold uppercase space-y-2">
+                    <li><a href="#" class="flex items-center gap-2 hover:translate-x-1 transition-transform"><i
+                                class="fab fa-facebook-f w-4"></i> Facebook</a></li>
+                    <li><a href="#" class="flex items-center gap-2 hover:translate-x-1 transition-transform"><i
+                                class="fab fa-tiktok w-4"></i> Tiktok</a></li>
+                    <li><a href="#" class="flex items-center gap-2 hover:translate-x-1 transition-transform"><i
+                                class="fab fa-instagram w-4"></i> Instagram</a></li>
+                    <li><a href="#" class="flex items-center gap-2 hover:translate-x-1 transition-transform"><i
+                                class="fab fa-x-twitter w-4"></i> Twitter/X</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div
+            class="max-w-7xl mx-auto pt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-black uppercase tracking-widest">
+            <div class="flex gap-6 opacity-70">
+                <a href="https://stasiunpasarsenen.com/tentang-kami" class="hover:text-white transition-colors">Siapa Kami</a>
+                <a href="https://stasiunpasarsenen.com/privasi" class="hover:text-white transition-colors">Privacy</a>
+                <a href="https://stasiunpasarsenen.com/syarat-dan-ketentuan" class="hover:text-white transition-colors">Ketentuan</a>
+            </div>
+            <span class="opacity-70">© 2026 PASAR SENEN. All Rights Reserved.</span>
+        </div>
+    </footer>
+
+    <script>
+        const body = document.body;
+        const btnMenu = document.getElementById('btn-menu');
+        const btnClose = document.getElementById('btn-close');
+        btnMenu.onclick = () => body.classList.add('menu-active');
+        btnClose.onclick = () => body.classList.remove('menu-active');
+    </script>
+
+</body>
+
+</html>

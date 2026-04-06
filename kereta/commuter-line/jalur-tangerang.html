@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Jadwal KRL Tangerang Line Terbaru - Commuter Line Jabodetabek</title>
+  <meta name="description"
+    content="Jadwal KRL Tangerang Line terbaru dari Stasiun Tangerang menuju Duri. Informasi lengkap waktu keberangkatan, transit, dan panduan perjalanan Commuter Line Tangerang - Duri." />
+  <meta name="keywords"
+    content="jadwal KRL Tangerang, jadwal KRL Tangerang Duri, jadwal commuter line Tangerang, jadwal KRL Batu Ceper Duri, jadwal KRL Tangerang Line, KRL Tangerang Jakarta Barat" />
+  <meta name="author" content="Pasar Senen" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://stasiunpasarsenen.com/kereta/commuter-line/jalur-tangerang" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://stasiunpasarsenen.com/public/icons/favicon.png" />
+  <link rel="apple-touch-icon" href="https://stasiunpasarsenen.com/public/icons/favicon.png" />
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#E11D48" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Jadwal KRL Tangerang Line Terbaru - Commuter Line Jabodetabek" />
+  <meta property="og:description"
+    content="Lihat jadwal terbaru KRL Tangerang Line menuju Duri lengkap dengan waktu transit dan panduan perjalanan Commuter Line Jabodetabek." />
+  <meta property="og:url" content="https://stasiunpasarsenen.com/kereta/commuter-line/jalur-tangerang" />
+  <meta property="og:site_name" content="Pasar Senen" />
+  <meta property="og:image" content="https://stasiunpasarsenen.com/public/icons/favicon.png" />
+  <meta property="og:locale" content="id_ID" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Jadwal KRL Tangerang Line Terbaru - Commuter Line Jabodetabek" />
+  <meta name="twitter:description"
+    content="Informasi jadwal KRL Tangerang menuju Duri lengkap dengan waktu keberangkatan setiap stasiun." />
+  <meta name="twitter:image" content="https://stasiunpasarsenen.com/public/icons/favicon.png" />
+
+  <!-- Geo Location -->
+  <meta name="geo.region" content="ID-JK" />
+  <meta name="geo.placename" content="Jakarta" />
+  <meta name="geo.position" content="-6.1702;106.8470" />
+  <meta name="ICBM" content="-6.1702,106.8470" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Jadwal KRL Tangerang Line Terbaru - Commuter Line Jabodetabek",
+  "description": "Informasi jadwal KRL Tangerang Line terbaru dari Stasiun Tangerang menuju Stasiun Duri dan jalur transit KRL Jabodetabek.",
+  "url": "https://stasiunpasarsenen.com/kereta/commuter-line/jalur-tangerang",
+  "inLanguage": "id",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Pasar Senen",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://stasiunpasarsenen.com/public/icons/favicon.png"
+    }
+  }
+}
+</script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TrainTrip",
+  "name": "KRL Tangerang Line",
+  "departureStation": {
+    "@type": "TrainStation",
+    "name": "Stasiun Tangerang"
+  },
+  "arrivalStation": {
+    "@type": "TrainStation",
+    "name": "Stasiun Duri"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "KAI Commuter"
+  }
+}
+</script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    html,
+    body {
+      max-width: 100%;
+      overflow-x: hidden;
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: #001220;
+    }
+
+
+    .sharp-card {
+      background: white;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+
+    }
+
+    .btn-sharp {
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+
+    .route-step {
+      position: relative;
+      padding-left: 2.5rem;
+      padding-bottom: 2rem;
+    }
+
+    .route-step::before {
+      content: '';
+      position: absolute;
+      left: 0.45rem;
+      top: 1.2rem;
+      bottom: 0;
+      width: 1px;
+
+      background: #e2e8f0;
+    }
+
+    .route-step:last-child::before {
+      display: none;
+    }
+
+    .dot-wrapper {
+      position: absolute;
+      left: 0.15rem;
+      top: 0.35rem;
+      width: 0.7rem;
+      height: 0.7rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+
+
+    .nav-dot {
+      width: 8px;
+      height: 8px;
+      background: #E11D48;
+      border-radius: 2px;
+
+    }
+
+    .nav-dot-end {
+      width: 8px;
+      height: 8px;
+      background: #001220;
+      border-radius: 2px;
+    }
+
+
+    .highlight-green {
+      background: #ecfdf5;
+      color: #065f46;
+      border-left: 3px solid #10b981;
+      border-radius: 2px;
+    }
+
+    .highlight-orange {
+      background: #fff7ed;
+      color: #9a3412;
+      border-left: 3px solid #f97316;
+      border-radius: 2px;
+    }
+
+    #nav-screen {
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateY(-100%);
+    }
+
+    .menu-active #nav-screen {
+      transform: translateY(0);
+    }
+
+
+    .glass-header {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-link-modern {
+      position: relative;
+      color: #1e293b;
+
+      transition: color 0.3s ease;
+    }
+
+    .nav-link-modern:hover {
+      color: #E11D48;
+    }
+
+    .nav-link-modern::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #E11D48;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link-modern:hover::after {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body class="antialiased">
+ <header class="fixed top-0 w-full z-[100] glass-header">
+    <div class="max-w-7xl mx-auto flex justify-between items-center h-20 px-6">
+        <a href="https://stasiunpasarsenen.com" class="flex items-center gap-3 no-underline group">
+            <div class="w-10 h-10 bg-[#E11D48] flex items-center justify-center rounded-sm group-hover:rotate-6 transition-transform shadow-md">
+                <i class="fas fa-train-subway text-white text-xl"></i>
+            </div>
+            <div class="flex flex-col text-left">
+                <span class="text-lg font-semibold uppercase tracking-tighter leading-none text-slate-900">PASAR SENEN</span>
+                <span class="text-[8px] font-mono text-slate-500 font-semibold tracking-[0.2em] uppercase mt-0.5">Informasi Stasiun</span>
+            </div>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-8">
+            <a href="https://stasiunpasarsenen.com/kereta/commuter-line/real-time-krl" class="nav-link-modern text-[11px] font-semibold uppercase tracking-widest">Jadwal Real-Time</a>
+            <a href="https://stasiunpasarsenen.com/kereta/commuter-line/rute-krl" class="nav-link-modern text-[11px] font-semibold uppercase tracking-widest">Rute KRL</a>
+            <a href="https://stasiunpasarsenen.com/jadwal-kereta/" class="nav-link-modern text-[11px] font-semibold uppercase tracking-widest">Antar Kota</a>
+            <a href="https://stasiunpasarsenen.com" class="nav-link-modern text-[11px] font-semibold uppercase tracking-widest">Layanan Stasiun</a>
+        </nav>
+
+       <button id="btn-menu" class="lg:hidden text-slate-900 text-2xl p-2 cursor-pointer">
+    <i class="fas fa-bars-staggered"></i>
+</button>
+    </div>
+</header>
+
+<div id="nav-screen" 
+     class="fixed inset-0 z-[200] bg-[#E11D48] flex flex-col justify-center p-8 translate-x-full transition-transform duration-500 ease-in-out">
+    
+    <button id="btn-close" class="absolute top-6 right-6 text-white text-3xl p-2">
+        <i class="fas fa-xmark"></i>
+    </button>
+
+    <div class="mb-10 text-white/40 text-[10px] font-semibold tracking-[0.4em] uppercase">Navigation Menu</div>
+
+    <nav class="flex flex-col space-y-6">
+        <a href="https://stasiunpasarsenen.com" class="text-white text-xl font-bold uppercase tracking-widest border-b border-white/10 pb-4">Beranda</a>
+        <a href="https://stasiunpasarsenen.com/kereta/commuter-line/real-time-krl" class="text-white text-xl font-bold uppercase tracking-widest border-b border-white/10 pb-4">Jadwal Real-Time</a>
+        <a href="https://stasiunpasarsenen.com/kereta/commuter-line/rute-krl" class="text-white text-xl font-bold uppercase tracking-widest border-b border-white/10 pb-4">Rute KRL</a>
+        <a href="https://stasiunpasarsenen.com/jadwal-kereta/" class="text-white text-xl font-bold uppercase tracking-widest border-b border-white/10 pb-4">Antar Kota</a>
+    </nav>
+</div>
+
+  <main class="max-w-6xl mx-auto px-6 mt-40 pb-40">
+    <section class="mb-12 border-l-4 border-orange-500 pl-6">
+      <h1 class="text-3xl md:text-5xl font-black tracking-tighter text-[#001220] uppercase leading-none mb-3">
+        JADWAL KRL <br><span class="text-orange-600">TANGERANG LINE</span>
+      </h1>
+      <p class="text-[11px] font-bold text-slate-400 uppercase tracking-[0.3em]">Update: Maret 2026 | Relasi Tangerang -
+        Duri</p>
+    </section>
+
+    <div class="mb-12 p-6 bg-slate-50 border border-slate-200 rounded-sm">
+      <p class="text-sm font-bold text-[#001220] uppercase tracking-tight mb-2">Informasi Operasional</p>
+      <p class="text-xs text-slate-600 leading-relaxed">
+        Tabel di bawah menampilkan waktu keberangkatan dari Stasiun Tangerang hingga tiba di Stasiun Duri. Gunakan fitur
+        geser (scroll) jika Anda mengakses melalui perangkat mobile.
+      </p>
+    </div>
+
+    <div class="overflow-x-auto shadow-sm border border-slate-100 rounded-sm">
+      <table class="w-full border-collapse bg-white text-[11px]">
+        <thead>
+          <tr class="bg-[#001220] text-white">
+            <th
+              class="px-4 py-5 font-black uppercase tracking-widest sticky left-0 bg-[#001220] z-10 border-r border-white/10">
+              No. KA</th>
+            <th class="px-4 py-5 font-black uppercase tracking-widest text-center">TNG</th>
+            <th class="px-4 py-5 font-black uppercase tracking-widest text-center">TTI</th>
+            <th class="px-4 py-5 font-black uppercase tracking-widest text-center">BPR</th>
+            <th class="px-4 py-5 font-black uppercase tracking-widest text-center">PRI</th>
+            <th class="px-4 py-5 font-black uppercase tracking-widest text-center">KDS</th>
+            <th class="px-4 py-5 font-black uppercase tracking-widest text-center">RBU</th>
+            <th class="px-4 py-5 font-black uppercase tracking-widest text-center">BJI</th>
+            <th class="px-4 py-5 font-black uppercase tracking-widest text-center">TKO</th>
+            <th class="px-4 py-5 font-black uppercase tracking-widest text-center">PSG</th>
+            <th class="px-4 py-5 font-black uppercase tracking-widest text-center">GGL</th>
+            <th class="px-4 py-5 font-black uppercase tracking-widest text-center bg-orange-600">DURI</th>
+          </tr>
+        </thead>
+        <tbody class="text-slate-600 font-medium">
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1903A</td>
+            <td class="px-4 py-3 text-center">04:27</td>
+            <td class="px-4 py-3 text-center">04:30</td>
+            <td class="px-4 py-3 text-center">04:34</td>
+            <td class="px-4 py-3 text-center">04:36</td>
+            <td class="px-4 py-3 text-center">04:38</td>
+            <td class="px-4 py-3 text-center">04:42</td>
+            <td class="px-4 py-3 text-center">04:44</td>
+            <td class="px-4 py-3 text-center">04:46</td>
+            <td class="px-4 py-3 text-center">04:48</td>
+            <td class="px-4 py-3 text-center">04:50</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">04:53</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1905A</td>
+            <td class="px-4 py-3 text-center">04:50</td>
+            <td class="px-4 py-3 text-center">04:53</td>
+            <td class="px-4 py-3 text-center">04:57</td>
+            <td class="px-4 py-3 text-center">04:59</td>
+            <td class="px-4 py-3 text-center">05:01</td>
+            <td class="px-4 py-3 text-center">05:05</td>
+            <td class="px-4 py-3 text-center">05:07</td>
+            <td class="px-4 py-3 text-center">05:09</td>
+            <td class="px-4 py-3 text-center">05:11</td>
+            <td class="px-4 py-3 text-center">05:13</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">05:16</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1907A</td>
+            <td class="px-4 py-3 text-center">05:07</td>
+            <td class="px-4 py-3 text-center">05:10</td>
+            <td class="px-4 py-3 text-center">05:14</td>
+            <td class="px-4 py-3 text-center">05:16</td>
+            <td class="px-4 py-3 text-center">05:18</td>
+            <td class="px-4 py-3 text-center">05:22</td>
+            <td class="px-4 py-3 text-center">05:24</td>
+            <td class="px-4 py-3 text-center">05:26</td>
+            <td class="px-4 py-3 text-center">05:28</td>
+            <td class="px-4 py-3 text-center">05:30</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">05:33</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1909A</td>
+            <td class="px-4 py-3 text-center">05:20</td>
+            <td class="px-4 py-3 text-center">05:23</td>
+            <td class="px-4 py-3 text-center">05:27</td>
+            <td class="px-4 py-3 text-center">05:29</td>
+            <td class="px-4 py-3 text-center">05:31</td>
+            <td class="px-4 py-3 text-center">05:35</td>
+            <td class="px-4 py-3 text-center">05:37</td>
+            <td class="px-4 py-3 text-center">05:39</td>
+            <td class="px-4 py-3 text-center">05:41</td>
+            <td class="px-4 py-3 text-center">05:43</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">05:46</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1911A</td>
+            <td class="px-4 py-3 text-center">05:37</td>
+            <td class="px-4 py-3 text-center">05:40</td>
+            <td class="px-4 py-3 text-center">05:44</td>
+            <td class="px-4 py-3 text-center">05:46</td>
+            <td class="px-4 py-3 text-center">05:48</td>
+            <td class="px-4 py-3 text-center">05:52</td>
+            <td class="px-4 py-3 text-center">05:54</td>
+            <td class="px-4 py-3 text-center">05:56</td>
+            <td class="px-4 py-3 text-center">05:58</td>
+            <td class="px-4 py-3 text-center">06:00</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">06:03</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1913A</td>
+            <td class="px-4 py-3 text-center">05:50</td>
+            <td class="px-4 py-3 text-center">05:53</td>
+            <td class="px-4 py-3 text-center">05:57</td>
+            <td class="px-4 py-3 text-center">05:59</td>
+            <td class="px-4 py-3 text-center">06:01</td>
+            <td class="px-4 py-3 text-center">06:05</td>
+            <td class="px-4 py-3 text-center">06:07</td>
+            <td class="px-4 py-3 text-center">06:09</td>
+            <td class="px-4 py-3 text-center">06:11</td>
+            <td class="px-4 py-3 text-center">06:13</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">06:16</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1915A</td>
+            <td class="px-4 py-3 text-center">06:07</td>
+            <td class="px-4 py-3 text-center">06:10</td>
+            <td class="px-4 py-3 text-center">06:14</td>
+            <td class="px-4 py-3 text-center">06:16</td>
+            <td class="px-4 py-3 text-center">06:18</td>
+            <td class="px-4 py-3 text-center">06:22</td>
+            <td class="px-4 py-3 text-center">06:24</td>
+            <td class="px-4 py-3 text-center">06:26</td>
+            <td class="px-4 py-3 text-center">06:28</td>
+            <td class="px-4 py-3 text-center">06:30</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">06:33</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1917A</td>
+            <td class="px-4 py-3 text-center">06:20</td>
+            <td class="px-4 py-3 text-center">06:23</td>
+            <td class="px-4 py-3 text-center">06:27</td>
+            <td class="px-4 py-3 text-center">06:29</td>
+            <td class="px-4 py-3 text-center">06:31</td>
+            <td class="px-4 py-3 text-center">06:35</td>
+            <td class="px-4 py-3 text-center">06:37</td>
+            <td class="px-4 py-3 text-center">06:39</td>
+            <td class="px-4 py-3 text-center">06:41</td>
+            <td class="px-4 py-3 text-center">06:43</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">06:46</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1919A</td>
+            <td class="px-4 py-3 text-center">06:37</td>
+            <td class="px-4 py-3 text-center">06:40</td>
+            <td class="px-4 py-3 text-center">06:44</td>
+            <td class="px-4 py-3 text-center">06:46</td>
+            <td class="px-4 py-3 text-center">06:48</td>
+            <td class="px-4 py-3 text-center">06:52</td>
+            <td class="px-4 py-3 text-center">06:54</td>
+            <td class="px-4 py-3 text-center">06:56</td>
+            <td class="px-4 py-3 text-center">06:58</td>
+            <td class="px-4 py-3 text-center">07:00</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">07:03</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1921A</td>
+            <td class="px-4 py-3 text-center">06:50</td>
+            <td class="px-4 py-3 text-center">06:53</td>
+            <td class="px-4 py-3 text-center">06:57</td>
+            <td class="px-4 py-3 text-center">06:59</td>
+            <td class="px-4 py-3 text-center">07:01</td>
+            <td class="px-4 py-3 text-center">07:05</td>
+            <td class="px-4 py-3 text-center">07:07</td>
+            <td class="px-4 py-3 text-center">07:09</td>
+            <td class="px-4 py-3 text-center">07:11</td>
+            <td class="px-4 py-3 text-center">07:13</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">07:16</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1923A</td>
+            <td class="px-4 py-3 text-center">07:07</td>
+            <td class="px-4 py-3 text-center">07:10</td>
+            <td class="px-4 py-3 text-center">07:14</td>
+            <td class="px-4 py-3 text-center">07:16</td>
+            <td class="px-4 py-3 text-center">07:18</td>
+            <td class="px-4 py-3 text-center">07:22</td>
+            <td class="px-4 py-3 text-center">07:24</td>
+            <td class="px-4 py-3 text-center">07:26</td>
+            <td class="px-4 py-3 text-center">07:28</td>
+            <td class="px-4 py-3 text-center">07:30</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">07:33</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1925A</td>
+            <td class="px-4 py-3 text-center">07:20</td>
+            <td class="px-4 py-3 text-center">07:23</td>
+            <td class="px-4 py-3 text-center">07:27</td>
+            <td class="px-4 py-3 text-center">07:29</td>
+            <td class="px-4 py-3 text-center">07:31</td>
+            <td class="px-4 py-3 text-center">07:35</td>
+            <td class="px-4 py-3 text-center">07:37</td>
+            <td class="px-4 py-3 text-center">07:39</td>
+            <td class="px-4 py-3 text-center">07:41</td>
+            <td class="px-4 py-3 text-center">07:43</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">07:46</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1927A</td>
+            <td class="px-4 py-3 text-center">07:37</td>
+            <td class="px-4 py-3 text-center">07:40</td>
+            <td class="px-4 py-3 text-center">07:44</td>
+            <td class="px-4 py-3 text-center">07:46</td>
+            <td class="px-4 py-3 text-center">07:48</td>
+            <td class="px-4 py-3 text-center">07:52</td>
+            <td class="px-4 py-3 text-center">07:54</td>
+            <td class="px-4 py-3 text-center">07:56</td>
+            <td class="px-4 py-3 text-center">07:58</td>
+            <td class="px-4 py-3 text-center">08:00</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">08:03</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1929A</td>
+            <td class="px-4 py-3 text-center">07:50</td>
+            <td class="px-4 py-3 text-center">07:53</td>
+            <td class="px-4 py-3 text-center">07:57</td>
+            <td class="px-4 py-3 text-center">07:59</td>
+            <td class="px-4 py-3 text-center">08:01</td>
+            <td class="px-4 py-3 text-center">08:05</td>
+            <td class="px-4 py-3 text-center">08:07</td>
+            <td class="px-4 py-3 text-center">08:09</td>
+            <td class="px-4 py-3 text-center">08:11</td>
+            <td class="px-4 py-3 text-center">08:13</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">08:16</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1931A</td>
+            <td class="px-4 py-3 text-center">08:07</td>
+            <td class="px-4 py-3 text-center">08:10</td>
+            <td class="px-4 py-3 text-center">08:14</td>
+            <td class="px-4 py-3 text-center">08:16</td>
+            <td class="px-4 py-3 text-center">08:18</td>
+            <td class="px-4 py-3 text-center">08:22</td>
+            <td class="px-4 py-3 text-center">08:24</td>
+            <td class="px-4 py-3 text-center">08:26</td>
+            <td class="px-4 py-3 text-center">08:28</td>
+            <td class="px-4 py-3 text-center">08:30</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">08:33</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1933A</td>
+            <td class="px-4 py-3 text-center">08:20</td>
+            <td class="px-4 py-3 text-center">08:23</td>
+            <td class="px-4 py-3 text-center">08:27</td>
+            <td class="px-4 py-3 text-center">08:29</td>
+            <td class="px-4 py-3 text-center">08:31</td>
+            <td class="px-4 py-3 text-center">08:35</td>
+            <td class="px-4 py-3 text-center">08:37</td>
+            <td class="px-4 py-3 text-center">08:39</td>
+            <td class="px-4 py-3 text-center">08:41</td>
+            <td class="px-4 py-3 text-center">08:43</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">08:46</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1935A</td>
+            <td class="px-4 py-3 text-center">08:37</td>
+            <td class="px-4 py-3 text-center">08:40</td>
+            <td class="px-4 py-3 text-center">08:44</td>
+            <td class="px-4 py-3 text-center">08:46</td>
+            <td class="px-4 py-3 text-center">08:48</td>
+            <td class="px-4 py-3 text-center">08:52</td>
+            <td class="px-4 py-3 text-center">08:54</td>
+            <td class="px-4 py-3 text-center">08:56</td>
+            <td class="px-4 py-3 text-center">08:58</td>
+            <td class="px-4 py-3 text-center">09:00</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">09:03</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1937A</td>
+            <td class="px-4 py-3 text-center">08:50</td>
+            <td class="px-4 py-3 text-center">08:53</td>
+            <td class="px-4 py-3 text-center">08:57</td>
+            <td class="px-4 py-3 text-center">08:59</td>
+            <td class="px-4 py-3 text-center">09:01</td>
+            <td class="px-4 py-3 text-center">09:05</td>
+            <td class="px-4 py-3 text-center">09:07</td>
+            <td class="px-4 py-3 text-center">09:09</td>
+            <td class="px-4 py-3 text-center">09:11</td>
+            <td class="px-4 py-3 text-center">09:13</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">09:16</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1939A</td>
+            <td class="px-4 py-3 text-center">09:07</td>
+            <td class="px-4 py-3 text-center">09:10</td>
+            <td class="px-4 py-3 text-center">09:14</td>
+            <td class="px-4 py-3 text-center">09:16</td>
+            <td class="px-4 py-3 text-center">09:18</td>
+            <td class="px-4 py-3 text-center">09:22</td>
+            <td class="px-4 py-3 text-center">09:24</td>
+            <td class="px-4 py-3 text-center">09:26</td>
+            <td class="px-4 py-3 text-center">09:28</td>
+            <td class="px-4 py-3 text-center">09:30</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">09:33</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1941A</td>
+            <td class="px-4 py-3 text-center">09:20</td>
+            <td class="px-4 py-3 text-center">09:23</td>
+            <td class="px-4 py-3 text-center">09:27</td>
+            <td class="px-4 py-3 text-center">09:29</td>
+            <td class="px-4 py-3 text-center">09:31</td>
+            <td class="px-4 py-3 text-center">09:35</td>
+            <td class="px-4 py-3 text-center">09:37</td>
+            <td class="px-4 py-3 text-center">09:39</td>
+            <td class="px-4 py-3 text-center">09:41</td>
+            <td class="px-4 py-3 text-center">09:43</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">09:46</td>
+          </tr>
+
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1943A</td>
+            <td class="px-4 py-3 text-center">09:37</td>
+            <td class="px-4 py-3 text-center">09:40</td>
+            <td class="px-4 py-3 text-center">09:44</td>
+            <td class="px-4 py-3 text-center">09:46</td>
+            <td class="px-4 py-3 text-center">09:48</td>
+            <td class="px-4 py-3 text-center">09:52</td>
+            <td class="px-4 py-3 text-center">09:54</td>
+            <td class="px-4 py-3 text-center">09:56</td>
+            <td class="px-4 py-3 text-center">09:58</td>
+            <td class="px-4 py-3 text-center">10:00</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">10:03</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1945A</td>
+            <td class="px-4 py-3 text-center">09:50</td>
+            <td class="px-4 py-3 text-center">09:53</td>
+            <td class="px-4 py-3 text-center">09:57</td>
+            <td class="px-4 py-3 text-center">09:59</td>
+            <td class="px-4 py-3 text-center">10:01</td>
+            <td class="px-4 py-3 text-center">10:05</td>
+            <td class="px-4 py-3 text-center">10:07</td>
+            <td class="px-4 py-3 text-center">10:09</td>
+            <td class="px-4 py-3 text-center">10:11</td>
+            <td class="px-4 py-3 text-center">10:13</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">10:16</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1947A</td>
+            <td class="px-4 py-3 text-center">10:07</td>
+            <td class="px-4 py-3 text-center">10:10</td>
+            <td class="px-4 py-3 text-center">10:14</td>
+            <td class="px-4 py-3 text-center">10:16</td>
+            <td class="px-4 py-3 text-center">10:18</td>
+            <td class="px-4 py-3 text-center">10:22</td>
+            <td class="px-4 py-3 text-center">10:24</td>
+            <td class="px-4 py-3 text-center">10:26</td>
+            <td class="px-4 py-3 text-center">10:28</td>
+            <td class="px-4 py-3 text-center">10:30</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">10:33</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1949A</td>
+            <td class="px-4 py-3 text-center">10:37</td>
+            <td class="px-4 py-3 text-center">10:40</td>
+            <td class="px-4 py-3 text-center">10:44</td>
+            <td class="px-4 py-3 text-center">10:46</td>
+            <td class="px-4 py-3 text-center">10:48</td>
+            <td class="px-4 py-3 text-center">10:52</td>
+            <td class="px-4 py-3 text-center">10:54</td>
+            <td class="px-4 py-3 text-center">10:56</td>
+            <td class="px-4 py-3 text-center">10:58</td>
+            <td class="px-4 py-3 text-center">11:00</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">11:03</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1951A</td>
+            <td class="px-4 py-3 text-center">11:07</td>
+            <td class="px-4 py-3 text-center">11:10</td>
+            <td class="px-4 py-3 text-center">11:14</td>
+            <td class="px-4 py-3 text-center">11:16</td>
+            <td class="px-4 py-3 text-center">11:18</td>
+            <td class="px-4 py-3 text-center">11:22</td>
+            <td class="px-4 py-3 text-center">11:24</td>
+            <td class="px-4 py-3 text-center">11:26</td>
+            <td class="px-4 py-3 text-center">11:28</td>
+            <td class="px-4 py-3 text-center">11:30</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">11:33</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1953A</td>
+            <td class="px-4 py-3 text-center">11:37</td>
+            <td class="px-4 py-3 text-center">11:40</td>
+            <td class="px-4 py-3 text-center">11:44</td>
+            <td class="px-4 py-3 text-center">11:46</td>
+            <td class="px-4 py-3 text-center">11:48</td>
+            <td class="px-4 py-3 text-center">11:52</td>
+            <td class="px-4 py-3 text-center">11:54</td>
+            <td class="px-4 py-3 text-center">11:56</td>
+            <td class="px-4 py-3 text-center">11:58</td>
+            <td class="px-4 py-3 text-center">12:00</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">12:03</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1955A</td>
+            <td class="px-4 py-3 text-center">12:07</td>
+            <td class="px-4 py-3 text-center">12:10</td>
+            <td class="px-4 py-3 text-center">12:14</td>
+            <td class="px-4 py-3 text-center">12:16</td>
+            <td class="px-4 py-3 text-center">12:18</td>
+            <td class="px-4 py-3 text-center">12:22</td>
+            <td class="px-4 py-3 text-center">12:24</td>
+            <td class="px-4 py-3 text-center">12:26</td>
+            <td class="px-4 py-3 text-center">12:28</td>
+            <td class="px-4 py-3 text-center">12:30</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">12:33</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1957A</td>
+            <td class="px-4 py-3 text-center">12:37</td>
+            <td class="px-4 py-3 text-center">12:40</td>
+            <td class="px-4 py-3 text-center">12:44</td>
+            <td class="px-4 py-3 text-center">12:46</td>
+            <td class="px-4 py-3 text-center">12:48</td>
+            <td class="px-4 py-3 text-center">12:52</td>
+            <td class="px-4 py-3 text-center">12:54</td>
+            <td class="px-4 py-3 text-center">12:56</td>
+            <td class="px-4 py-3 text-center">12:58</td>
+            <td class="px-4 py-3 text-center">13:00</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">13:03</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1959A</td>
+            <td class="px-4 py-3 text-center">13:07</td>
+            <td class="px-4 py-3 text-center">13:10</td>
+            <td class="px-4 py-3 text-center">13:14</td>
+            <td class="px-4 py-3 text-center">13:16</td>
+            <td class="px-4 py-3 text-center">13:18</td>
+            <td class="px-4 py-3 text-center">13:22</td>
+            <td class="px-4 py-3 text-center">13:24</td>
+            <td class="px-4 py-3 text-center">13:26</td>
+            <td class="px-4 py-3 text-center">13:28</td>
+            <td class="px-4 py-3 text-center">13:30</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">13:33</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1961A</td>
+            <td class="px-4 py-3 text-center">13:37</td>
+            <td class="px-4 py-3 text-center">13:40</td>
+            <td class="px-4 py-3 text-center">13:44</td>
+            <td class="px-4 py-3 text-center">13:46</td>
+            <td class="px-4 py-3 text-center">13:48</td>
+            <td class="px-4 py-3 text-center">13:52</td>
+            <td class="px-4 py-3 text-center">13:54</td>
+            <td class="px-4 py-3 text-center">13:56</td>
+            <td class="px-4 py-3 text-center">13:58</td>
+            <td class="px-4 py-3 text-center">14:00</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">14:03</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1963A</td>
+            <td class="px-4 py-3 text-center">14:07</td>
+            <td class="px-4 py-3 text-center">14:10</td>
+            <td class="px-4 py-3 text-center">14:14</td>
+            <td class="px-4 py-3 text-center">14:16</td>
+            <td class="px-4 py-3 text-center">14:18</td>
+            <td class="px-4 py-3 text-center">14:22</td>
+            <td class="px-4 py-3 text-center">14:24</td>
+            <td class="px-4 py-3 text-center">14:26</td>
+            <td class="px-4 py-3 text-center">14:28</td>
+            <td class="px-4 py-3 text-center">14:30</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">14:33</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1965A</td>
+            <td class="px-4 py-3 text-center">14:37</td>
+            <td class="px-4 py-3 text-center">14:40</td>
+            <td class="px-4 py-3 text-center">14:44</td>
+            <td class="px-4 py-3 text-center">14:46</td>
+            <td class="px-4 py-3 text-center">14:48</td>
+            <td class="px-4 py-3 text-center">14:52</td>
+            <td class="px-4 py-3 text-center">14:54</td>
+            <td class="px-4 py-3 text-center">14:56</td>
+            <td class="px-4 py-3 text-center">14:58</td>
+            <td class="px-4 py-3 text-center">15:00</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">15:03</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1967A</td>
+            <td class="px-4 py-3 text-center">15:07</td>
+            <td class="px-4 py-3 text-center">15:10</td>
+            <td class="px-4 py-3 text-center">15:14</td>
+            <td class="px-4 py-3 text-center">15:16</td>
+            <td class="px-4 py-3 text-center">15:18</td>
+            <td class="px-4 py-3 text-center">15:22</td>
+            <td class="px-4 py-3 text-center">15:24</td>
+            <td class="px-4 py-3 text-center">15:26</td>
+            <td class="px-4 py-3 text-center">15:28</td>
+            <td class="px-4 py-3 text-center">15:30</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">15:33</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1969A</td>
+            <td class="px-4 py-3 text-center">15:20</td>
+            <td class="px-4 py-3 text-center">15:23</td>
+            <td class="px-4 py-3 text-center">15:27</td>
+            <td class="px-4 py-3 text-center">15:29</td>
+            <td class="px-4 py-3 text-center">15:31</td>
+            <td class="px-4 py-3 text-center">15:35</td>
+            <td class="px-4 py-3 text-center">15:37</td>
+            <td class="px-4 py-3 text-center">15:39</td>
+            <td class="px-4 py-3 text-center">15:41</td>
+            <td class="px-4 py-3 text-center">15:43</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">15:46</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1971A</td>
+            <td class="px-4 py-3 text-center">15:37</td>
+            <td class="px-4 py-3 text-center">15:40</td>
+            <td class="px-4 py-3 text-center">15:44</td>
+            <td class="px-4 py-3 text-center">15:46</td>
+            <td class="px-4 py-3 text-center">15:48</td>
+            <td class="px-4 py-3 text-center">15:52</td>
+            <td class="px-4 py-3 text-center">15:54</td>
+            <td class="px-4 py-3 text-center">15:56</td>
+            <td class="px-4 py-3 text-center">15:58</td>
+            <td class="px-4 py-3 text-center">16:00</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">16:03</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1973A</td>
+            <td class="px-4 py-3 text-center">15:50</td>
+            <td class="px-4 py-3 text-center">15:53</td>
+            <td class="px-4 py-3 text-center">15:57</td>
+            <td class="px-4 py-3 text-center">15:59</td>
+            <td class="px-4 py-3 text-center">16:01</td>
+            <td class="px-4 py-3 text-center">16:05</td>
+            <td class="px-4 py-3 text-center">16:07</td>
+            <td class="px-4 py-3 text-center">16:09</td>
+            <td class="px-4 py-3 text-center">16:11</td>
+            <td class="px-4 py-3 text-center">16:13</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">16:16</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1975A</td>
+            <td class="px-4 py-3 text-center">16:07</td>
+            <td class="px-4 py-3 text-center">16:10</td>
+            <td class="px-4 py-3 text-center">16:14</td>
+            <td class="px-4 py-3 text-center">16:16</td>
+            <td class="px-4 py-3 text-center">16:18</td>
+            <td class="px-4 py-3 text-center">16:22</td>
+            <td class="px-4 py-3 text-center">16:24</td>
+            <td class="px-4 py-3 text-center">16:26</td>
+            <td class="px-4 py-3 text-center">16:28</td>
+            <td class="px-4 py-3 text-center">16:30</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">16:33</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1977A</td>
+            <td class="px-4 py-3 text-center">16:20</td>
+            <td class="px-4 py-3 text-center">16:23</td>
+            <td class="px-4 py-3 text-center">16:27</td>
+            <td class="px-4 py-3 text-center">16:29</td>
+            <td class="px-4 py-3 text-center">16:31</td>
+            <td class="px-4 py-3 text-center">16:35</td>
+            <td class="px-4 py-3 text-center">16:37</td>
+            <td class="px-4 py-3 text-center">16:39</td>
+            <td class="px-4 py-3 text-center">16:41</td>
+            <td class="px-4 py-3 text-center">16:43</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">16:46</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1979A</td>
+            <td class="px-4 py-3 text-center">16:37</td>
+            <td class="px-4 py-3 text-center">16:40</td>
+            <td class="px-4 py-3 text-center">16:44</td>
+            <td class="px-4 py-3 text-center">16:46</td>
+            <td class="px-4 py-3 text-center">16:48</td>
+            <td class="px-4 py-3 text-center">16:52</td>
+            <td class="px-4 py-3 text-center">16:54</td>
+            <td class="px-4 py-3 text-center">16:56</td>
+            <td class="px-4 py-3 text-center">16:58</td>
+            <td class="px-4 py-3 text-center">17:00</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">17:03</td>
+          </tr>
+
+          <!-- Lanjutkan tbody -->
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1981A</td>
+            <td class="px-4 py-3 text-center">16:50</td>
+            <td class="px-4 py-3 text-center">16:53</td>
+            <td class="px-4 py-3 text-center">16:57</td>
+            <td class="px-4 py-3 text-center">16:59</td>
+            <td class="px-4 py-3 text-center">17:01</td>
+            <td class="px-4 py-3 text-center">17:05</td>
+            <td class="px-4 py-3 text-center">17:07</td>
+            <td class="px-4 py-3 text-center">17:09</td>
+            <td class="px-4 py-3 text-center">17:11</td>
+            <td class="px-4 py-3 text-center">17:13</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">17:16</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1983A</td>
+            <td class="px-4 py-3 text-center">17:07</td>
+            <td class="px-4 py-3 text-center">17:10</td>
+            <td class="px-4 py-3 text-center">17:14</td>
+            <td class="px-4 py-3 text-center">17:16</td>
+            <td class="px-4 py-3 text-center">17:18</td>
+            <td class="px-4 py-3 text-center">17:22</td>
+            <td class="px-4 py-3 text-center">17:24</td>
+            <td class="px-4 py-3 text-center">17:26</td>
+            <td class="px-4 py-3 text-center">17:28</td>
+            <td class="px-4 py-3 text-center">17:30</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">17:33</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1985A</td>
+            <td class="px-4 py-3 text-center">17:20</td>
+            <td class="px-4 py-3 text-center">17:23</td>
+            <td class="px-4 py-3 text-center">17:27</td>
+            <td class="px-4 py-3 text-center">17:29</td>
+            <td class="px-4 py-3 text-center">17:31</td>
+            <td class="px-4 py-3 text-center">17:35</td>
+            <td class="px-4 py-3 text-center">17:37</td>
+            <td class="px-4 py-3 text-center">17:39</td>
+            <td class="px-4 py-3 text-center">17:41</td>
+            <td class="px-4 py-3 text-center">17:43</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">17:46</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1987A</td>
+            <td class="px-4 py-3 text-center">17:37</td>
+            <td class="px-4 py-3 text-center">17:40</td>
+            <td class="px-4 py-3 text-center">17:44</td>
+            <td class="px-4 py-3 text-center">17:46</td>
+            <td class="px-4 py-3 text-center">17:48</td>
+            <td class="px-4 py-3 text-center">17:52</td>
+            <td class="px-4 py-3 text-center">17:54</td>
+            <td class="px-4 py-3 text-center">17:56</td>
+            <td class="px-4 py-3 text-center">17:58</td>
+            <td class="px-4 py-3 text-center">18:00</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">18:03</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1989A</td>
+            <td class="px-4 py-3 text-center">17:50</td>
+            <td class="px-4 py-3 text-center">17:53</td>
+            <td class="px-4 py-3 text-center">17:57</td>
+            <td class="px-4 py-3 text-center">17:59</td>
+            <td class="px-4 py-3 text-center">18:01</td>
+            <td class="px-4 py-3 text-center">18:05</td>
+            <td class="px-4 py-3 text-center">18:07</td>
+            <td class="px-4 py-3 text-center">18:09</td>
+            <td class="px-4 py-3 text-center">18:11</td>
+            <td class="px-4 py-3 text-center">18:13</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">18:16</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1991A</td>
+            <td class="px-4 py-3 text-center">18:07</td>
+            <td class="px-4 py-3 text-center">18:10</td>
+            <td class="px-4 py-3 text-center">18:14</td>
+            <td class="px-4 py-3 text-center">18:16</td>
+            <td class="px-4 py-3 text-center">18:18</td>
+            <td class="px-4 py-3 text-center">18:22</td>
+            <td class="px-4 py-3 text-center">18:24</td>
+            <td class="px-4 py-3 text-center">18:26</td>
+            <td class="px-4 py-3 text-center">18:28</td>
+            <td class="px-4 py-3 text-center">18:30</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">18:33</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1993A</td>
+            <td class="px-4 py-3 text-center">18:20</td>
+            <td class="px-4 py-3 text-center">18:23</td>
+            <td class="px-4 py-3 text-center">18:27</td>
+            <td class="px-4 py-3 text-center">18:29</td>
+            <td class="px-4 py-3 text-center">18:31</td>
+            <td class="px-4 py-3 text-center">18:35</td>
+            <td class="px-4 py-3 text-center">18:37</td>
+            <td class="px-4 py-3 text-center">18:39</td>
+            <td class="px-4 py-3 text-center">18:41</td>
+            <td class="px-4 py-3 text-center">18:43</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">18:46</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1995A</td>
+            <td class="px-4 py-3 text-center">18:37</td>
+            <td class="px-4 py-3 text-center">18:40</td>
+            <td class="px-4 py-3 text-center">18:44</td>
+            <td class="px-4 py-3 text-center">18:46</td>
+            <td class="px-4 py-3 text-center">18:48</td>
+            <td class="px-4 py-3 text-center">18:52</td>
+            <td class="px-4 py-3 text-center">18:54</td>
+            <td class="px-4 py-3 text-center">18:56</td>
+            <td class="px-4 py-3 text-center">18:58</td>
+            <td class="px-4 py-3 text-center">19:00</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">19:03</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1997A</td>
+            <td class="px-4 py-3 text-center">18:50</td>
+            <td class="px-4 py-3 text-center">18:53</td>
+            <td class="px-4 py-3 text-center">18:57</td>
+            <td class="px-4 py-3 text-center">18:59</td>
+            <td class="px-4 py-3 text-center">19:01</td>
+            <td class="px-4 py-3 text-center">19:05</td>
+            <td class="px-4 py-3 text-center">19:07</td>
+            <td class="px-4 py-3 text-center">19:09</td>
+            <td class="px-4 py-3 text-center">19:11</td>
+            <td class="px-4 py-3 text-center">19:13</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">19:16</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">1999A</td>
+            <td class="px-4 py-3 text-center">19:07</td>
+            <td class="px-4 py-3 text-center">19:10</td>
+            <td class="px-4 py-3 text-center">19:14</td>
+            <td class="px-4 py-3 text-center">19:16</td>
+            <td class="px-4 py-3 text-center">19:18</td>
+            <td class="px-4 py-3 text-center">19:22</td>
+            <td class="px-4 py-3 text-center">19:24</td>
+            <td class="px-4 py-3 text-center">19:26</td>
+            <td class="px-4 py-3 text-center">19:28</td>
+            <td class="px-4 py-3 text-center">19:30</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">19:33</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">2001A</td>
+            <td class="px-4 py-3 text-center">19:20</td>
+            <td class="px-4 py-3 text-center">19:23</td>
+            <td class="px-4 py-3 text-center">19:27</td>
+            <td class="px-4 py-3 text-center">19:29</td>
+            <td class="px-4 py-3 text-center">19:31</td>
+            <td class="px-4 py-3 text-center">19:35</td>
+            <td class="px-4 py-3 text-center">19:37</td>
+            <td class="px-4 py-3 text-center">19:39</td>
+            <td class="px-4 py-3 text-center">19:41</td>
+            <td class="px-4 py-3 text-center">19:43</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">19:46</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">2003A</td>
+            <td class="px-4 py-3 text-center">19:37</td>
+            <td class="px-4 py-3 text-center">19:40</td>
+            <td class="px-4 py-3 text-center">19:44</td>
+            <td class="px-4 py-3 text-center">19:46</td>
+            <td class="px-4 py-3 text-center">19:48</td>
+            <td class="px-4 py-3 text-center">19:52</td>
+            <td class="px-4 py-3 text-center">19:54</td>
+            <td class="px-4 py-3 text-center">19:56</td>
+            <td class="px-4 py-3 text-center">19:58</td>
+            <td class="px-4 py-3 text-center">20:00</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">20:03</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">2005A</td>
+            <td class="px-4 py-3 text-center">19:50</td>
+            <td class="px-4 py-3 text-center">19:53</td>
+            <td class="px-4 py-3 text-center">19:57</td>
+            <td class="px-4 py-3 text-center">19:59</td>
+            <td class="px-4 py-3 text-center">20:01</td>
+            <td class="px-4 py-3 text-center">20:05</td>
+            <td class="px-4 py-3 text-center">20:07</td>
+            <td class="px-4 py-3 text-center">20:09</td>
+            <td class="px-4 py-3 text-center">20:11</td>
+            <td class="px-4 py-3 text-center">20:13</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">20:16</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">2007A</td>
+            <td class="px-4 py-3 text-center">20:07</td>
+            <td class="px-4 py-3 text-center">20:10</td>
+            <td class="px-4 py-3 text-center">20:14</td>
+            <td class="px-4 py-3 text-center">20:16</td>
+            <td class="px-4 py-3 text-center">20:18</td>
+            <td class="px-4 py-3 text-center">20:22</td>
+            <td class="px-4 py-3 text-center">20:24</td>
+            <td class="px-4 py-3 text-center">20:26</td>
+            <td class="px-4 py-3 text-center">20:28</td>
+            <td class="px-4 py-3 text-center">20:30</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">20:33</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">2009A</td>
+            <td class="px-4 py-3 text-center">20:20</td>
+            <td class="px-4 py-3 text-center">20:23</td>
+            <td class="px-4 py-3 text-center">20:27</td>
+            <td class="px-4 py-3 text-center">20:29</td>
+            <td class="px-4 py-3 text-center">20:31</td>
+            <td class="px-4 py-3 text-center">20:35</td>
+            <td class="px-4 py-3 text-center">20:37</td>
+            <td class="px-4 py-3 text-center">20:39</td>
+            <td class="px-4 py-3 text-center">20:41</td>
+            <td class="px-4 py-3 text-center">20:43</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">20:46</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">2011A</td>
+            <td class="px-4 py-3 text-center">20:37</td>
+            <td class="px-4 py-3 text-center">20:40</td>
+            <td class="px-4 py-3 text-center">20:44</td>
+            <td class="px-4 py-3 text-center">20:46</td>
+            <td class="px-4 py-3 text-center">20:48</td>
+            <td class="px-4 py-3 text-center">20:52</td>
+            <td class="px-4 py-3 text-center">20:54</td>
+            <td class="px-4 py-3 text-center">20:56</td>
+            <td class="px-4 py-3 text-center">20:58</td>
+            <td class="px-4 py-3 text-center">21:00</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">21:03</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">2013A</td>
+            <td class="px-4 py-3 text-center">21:07</td>
+            <td class="px-4 py-3 text-center">21:10</td>
+            <td class="px-4 py-3 text-center">21:14</td>
+            <td class="px-4 py-3 text-center">21:16</td>
+            <td class="px-4 py-3 text-center">21:18</td>
+            <td class="px-4 py-3 text-center">21:22</td>
+            <td class="px-4 py-3 text-center">21:24</td>
+            <td class="px-4 py-3 text-center">21:26</td>
+            <td class="px-4 py-3 text-center">21:28</td>
+            <td class="px-4 py-3 text-center">21:30</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">21:33</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">2015A</td>
+            <td class="px-4 py-3 text-center">21:20</td>
+            <td class="px-4 py-3 text-center">21:23</td>
+            <td class="px-4 py-3 text-center">21:27</td>
+            <td class="px-4 py-3 text-center">21:29</td>
+            <td class="px-4 py-3 text-center">21:31</td>
+            <td class="px-4 py-3 text-center">21:35</td>
+            <td class="px-4 py-3 text-center">21:37</td>
+            <td class="px-4 py-3 text-center">21:39</td>
+            <td class="px-4 py-3 text-center">21:41</td>
+            <td class="px-4 py-3 text-center">21:43</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">21:46</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">2017A</td>
+            <td class="px-4 py-3 text-center">21:50</td>
+            <td class="px-4 py-3 text-center">21:53</td>
+            <td class="px-4 py-3 text-center">21:57</td>
+            <td class="px-4 py-3 text-center">21:59</td>
+            <td class="px-4 py-3 text-center">22:01</td>
+            <td class="px-4 py-3 text-center">22:05</td>
+            <td class="px-4 py-3 text-center">22:07</td>
+            <td class="px-4 py-3 text-center">22:09</td>
+            <td class="px-4 py-3 text-center">22:11</td>
+            <td class="px-4 py-3 text-center">22:13</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">22:16</td>
+          </tr>
+          <tr class="border-b border-slate-100 hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">2019A</td>
+            <td class="px-4 py-3 text-center">22:07</td>
+            <td class="px-4 py-3 text-center">22:10</td>
+            <td class="px-4 py-3 text-center">22:14</td>
+            <td class="px-4 py-3 text-center">22:16</td>
+            <td class="px-4 py-3 text-center">22:18</td>
+            <td class="px-4 py-3 text-center">22:22</td>
+            <td class="px-4 py-3 text-center">22:24</td>
+            <td class="px-4 py-3 text-center">22:26</td>
+            <td class="px-4 py-3 text-center">22:28</td>
+            <td class="px-4 py-3 text-center">22:30</td>
+            <td class="px-4 py-3 text-center font-bold text-orange-600 bg-orange-50/30">22:33</td>
+          </tr>
+          <tr class="hover:bg-orange-50 transition-colors">
+            <td class="px-4 py-3 font-black text-[#001220] sticky left-0 bg-white border-r border-slate-100">2021A</td>
+            <td class="px-4 py-3 text-center">22:37</td>
+            <td class="px-4 py-3 text-center">22:40</td>
+            <td class="px-4 py-3 text-center">22:44</td>
+            <td class="px-4 py-3 text-center">22:46</td>
+            <td class="px-4 py-3 text-center">22:48</td>
+            <td class="px-4 py-3 text-center">22:52</td>
+            <td class="px-4 py-3 text-center">22:54</td>
+            <td class="px-4 py-3 text-center">22:56</td>
+            <td class="px-4 py-3 text-center">22:58</td>
+            <td class="px-4 py-3 text-center">23:00</td>
+            <td class="px-4 py-3 text-center font-black text-white bg-orange-600">23:03</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="flex items-center gap-2">
+        <span class="text-[10px] font-bold bg-slate-100 px-2 py-1 rounded">TNG</span>
+        <span class="text-[10px] uppercase font-bold text-slate-400">Tangerang</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="text-[10px] font-bold bg-slate-100 px-2 py-1 rounded">BPR</span>
+        <span class="text-[10px] uppercase font-bold text-slate-400">Batu Ceper</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="text-[10px] font-bold bg-slate-100 px-2 py-1 rounded">RBU</span>
+        <span class="text-[10px] uppercase font-bold text-slate-400">Rawa Buaya</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="text-[10px] font-bold bg-orange-600 text-white px-2 py-1 rounded">DURI</span>
+        <span class="text-[10px] uppercase font-bold text-slate-400">Stasiun Akhir</span>
+      </div>
+    </div>
+
+    <div class="mt-20 text-center">
+      <a href="https://stasiunpasarsenen.com/kereta/commuter-line/rute-krl"
+        class="inline-block border-2 border-[#001220] text-[#001220] px-12 py-5 rounded-sm font-black uppercase tracking-[0.3em] text-[10px] hover:bg-orange-500 hover:border-orange-500 hover:text-white transition-all">
+        Kembali ke Daftar Rute
+      </a>
+    </div>
+    <section class="max-w-4xl mx-auto px-6 py-20 border-t border-slate-100">
+      <article class="prose prose-slate max-w-none">
+        <div class="border-l-4 border-orange-500 pl-6 mb-10">
+          <h2 class="text-3xl font-black text-[#001220] uppercase tracking-tighter leading-none mb-2">
+            Panduan Lengkap <br><span class="text-orange-600">KRL Line Tangerang</span>
+          </h2>
+          <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Transportasi Utama Penyangga Jakarta
+            Barat</p>
+        </div>
+
+        <div class="text-[#001220] leading-relaxed space-y-8">
+          <p class="text-lg font-medium leading-snug">
+            KRL Commuter Line Tangerang, atau yang sering disebut sebagai <span
+              class="border-b-2 border-orange-200">Brown Line</span>, merupakan urat nadi transportasi bagi ribuan
+            penglaju dari Kota Tangerang menuju pusat bisnis di Jakarta. Dengan titik akhir di Stasiun Duri, rute ini
+            menawarkan koneksi cepat ke area-area strategis seperti Jakarta Barat dan akses transit ke seluruh
+            Jabodetabek.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose">
+            <div class="bg-slate-50 border border-slate-200 p-6 rounded-sm hover:border-orange-500 transition-colors">
+              <div class="flex items-center gap-2 mb-3">
+                <div class="w-2 h-2 rounded-full bg-orange-600"></div>
+                <h3 class="font-black uppercase tracking-tight text-sm">Titik Transit Strategis</h3>
+              </div>
+              <p class="text-slate-600 text-xs leading-relaxed">
+                <strong>Stasiun Duri</strong> adalah gerbang utama. Penumpang dapat berpindah ke KRL Lintas Cikarang
+                (Loop Line) untuk menuju Tanah Abang, Sudirman, hingga Bekasi dan Cikarang tanpa perlu keluar area
+                stasiun.
+              </p>
+            </div>
+
+            <div class="bg-slate-50 border border-slate-200 p-6 rounded-sm hover:border-orange-500 transition-colors">
+              <div class="flex items-center gap-2 mb-3">
+                <div class="w-2 h-2 rounded-full bg-[#001220]"></div>
+                <h3 class="font-black uppercase tracking-tight text-sm">Koneksi Bandara Soekarno-Hatta</h3>
+              </div>
+              <p class="text-slate-600 text-xs leading-relaxed">
+                Di <strong>Stasiun Batu Ceper</strong>, penumpang dapat berpindah moda ke KA Bandara Soekarno-Hatta.
+                Titik ini sangat krusial bagi pelancong yang mencari opsi transportasi hemat waktu dan biaya menuju
+                bandara internasional.
+              </p>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-bold pt-4">Tips Perjalanan Efisien</h3>
+          <ul class="list-none space-y-3 pl-0">
+            <li class="flex gap-3 text-sm">
+              <span class="text-orange-600 font-bold">01.</span>
+              <span><strong>Perhatikan Jam Sibuk:</strong> Antara jam 06.00 – 08.00 WIB rute menuju Duri sangat padat.
+                Sebaiknya gunakan jadwal kereta paling pagi untuk mendapatkan kenyamanan lebih.</span>
+            </li>
+            <li class="flex gap-3 text-sm">
+              <span class="text-orange-600 font-bold">02.</span>
+              <span><strong>Cek Saldo KMT:</strong> Pastikan saldo Kartu Multi Trip (KMT) atau uang elektronik Anda
+                minimal Rp5.000 agar tidak terhambat di gate masuk.</span>
+            </li>
+            <li class="flex gap-3 text-sm">
+              <span class="text-orange-600 font-bold">03.</span>
+              <span><strong>Stasiun Rawa Buaya:</strong> Bagi Anda yang bekerja di area Puri Indah atau Cengkareng,
+                turun di Rawa Buaya adalah pilihan terbaik untuk melanjutkan perjalanan dengan ojek online atau bus
+                kota.</span>
+            </li>
+          </ul>
+
+          <p class="text-slate-500 text-[11px] italic pt-6 border-t border-slate-100 uppercase tracking-wide">
+            * Jadwal dapat berubah sewaktu-waktu sesuai kebijakan PT KCI. Pastikan selalu memantau aplikasi resmi untuk
+            perubahan operasional mendadak.
+          </p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="bg-[#001220] border-t-4 border-[#E11D48] pt-16 pb-8 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+
+        <div class="space-y-4">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 bg-[#E11D48] flex items-center justify-center rounded-sm">
+              <i class="fas fa-train-subway text-white text-sm"></i>
+            </div>
+            <span class="text-white font-black tracking-tighter uppercase italic">Pasar Senen</span>
+          </div>
+          <p class="text-slate-400 text-[11px] leading-relaxed font-medium">
+            Portal informasi untuk kemudahan perjalanan Commuter Line terencana di wilayah Jabodetabek.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <h4 class="text-white text-[10px] font-black uppercase tracking-[0.2em] border-b border-white/10 pb-2">Jalur
+            Utama</h4>
+          <ul class="space-y-2">
+            <li><a href="https://stasiunpasarsenen.com/kereta/commuter-line/jalur-bogor"
+                class="text-slate-400 hover:text-[#E11D48] text-[11px] font-bold uppercase transition-colors">Bogor
+                Line</a></li>
+            <li><a href="https://stasiunpasarsenen.com/kereta/commuter-line/jalur-cikarang"
+                class="text-slate-400 hover:text-[#E11D48] text-[11px] font-bold uppercase transition-colors">Cikarang
+                Line</a></li>
+            <li><a href="#"
+                class="text-slate-400 hover:text-[#E11D48] text-[11px] font-bold uppercase transition-colors">Rangkasbitung
+                Line</a></li>
+            <li><a href="https://stasiunpasarsenen.com/kereta/commuter-line/jalur-tangerang"
+                class="text-slate-400 hover:text-[#E11D48] text-[11px] font-bold uppercase transition-colors">Tangerang
+                Line</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-4">
+          <h4 class="text-white text-[10px] font-black uppercase tracking-[0.2em] border-b border-white/10 pb-2">
+            Informasi</h4>
+          <ul class="space-y-2">
+            <li><a href="https://stasiunpasarsenen.com/kereta/"
+                class="text-slate-400 hover:text-white text-[11px] font-bold uppercase transition-colors">Jadwal KA</a>
+            </li>
+            <li><a href="#"
+                class="text-slate-400 hover:text-white text-[11px] font-bold uppercase transition-colors">Peta
+                Stasiun</a></li>
+            <li><a href="https://stasiunpasarsenen.com/kereta/commuter-line/rute-krl"
+                class="text-slate-400 hover:text-white text-[11px] font-bold uppercase transition-colors">Rute KRL
+                Jabodetabek</a></li>
+            <li><a href="#"
+                class="text-slate-400 hover:text-white text-[11px] font-bold uppercase transition-colors">Wisata
+                Sekitar</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-4">
+          <h4 class="text-white text-[10px] font-black uppercase tracking-[0.2em] border-b border-white/10 pb-2">Insight
+          </h4>
+          <ul class="space-y-2">
+            <li><a href="#"
+                class="text-slate-400 hover:text-white text-[11px] font-bold uppercase transition-colors">Tentang
+                Kami</a></li>
+            <li><a href="#"
+                class="text-slate-400 hover:text-white text-[11px] font-bold uppercase transition-colors">Ketentuan</a>
+            </li>
+            <li><a href="#"
+                class="text-slate-400 hover:text-white text-[11px] font-bold uppercase transition-colors">Privasi</a>
+            </li>
+            <li><a href="#"
+                class="text-slate-400 hover:text-white text-[11px] font-bold uppercase transition-colors">Blog</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-[10px] font-mono text-slate-500 uppercase tracking-[0.3em]">
+          © 2026 PASAR SENEN
+        </p>
+        <div class="flex gap-6">
+          <a href="#" class="text-slate-500 hover:text-white text-xs"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-slate-500 hover:text-white text-xs"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-slate-500 hover:text-white text-xs"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+
+    function init() {
+      console.log("Sistem navigasi siap.");
+
+    }
+
+
+    function scrollToExplanation() {
+      const explanation = document.getElementById('explanation-section');
+      if (explanation) {
+        window.scrollTo({
+          top: explanation.offsetTop - 120,
+          behavior: 'smooth'
+        });
+      }
+    }
+
+
+    window.onload = () => {
+
+      init();
+
+
+      const body = document.body;
+      const btnMenu = document.getElementById('btn-menu');
+      const btnClose = document.getElementById('btn-close');
+
+
+      if (btnMenu) {
+        btnMenu.onclick = () => {
+          body.classList.add('menu-active');
+        };
+      }
+
+
+      if (btnClose) {
+        btnClose.onclick = () => {
+          body.classList.remove('menu-active');
+        };
+      }
+    };
+  </script>
+</body>
+
+</html>

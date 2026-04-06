@@ -1,0 +1,5017 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Board KRL Jabodetabek | Jadwal Real-Time & Estimasi Kedatangan</title>
+    <meta name="title" content="Live Board KRL Jabodetabek | Jadwal Real-Time & Estimasi Kedatangan">
+    <meta name="description"
+        content="Pantau jadwal KRL Jabodetabek secara real-time. Informasi estimasi kedatangan kereta di Manggarai, Sudirman, Tanah Abang, dan stasiun lainnya langsung dari GAPEKA terbaru.">
+    <meta name="keywords"
+        content="live board krl, jadwal krl real time, krl jabodetabek, estimasi krl, jadwal commuter line, manggarai live board, jadwal krl hari ini">
+    <meta name="author" content="Pasar Senen">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://stasiunpasarsenen.com/kereta/commuter-line/real-time-krl">
+    <meta property="og:title" content="Live Board KRL Jabodetabek | Jadwal Real-Time">
+    <meta property="og:description"
+        content="Cek posisi dan estimasi kedatangan KRL Jabodetabek secara instan dengan tampilan papan informasi digital stasiun.">
+    <meta property="og:image" content="https://stasiunpasarsenen.com/public/images/og-real-time-krl.jpg">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://stasiunpasarsenen.com/kereta/commuter-line/real-time-krl">
+    <meta property="twitter:title" content="Live Board KRL Jabodetabek | Jadwal Real-Time">
+    <meta property="twitter:description"
+        content="Cek posisi dan estimasi kedatangan KRL Jabodetabek secara instan dengan tampilan papan informasi digital stasiun.">
+    <meta property="twitter:image" content="https://stasiunpasarsenen.com/public/images/og-real-time-krl.jpg">
+    <meta name="theme-color" content="#001220">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="icon" type="image/png" href="https://stasiunpasarsenen.com/public/icons/favicon.png" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Space+Mono:wght@700&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8fafc;
+            color: #0f172a;
+        }
+
+
+        .glass-header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-link-modern {
+            position: relative;
+            color: #1e293b;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link-modern::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #E11D48;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link-modern:hover::after {
+            width: 100%;
+        }
+
+        .nav-link-modern:hover {
+            color: #E11D48;
+        }
+
+
+        .sharp-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 2px;
+
+            transition: all 0.2s ease;
+        }
+
+        .sharp-card:hover {
+            border-color: #cbd5e1;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        }
+
+        .time-large {
+            font-size: 1.75rem;
+            line-height: 1;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            font-feature-settings: "tnum";
+        }
+
+        .status-badge {
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 2px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <header class="fixed top-0 left-0 w-full z-[100] glass-header">
+        <div class="max-w-7xl mx-auto flex justify-between items-center h-20 px-6">
+            <a href="https://stasiunpasarsenen.com" class="flex items-center gap-3 no-underline group">
+                <div
+                    class="w-10 h-10 bg-[#E11D48] flex items-center justify-center rounded-sm group-hover:rotate-6 transition-transform shadow-md">
+                    <i class="fas fa-train-subway text-white text-xl"></i>
+                </div>
+                <div class="flex flex-col text-left">
+                    <span class="text-lg font-semibold uppercase tracking-tighter leading-none text-slate-900">PASAR
+                        SENEN</span>
+                    <span class="text-[8px] font-mono text-slate-500 font-semibold tracking-[0.2em] uppercase mt-0.5">
+                        Informasi Stasiun</span>
+                </div>
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-8">
+                <a href="https://stasiunpasarsenen.com/kereta/commuter-line/real-time-krl"
+                    class="nav-link-modern text-[11px] font-semibold uppercase tracking-widest">Jadwal Real-Time</a>
+                <a href="https://stasiunpasarsenen.com/kereta/commuter-line/rute-krl"
+                    class="nav-link-modern text-[11px] font-semibold uppercase tracking-widest">Rute KRL</a>
+                <a href="https://stasiunpasarsenen.com/jadwal-kereta/"
+                    class="nav-link-modern text-[11px] font-semibold uppercase tracking-widest">Kereta
+                    Antar
+                    Kota</a>
+                <a href="https://stasiunpasarsenen.com"
+                    class="nav-link-modern text-[11px] font-semibold uppercase tracking-widest">Layanan
+                    Stasiun</a>
+            </nav>
+
+
+            <button id="btn-menu" class="lg:hidden text-slate-900 text-2xl">
+                <i class="fas fa-bars-staggered"></i>
+            </button>
+        </div>
+    </header>
+    
+    <div id="nav-screen"
+        class="fixed inset-0 z-[150] bg-[#E11D48] flex flex-col justify-center p-8 translate-x-full transition-transform duration-500">
+        <button id="btn-close" class="absolute top-6 right-6 text-white text-2xl">
+            <i class="fas fa-xmark"></i>
+        </button>
+        <div class="mb-10 text-white/40 text-[10px] font-semibold tracking-[0.4em] uppercase">Navigation Menu</div>
+        <nav class="flex flex-col space-y-4">
+            <a href="https://stasiunpasarsenen.com/kereta/commuter-line/navigasi-krl-jabodetabek"
+                class="text-white text-xl font-semibold uppercase tracking-widest border-b border-white/10 pb-3">Beranda</a>
+            <a href="https://stasiunpasarsenen.com/kereta/commuter-line/real-time-krl"
+                class="text-white text-xl font-semibold uppercase tracking-widest border-b border-white/10 pb-3">Jadwal
+                Real-Time</a>
+            <a href="https://stasiunpasarsenen.com/kereta/commuter-line/rute-krl"
+                class="text-white text-xl font-semibold uppercase tracking-widest border-b border-white/10 pb-3">Informasi
+                Rute</a>
+            <a href="https://stasiunpasarsenen.com/kereta/commuter-line/jadwal-kereta/"
+                class="text-white text-xl font-semibold uppercase tracking-widest border-b border-white/10 pb-3">Antar
+                Kota</a>
+    
+        </nav>
+        </div>
+
+    <section class="max-w-7xl mx-auto px-6 pt-28 px-4 md:px-8 pb-12">
+        <section
+            class="mb-10 flex flex-col lg:flex-row justify-between items-start lg:items-center bg-slate-50 p-8 border border-slate-200 rounded-xl gap-6">
+            <div class="flex items-center gap-5">
+
+                <div>
+                    <h2 class="text-2xl font-semibold text-slate-900 tracking-tight">Pantau Jadwal Real-Time KRL</h2>
+                    <p class="text-[11px] font-medium text-slate-400 uppercase tracking-wider mt-0.5">Real-time Traffic
+                        System</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-6 divide-x divide-slate-200">
+
+
+                <div class="pl-6 flex flex-col items-start lg:items-end">
+                    <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-widest mb-1">Waktu Saat
+                        Ini</span>
+                    <div id="live-clock-main"
+                        class="text-3xl font-semibold text-slate-800 tabular-nums tracking-tighter">00:00:00</div>
+                </div>
+            </div>
+        </section>
+
+
+        <div id="boards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 mb-20 mt-12">
+        <article class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+            <div class="grid grid-cols-1 lg:grid-cols-2">
+                <div class="p-8 lg:p-12 border-b lg:border-b-0 lg:border-r border-slate-100">
+
+                    <h3 class="text-3xl font-semibold text-slate-900 leading-tight mb-6">
+                        Pantau Jadwal Real-Time Mengubah Cara Kita Bergerak
+                    </h3>
+                    <p class="text-slate-600 leading-relaxed mb-8">
+                        Dalam ekosistem transportasi publik yang padat seperti Jabodetabek, waktu adalah aset yang
+                        paling berharga. Platform jadwal real-time hadir bukan hanya sebagai penunjuk jam, melainkan
+                        sebagai pusat kendali navigasi harian Anda yang membantu menghindari ketidakpastian di lintasan.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="flex gap-4">
+                            <div
+                                class="flex-shrink-0 w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center">
+                                <svg class="w-5 h-5 text-[#D50000]" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-slate-800">Efisiensi Waktu</h4>
+                                <p class="text-[11px] text-slate-500 mt-1 leading-relaxed">Hindari menunggu terlalu lama
+                                    di peron yang padat dengan estimasi akurat.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div
+                                class="flex-shrink-0 w-10 h-10 bg-slate-50 rounded-lg flex items-center justify-center">
+                                <svg class="w-5 h-5 text-[#D50000]" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-slate-800">Manajemen Risiko</h4>
+                                <p class="text-[11px] text-slate-500 mt-1 leading-relaxed">Cepat beradaptasi dan cari
+                                    rute alternatif jika terjadi kendala teknis.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8 lg:p-12 bg-slate-50/50">
+                    <h4 class="text-[11px] font-semibold text-slate-400 uppercase tracking-[0.2em] mb-8">Manfaat Utama
+                        Platform</h4>
+                    <ul class="space-y-8">
+                        <li class="flex items-start gap-5">
+                            <span class="text-slate-200 font-semibold text-2xl leading-none mt-1">01</span>
+                            <div>
+                                <p class="text-[15px] font-semibold text-slate-800 mb-1">Akurasi Pergerakan Unit</p>
+                                <p class="text-xs text-slate-500 leading-relaxed">Pantau posisi pasti kereta tanpa perlu
+                                    bergantung pada jadwal statis yang seringkali berubah karena kondisi operasional di
+                                    lapangan.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-5">
+                            <span class="text-slate-200 font-semibold text-2xl leading-none mt-1">02</span>
+                            <div>
+                                <p class="text-[15px] font-semibold text-slate-800 mb-1">Pengambilan Keputusan Cepat</p>
+                                <p class="text-xs text-slate-500 leading-relaxed">Pilih dengan cerdas apakah akan
+                                    menunggu kereta berikutnya atau beralih moda transportasi saat terjadi lonjakan
+                                    kepadatan penumpang.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-5">
+                            <span class="text-slate-200 font-semibold text-2xl leading-none mt-1">03</span>
+                            <div>
+                                <p class="text-[15px] font-semibold text-slate-800 mb-1">Kenyamanan Psikologis</p>
+                                <p class="text-xs text-slate-500 leading-relaxed">Mengetahui dengan pasti estimasi waktu
+                                    kedatangan mengurangi tingkat kecemasan perjalanan (commuter anxiety) secara
+                                    signifikan.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .font-semibold {
+            font-weight: 600;
+        }
+    </style>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcfcfc;
+            color: #1e293b;
+        }
+
+
+        .font-semibold {
+            font-weight: 700;
+        }
+
+        .tabular-nums {
+            font-variant-numeric: tabular-nums;
+        }
+
+
+        .train-row {
+            transition: all 0.2s ease;
+        }
+
+        .train-row:hover {
+            background-color: #f8fafc;
+            padding-left: 8px;
+            padding-right: 8px;
+            margin-left: -8px;
+            margin-right: -8px;
+            border-radius: 6px;
+        }
+    </style>
+
+    <footer class="bg-[#001220] border-t-4 border-[#E11D48] pt-16 pb-8 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 bg-[#E11D48] flex items-center justify-center rounded-sm">
+                            <i class="fas fa-train-subway text-white text-sm"></i>
+                        </div>
+                        <span class="text-white font-black tracking-tighter uppercase italic">Pasar Senen</span>
+                    </div>
+                    <p class="text-slate-400 text-[11px] leading-relaxed font-medium">
+                        Portal informasi untuk kemudahan perjalanan Commuter Line terencana di wilayah Jabodetabek.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h4
+                        class="text-white text-[10px] font-black uppercase tracking-[0.2em] border-b border-white/10 pb-2">
+                        Jalur Utama</h4>
+                    <ul class="space-y-2">
+                        <li><a href="https://stasiunpasarsenen.com/kereta/commuter-line/jalur-bogor"
+                                class="text-slate-400 hover:text-[#E11D48] text-[11px] font-bold uppercase transition-colors">Bogor
+                                Line</a></li>
+                        <li><a href="https://stasiunpasarsenen.com/kereta/commuter-line/jalur-cikarang"
+                                class="text-slate-400 hover:text-[#E11D48] text-[11px] font-bold uppercase transition-colors">Cikarang
+                                Line</a></li>
+                        <li><a href="#"
+                                class="text-slate-400 hover:text-[#E11D48] text-[11px] font-bold uppercase transition-colors">Rangkasbitung
+                                Line</a></li>
+                        <li><a href="https://stasiunpasarsenen.com/kereta/commuter-line/jalur-tangerang"
+                                class="text-slate-400 hover:text-[#E11D48] text-[11px] font-bold uppercase transition-colors">Tangerang
+                                Line</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4">
+                    <h4
+                        class="text-white text-[10px] font-black uppercase tracking-[0.2em] border-b border-white/10 pb-2">
+                        Informasi</h4>
+                    <ul class="space-y-2">
+                        <li><a href="https://stasiunpasarsenen.com/kereta/"
+                                class="text-slate-400 hover:text-white text-[11px] font-bold uppercase transition-colors">Jadwal
+                                KA</a></li>
+                        <li><a href="#"
+                                class="text-slate-400 hover:text-white text-[11px] font-bold uppercase transition-colors">Peta
+                                Stasiun</a></li>
+                        <li><a href="https://stasiunpasarsenen.com/kereta/commuter-line/rute-krl"
+                                class="text-slate-400 hover:text-white text-[11px] font-bold uppercase transition-colors">Rute
+                                KRL Jabodetabek</a></li>
+                        <li><a href="#"
+                                class="text-slate-400 hover:text-white text-[11px] font-bold uppercase transition-colors">Wisata
+                                Sekitar</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4">
+                    <h4
+                        class="text-white text-[10px] font-black uppercase tracking-[0.2em] border-b border-white/10 pb-2">
+                        Insight</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#"
+                                class="text-slate-400 hover:text-white text-[11px] font-bold uppercase transition-colors">Tentang
+                                Kami</a></li>
+                        <li><a href="#"
+                                class="text-slate-400 hover:text-white text-[11px] font-bold uppercase transition-colors">Ketentuan</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-slate-400 hover:text-white text-[11px] font-bold uppercase transition-colors">Privasi</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-slate-400 hover:text-white text-[11px] font-bold uppercase transition-colors">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-[10px] font-mono text-slate-500 uppercase tracking-[0.3em]">
+                    © 2026 PASAR SENEN
+                </p>
+                <div class="flex gap-6">
+                    <a href="#" class="text-slate-500 hover:text-white text-xs"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-slate-500 hover:text-white text-xs"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-slate-500 hover:text-white text-xs"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+    <script>
+        const trainData = [
+            {
+                "nomor_ka": "5017",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "04:41",
+                    "SUD": "04:46",
+                    "SUDR": "04:47",
+                    "KAT": "04:49",
+                    "THB": "04:58"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5039",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "04:45",
+                    "SUD": "04:51",
+                    "SUDR": "04:52",
+                    "KAT": "04:54",
+                    "THB": "05:03"
+                },
+                "keterangan": "Weekdays Only"
+            },
+            {
+                "nomor_ka": "5041",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "04:56",
+                    "SUD": "05:02",
+                    "SUDR": "05:03",
+                    "KAT": "05:05",
+                    "THB": "05:14"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "4005",
+                "relasi": "Bekasi - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "05:01",
+                    "SUD": "05:07",
+                    "SUDR": "05:08",
+                    "KAT": "05:10",
+                    "THB": "05:19"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5043",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "05:04",
+                    "SUD": "05:10",
+                    "SUDR": "05:11",
+                    "KAT": "05:13",
+                    "THB": "05:22"
+                },
+                "keterangan": "Weekdays Only"
+            },
+            {
+                "nomor_ka": "5045",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "05:12",
+                    "SUD": "05:18",
+                    "SUDR": "05:19",
+                    "KAT": "05:21",
+                    "THB": "05:31"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5047",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "05:23",
+                    "SUD": "05:29",
+                    "SUDR": "05:30",
+                    "KAT": "05:32",
+                    "THB": "05:41"
+                },
+                "keterangan": "Weekdays Only"
+            },
+            {
+                "nomor_ka": "5049",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "05:27",
+                    "SUD": "05:33",
+                    "SUDR": "05:34",
+                    "KAT": "05:36",
+                    "THB": "05:46"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5051",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "05:38",
+                    "SUD": "05:44",
+                    "SUDR": "05:45",
+                    "KAT": "05:47",
+                    "THB": "05:57"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5053",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "05:43",
+                    "SUD": "05:49",
+                    "SUDR": "05:50",
+                    "KAT": "05:52",
+                    "THB": "06:01"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5055",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "05:50",
+                    "SUD": "05:56",
+                    "SUDR": "05:57",
+                    "KAT": "05:59",
+                    "THB": "06:08"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "4007",
+                "relasi": "Bekasi - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "05:55",
+                    "SUD": "06:01",
+                    "SUDR": "06:02",
+                    "KAT": "06:04",
+                    "THB": "06:13"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5057",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "06:01",
+                    "SUD": "06:07",
+                    "SUDR": "06:08",
+                    "KAT": "06:10",
+                    "THB": "06:19"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5059",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "06:08",
+                    "SUD": "06:14",
+                    "SUDR": "06:15",
+                    "KAT": "06:17",
+                    "THB": "06:26"
+                },
+                "keterangan": "Weekdays Only"
+            },
+            {
+                "nomor_ka": "5061",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "06:12",
+                    "SUD": "06:18",
+                    "SUDR": "06:19",
+                    "KAT": "06:21",
+                    "THB": "06:30"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5063",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "06:19",
+                    "SUD": "06:25",
+                    "SUDR": "06:26",
+                    "KAT": "06:28",
+                    "THB": "06:37"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5065",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "06:26",
+                    "SUD": "06:32",
+                    "SUDR": "06:33",
+                    "KAT": "06:35",
+                    "THB": "06:44"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5067",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "06:34",
+                    "SUD": "06:40",
+                    "SUDR": "06:41",
+                    "KAT": "06:43",
+                    "THB": "06:52"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5069",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "06:41",
+                    "SUD": "06:47",
+                    "SUDR": "06:48",
+                    "KAT": "06:50",
+                    "THB": "06:59"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5071",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "06:48",
+                    "SUD": "06:54",
+                    "SUDR": "06:55",
+                    "KAT": "06:57",
+                    "THB": "07:06"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5073",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "06:56",
+                    "SUD": "07:02",
+                    "SUDR": "07:03",
+                    "KAT": "07:05",
+                    "THB": "07:14"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5075",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "07:01",
+                    "SUD": "07:07",
+                    "SUDR": "07:08",
+                    "KAT": "07:10",
+                    "THB": "07:19"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5077",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "07:10",
+                    "SUD": "07:16",
+                    "SUDR": "07:17",
+                    "KAT": "07:19",
+                    "THB": "07:28"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5079",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "07:14",
+                    "SUD": "07:20",
+                    "SUDR": "07:21",
+                    "KAT": "07:23",
+                    "THB": "07:32"
+                },
+                "keterangan": "Weekdays Only"
+            },
+            {
+                "nomor_ka": "5081",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "07:23",
+                    "SUD": "07:29",
+                    "SUDR": "07:30",
+                    "KAT": "07:32",
+                    "THB": "07:41"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5083",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "07:28",
+                    "SUD": "07:34",
+                    "SUDR": "07:35",
+                    "KAT": "07:37",
+                    "THB": "07:46"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5085",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "07:36",
+                    "SUD": "07:42",
+                    "SUDR": "07:43",
+                    "KAT": "07:45",
+                    "THB": "07:54"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5087",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "07:43",
+                    "SUD": "07:49",
+                    "SUDR": "07:50",
+                    "KAT": "07:52",
+                    "THB": "08:01"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5089",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "07:51",
+                    "SUD": "07:57",
+                    "SUDR": "07:58",
+                    "KAT": "08:00",
+                    "THB": "08:09"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5091",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "07:58",
+                    "SUD": "08:04",
+                    "SUDR": "08:05",
+                    "KAT": "08:07",
+                    "THB": "08:16"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5093",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "08:06",
+                    "SUD": "08:12",
+                    "SUDR": "08:13",
+                    "KAT": "08:15",
+                    "THB": "08:24"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5095",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "08:12",
+                    "SUD": "08:18",
+                    "SUDR": "08:19",
+                    "KAT": "08:21",
+                    "THB": "08:30"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5097",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "08:21",
+                    "SUD": "08:27",
+                    "SUDR": "08:28",
+                    "KAT": "08:30",
+                    "THB": "08:39"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5099",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "08:27",
+                    "SUD": "08:33",
+                    "SUDR": "08:34",
+                    "KAT": "08:36",
+                    "THB": "08:45"
+                },
+                "keterangan": "Weekdays Only"
+            },
+            {
+                "nomor_ka": "5101",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "08:35",
+                    "SUD": "08:41",
+                    "SUDR": "08:42",
+                    "KAT": "08:44",
+                    "THB": "08:53"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5103",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "08:40",
+                    "SUD": "08:46",
+                    "SUDR": "08:47",
+                    "KAT": "08:49",
+                    "THB": "08:58"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5105",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "08:49",
+                    "SUD": "08:55",
+                    "SUDR": "08:56",
+                    "KAT": "08:58",
+                    "THB": "09:07"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5107",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "08:54",
+                    "SUD": "09:00",
+                    "SUDR": "09:01",
+                    "KAT": "09:03",
+                    "THB": "09:12"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5109",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "09:03",
+                    "SUD": "09:09",
+                    "SUDR": "09:10",
+                    "KAT": "09:12",
+                    "THB": "09:21"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5111",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "09:08",
+                    "SUD": "09:14",
+                    "SUDR": "09:15",
+                    "KAT": "09:17",
+                    "THB": "09:26"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5113",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "09:17",
+                    "SUD": "09:23",
+                    "SUDR": "09:24",
+                    "KAT": "09:26",
+                    "THB": "09:35"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5115",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "09:22",
+                    "SUD": "09:28",
+                    "SUDR": "09:29",
+                    "KAT": "09:31",
+                    "THB": "09:40"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5117",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "09:31",
+                    "SUD": "09:37",
+                    "SUDR": "09:38",
+                    "KAT": "09:40",
+                    "THB": "09:49"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5119",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "09:36",
+                    "SUD": "09:42",
+                    "SUDR": "09:43",
+                    "KAT": "09:45",
+                    "THB": "09:54"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5121",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "09:45",
+                    "SUD": "09:51",
+                    "SUDR": "09:52",
+                    "KAT": "09:54",
+                    "THB": "10:03"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5123",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "09:51",
+                    "SUD": "09:57",
+                    "SUDR": "09:58",
+                    "KAT": "10:00",
+                    "THB": "10:09"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5125",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "10:00",
+                    "SUD": "10:06",
+                    "SUDR": "10:07",
+                    "KAT": "10:09",
+                    "THB": "10:18"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5127",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "10:06",
+                    "SUD": "10:12",
+                    "SUDR": "10:13",
+                    "KAT": "10:15",
+                    "THB": "10:24"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5129",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "10:14",
+                    "SUD": "10:20",
+                    "SUDR": "10:21",
+                    "KAT": "10:23",
+                    "THB": "10:32"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5131",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "10:21",
+                    "SUD": "10:27",
+                    "SUDR": "10:28",
+                    "KAT": "10:30",
+                    "THB": "10:39"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5133",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "10:30",
+                    "SUD": "10:36",
+                    "SUDR": "10:37",
+                    "KAT": "10:39",
+                    "THB": "10:48"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5135",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "10:36",
+                    "SUD": "10:42",
+                    "SUDR": "10:43",
+                    "KAT": "10:45",
+                    "THB": "10:54"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5137",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "10:44",
+                    "SUD": "10:50",
+                    "SUDR": "10:51",
+                    "KAT": "10:53",
+                    "THB": "11:02"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5139",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "10:51",
+                    "SUD": "10:57",
+                    "SUDR": "10:58",
+                    "KAT": "11:00",
+                    "THB": "11:09"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5141",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "11:00",
+                    "SUD": "11:06",
+                    "SUDR": "11:07",
+                    "KAT": "11:09",
+                    "THB": "11:18"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5143",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "11:06",
+                    "SUD": "11:12",
+                    "SUDR": "11:13",
+                    "KAT": "11:15",
+                    "THB": "11:24"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5145",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "11:14",
+                    "SUD": "11:20",
+                    "SUDR": "11:21",
+                    "KAT": "11:23",
+                    "THB": "11:32"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5147",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "11:21",
+                    "SUD": "11:27",
+                    "SUDR": "11:28",
+                    "KAT": "11:30",
+                    "THB": "11:39"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5149",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "11:30",
+                    "SUD": "11:36",
+                    "SUDR": "11:37",
+                    "KAT": "11:39",
+                    "THB": "11:48"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5151",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "11:36",
+                    "SUD": "11:42",
+                    "SUDR": "11:43",
+                    "KAT": "11:45",
+                    "THB": "11:54"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5153",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "11:44",
+                    "SUD": "11:50",
+                    "SUDR": "11:51",
+                    "KAT": "11:53",
+                    "THB": "12:02"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5155",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "11:51",
+                    "SUD": "11:57",
+                    "SUDR": "11:58",
+                    "KAT": "12:00",
+                    "THB": "12:09"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5157",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "11:59",
+                    "SUD": "12:05",
+                    "SUDR": "12:06",
+                    "KAT": "12:08",
+                    "THB": "12:17"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5159",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "12:11",
+                    "SUD": "12:17",
+                    "SUDR": "12:18",
+                    "KAT": "12:20",
+                    "THB": "12:29"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5161",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "12:16",
+                    "SUD": "12:22",
+                    "SUDR": "12:23",
+                    "KAT": "12:25",
+                    "THB": "12:34"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5163",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "12:26",
+                    "SUD": "12:32",
+                    "SUDR": "12:33",
+                    "KAT": "12:35",
+                    "THB": "12:44"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5165",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "12:31",
+                    "SUD": "12:37",
+                    "SUDR": "12:38",
+                    "KAT": "12:40",
+                    "THB": "12:49"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5167",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "12:41",
+                    "SUD": "12:47",
+                    "SUDR": "12:48",
+                    "KAT": "12:50",
+                    "THB": "12:59"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5169",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "12:46",
+                    "SUD": "12:52",
+                    "SUDR": "12:53",
+                    "KAT": "12:55",
+                    "THB": "13:04"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5171",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "12:56",
+                    "SUD": "13:02",
+                    "SUDR": "13:03",
+                    "KAT": "13:05",
+                    "THB": "13:14"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5173",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "13:01",
+                    "SUD": "13:07",
+                    "SUDR": "13:08",
+                    "KAT": "13:10",
+                    "THB": "13:19"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5175",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "13:11",
+                    "SUD": "13:17",
+                    "SUDR": "13:18",
+                    "KAT": "13:20",
+                    "THB": "13:29"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5177",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "13:17",
+                    "SUD": "13:23",
+                    "SUDR": "13:24",
+                    "KAT": "13:26",
+                    "THB": "13:35"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5179",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "13:26",
+                    "SUD": "13:32",
+                    "SUDR": "13:33",
+                    "KAT": "13:35",
+                    "THB": "13:44"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5181",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "13:31",
+                    "SUD": "13:37",
+                    "SUDR": "13:38",
+                    "KAT": "13:40",
+                    "THB": "13:49"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5183",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "13:41",
+                    "SUD": "13:47",
+                    "SUDR": "13:48",
+                    "KAT": "13:50",
+                    "THB": "13:59"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5185",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "13:46",
+                    "SUD": "13:52",
+                    "SUDR": "13:53",
+                    "KAT": "13:55",
+                    "THB": "14:04"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5187",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "13:56",
+                    "SUD": "14:02",
+                    "SUDR": "14:03",
+                    "KAT": "14:05",
+                    "THB": "14:14"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5189",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "14:01",
+                    "SUD": "14:07",
+                    "SUDR": "14:08",
+                    "KAT": "14:10",
+                    "THB": "14:19"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5191",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "14:11",
+                    "SUD": "14:17",
+                    "SUDR": "14:18",
+                    "KAT": "14:20",
+                    "THB": "14:29"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5193",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "14:16",
+                    "SUD": "14:22",
+                    "SUDR": "14:23",
+                    "KAT": "14:25",
+                    "THB": "14:34"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5195",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "14:26",
+                    "SUD": "14:32",
+                    "SUDR": "14:33",
+                    "KAT": "14:35",
+                    "THB": "14:44"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5197",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "14:31",
+                    "SUD": "14:37",
+                    "SUDR": "14:38",
+                    "KAT": "14:40",
+                    "THB": "14:49"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5199",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "14:41",
+                    "SUD": "14:47",
+                    "SUDR": "14:48",
+                    "KAT": "14:50",
+                    "THB": "14:59"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5201",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "14:44",
+                    "SUD": "14:50",
+                    "SUDR": "14:51",
+                    "KAT": "14:53",
+                    "THB": "15:02"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5203",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "14:51",
+                    "SUD": "14:57",
+                    "SUDR": "14:58",
+                    "KAT": "15:00",
+                    "THB": "15:09"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5205",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "14:58",
+                    "SUD": "15:04",
+                    "SUDR": "15:05",
+                    "KAT": "15:07",
+                    "THB": "15:16"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5207",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "15:06",
+                    "SUD": "15:12",
+                    "SUDR": "15:13",
+                    "KAT": "15:15",
+                    "THB": "15:24"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5209",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "15:13",
+                    "SUD": "15:19",
+                    "SUDR": "15:20",
+                    "KAT": "15:22",
+                    "THB": "15:31"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5211",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "15:21",
+                    "SUD": "15:27",
+                    "SUDR": "15:28",
+                    "KAT": "15:30",
+                    "THB": "15:39"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5213",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "15:28",
+                    "SUD": "15:34",
+                    "SUDR": "15:35",
+                    "KAT": "15:37",
+                    "THB": "15:46"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5215",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "15:36",
+                    "SUD": "15:42",
+                    "SUDR": "15:43",
+                    "KAT": "15:45",
+                    "THB": "15:54"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5217",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "15:43",
+                    "SUD": "15:49",
+                    "SUDR": "15:50",
+                    "KAT": "15:52",
+                    "THB": "16:01"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5219",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "15:51",
+                    "SUD": "15:57",
+                    "SUDR": "15:58",
+                    "KAT": "16:00",
+                    "THB": "16:09"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5221",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "15:58",
+                    "SUD": "16:04",
+                    "SUDR": "16:05",
+                    "KAT": "16:07",
+                    "THB": "16:16"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5223",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "16:06",
+                    "SUD": "16:12",
+                    "SUDR": "16:13",
+                    "KAT": "16:15",
+                    "THB": "16:24"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5225",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "16:13",
+                    "SUD": "16:19",
+                    "SUDR": "16:20",
+                    "KAT": "16:22",
+                    "THB": "16:31"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5227",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "16:21",
+                    "SUD": "16:27",
+                    "SUDR": "16:28",
+                    "KAT": "16:30",
+                    "THB": "16:39"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5229",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "16:28",
+                    "SUD": "16:34",
+                    "SUDR": "16:35",
+                    "KAT": "16:37",
+                    "THB": "16:46"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5231",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "16:36",
+                    "SUD": "16:42",
+                    "SUDR": "16:43",
+                    "KAT": "16:45",
+                    "THB": "16:54"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5233",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "16:43",
+                    "SUD": "16:49",
+                    "SUDR": "16:50",
+                    "KAT": "16:52",
+                    "THB": "17:01"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5235",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "16:51",
+                    "SUD": "16:57",
+                    "SUDR": "16:58",
+                    "KAT": "17:00",
+                    "THB": "17:09"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5237",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "16:58",
+                    "SUD": "17:04",
+                    "SUDR": "17:05",
+                    "KAT": "17:07",
+                    "THB": "17:16"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5239",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "17:06",
+                    "SUD": "17:12",
+                    "SUDR": "17:13",
+                    "KAT": "17:15",
+                    "THB": "17:24"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5241",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "17:13",
+                    "SUD": "17:19",
+                    "SUDR": "17:20",
+                    "KAT": "17:22",
+                    "THB": "17:31"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5243",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "17:21",
+                    "SUD": "17:27",
+                    "SUDR": "17:28",
+                    "KAT": "17:30",
+                    "THB": "17:39"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5245",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "17:28",
+                    "SUD": "17:34",
+                    "SUDR": "17:35",
+                    "KAT": "17:37",
+                    "THB": "17:46"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5247",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "17:36",
+                    "SUD": "17:42",
+                    "SUDR": "17:43",
+                    "KAT": "17:45",
+                    "THB": "17:54"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5249",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "17:43",
+                    "SUD": "17:49",
+                    "SUDR": "17:50",
+                    "KAT": "17:52",
+                    "THB": "18:01"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5251",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "17:51",
+                    "SUD": "17:57",
+                    "SUDR": "17:58",
+                    "KAT": "18:00",
+                    "THB": "18:09"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5253",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "17:58",
+                    "SUD": "18:04",
+                    "SUDR": "18:05",
+                    "KAT": "18:07",
+                    "THB": "18:16"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5255",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "18:06",
+                    "SUD": "18:12",
+                    "SUDR": "18:13",
+                    "KAT": "18:15",
+                    "THB": "18:24"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5257",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "18:13",
+                    "SUD": "18:19",
+                    "SUDR": "18:20",
+                    "KAT": "18:22",
+                    "THB": "18:31"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5259",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "18:21",
+                    "SUD": "18:27",
+                    "SUDR": "18:28",
+                    "KAT": "18:30",
+                    "THB": "18:39"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5261",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "18:28",
+                    "SUD": "18:34",
+                    "SUDR": "18:35",
+                    "KAT": "18:37",
+                    "THB": "18:46"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5263",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "18:36",
+                    "SUD": "18:42",
+                    "SUDR": "18:43",
+                    "KAT": "18:45",
+                    "THB": "18:54"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5265",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "18:43",
+                    "SUD": "18:49",
+                    "SUDR": "18:50",
+                    "KAT": "18:52",
+                    "THB": "19:01"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5267",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "18:51",
+                    "SUD": "18:57",
+                    "SUDR": "18:58",
+                    "KAT": "19:00",
+                    "THB": "19:09"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5269",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "18:58",
+                    "SUD": "19:04",
+                    "SUDR": "19:05",
+                    "KAT": "19:07",
+                    "THB": "19:16"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5271",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "19:11",
+                    "SUD": "19:17",
+                    "SUDR": "19:18",
+                    "KAT": "19:20",
+                    "THB": "19:29"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5273",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "19:16",
+                    "SUD": "19:22",
+                    "SUDR": "19:23",
+                    "KAT": "19:25",
+                    "THB": "19:34"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5275",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "19:26",
+                    "SUD": "19:32",
+                    "SUDR": "19:33",
+                    "KAT": "19:35",
+                    "THB": "19:44"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5277",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "19:32",
+                    "SUD": "19:38",
+                    "SUDR": "19:39",
+                    "KAT": "19:41",
+                    "THB": "19:50"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5279",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "19:41",
+                    "SUD": "19:47",
+                    "SUDR": "19:48",
+                    "KAT": "19:50",
+                    "THB": "19:59"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5281",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "19:46",
+                    "SUD": "19:52",
+                    "SUDR": "19:53",
+                    "KAT": "19:55",
+                    "THB": "20:04"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5283",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "19:56",
+                    "SUD": "20:02",
+                    "SUDR": "20:03",
+                    "KAT": "20:05",
+                    "THB": "20:14"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5285",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "20:01",
+                    "SUD": "20:07",
+                    "SUDR": "20:08",
+                    "KAT": "20:10",
+                    "THB": "20:19"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5287",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "20:11",
+                    "SUD": "20:17",
+                    "SUDR": "20:18",
+                    "KAT": "20:20",
+                    "THB": "20:29"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5289",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "20:16",
+                    "SUD": "20:22",
+                    "SUDR": "20:23",
+                    "KAT": "20:25",
+                    "THB": "20:34"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5291",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "20:26",
+                    "SUD": "20:32",
+                    "SUDR": "20:33",
+                    "KAT": "20:35",
+                    "THB": "20:44"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5293",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "20:31",
+                    "SUD": "20:37",
+                    "SUDR": "20:38",
+                    "KAT": "20:40",
+                    "THB": "20:49"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5295",
+                "relasi": "Bekasi - Angke",
+                "stasiun": {
+                    "MRI": "20:41",
+                    "SUD": "20:47",
+                    "SUDR": "20:48",
+                    "KAT": "20:50",
+                    "THB": "20:59"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5297",
+                "relasi": "Cikarang - Angke",
+                "stasiun": {
+                    "MRI": "20:46",
+                    "SUD": "20:52",
+                    "SUDR": "20:53",
+                    "KAT": "20:55",
+                    "THB": "21:04"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5000",
+                "relasi": "Kampung Bandan - Cikarang",
+                "stasiun": {
+                    "THB": "04:12",
+                    "KAT": "04:21",
+                    "SUDR": "04:23",
+                    "SUD": "04:24",
+                    "MRI": "04:30"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5002",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "04:23",
+                    "KAT": "04:32",
+                    "SUDR": "04:34",
+                    "SUD": "04:35",
+                    "MRI": "04:41"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5004",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "04:38",
+                    "KAT": "04:47",
+                    "SUDR": "04:49",
+                    "SUD": "04:50",
+                    "MRI": "04:56"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5006",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "04:54",
+                    "KAT": "05:03",
+                    "SUDR": "05:05",
+                    "SUD": "05:06",
+                    "MRI": "05:12"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5008",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "05:09",
+                    "KAT": "05:18",
+                    "SUDR": "05:20",
+                    "SUD": "05:21",
+                    "MRI": "05:27"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5010",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "05:20",
+                    "KAT": "05:29",
+                    "SUDR": "05:31",
+                    "SUD": "05:32",
+                    "MRI": "05:38"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5012",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "05:35",
+                    "KAT": "05:44",
+                    "SUDR": "05:46",
+                    "SUD": "05:47",
+                    "MRI": "05:53"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5014",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "05:46",
+                    "KAT": "05:55",
+                    "SUDR": "05:57",
+                    "SUD": "05:58",
+                    "MRI": "06:04"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5016",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "05:57",
+                    "KAT": "06:06",
+                    "SUDR": "06:08",
+                    "SUD": "06:09",
+                    "MRI": "06:15"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5018",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "06:07",
+                    "KAT": "06:16",
+                    "SUDR": "06:18",
+                    "SUD": "06:19",
+                    "MRI": "06:25"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5020",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "06:18",
+                    "KAT": "06:27",
+                    "SUDR": "06:29",
+                    "SUD": "06:30",
+                    "MRI": "06:36"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5022",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "06:26",
+                    "KAT": "06:35",
+                    "SUDR": "06:37",
+                    "SUD": "06:38",
+                    "MRI": "06:44"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5024",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "06:33",
+                    "KAT": "06:42",
+                    "SUDR": "06:44",
+                    "SUD": "06:45",
+                    "MRI": "06:51"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5026",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "06:45",
+                    "KAT": "06:54",
+                    "SUDR": "06:56",
+                    "SUD": "06:57",
+                    "MRI": "07:03"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5028",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "06:53",
+                    "KAT": "07:02",
+                    "SUDR": "07:04",
+                    "SUD": "07:05",
+                    "MRI": "07:11"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5030",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "07:05",
+                    "KAT": "07:14",
+                    "SUDR": "07:16",
+                    "SUD": "07:17",
+                    "MRI": "07:23"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5032",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "07:12",
+                    "KAT": "07:21",
+                    "SUDR": "07:23",
+                    "SUD": "07:24",
+                    "MRI": "07:30"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5034",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "07:24",
+                    "KAT": "07:33",
+                    "SUDR": "07:35",
+                    "SUD": "07:36",
+                    "MRI": "07:42"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5036",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "07:34",
+                    "KAT": "07:43",
+                    "SUDR": "07:45",
+                    "SUD": "07:46",
+                    "MRI": "07:52"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5038",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "07:40",
+                    "KAT": "07:49",
+                    "SUDR": "07:51",
+                    "SUD": "07:52",
+                    "MRI": "07:58"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5040",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "07:49",
+                    "KAT": "07:58",
+                    "SUDR": "08:00",
+                    "SUD": "08:01",
+                    "MRI": "08:07"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5042",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "07:55",
+                    "KAT": "08:04",
+                    "SUDR": "08:06",
+                    "SUD": "08:07",
+                    "MRI": "08:13"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5044",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "08:04",
+                    "KAT": "08:13",
+                    "SUDR": "08:15",
+                    "SUD": "08:16",
+                    "MRI": "08:22"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5046",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "08:10",
+                    "KAT": "08:19",
+                    "SUDR": "08:21",
+                    "SUD": "08:22",
+                    "MRI": "08:28"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5048",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "08:18",
+                    "KAT": "08:27",
+                    "SUDR": "08:29",
+                    "SUD": "08:30",
+                    "MRI": "08:36"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5050",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "08:24",
+                    "KAT": "08:33",
+                    "SUDR": "08:35",
+                    "SUD": "08:36",
+                    "MRI": "08:42"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5052",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "08:31",
+                    "KAT": "08:40",
+                    "SUDR": "08:42",
+                    "SUD": "08:43",
+                    "MRI": "08:49"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5054",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "08:40",
+                    "KAT": "08:49",
+                    "SUDR": "08:51",
+                    "SUD": "08:52",
+                    "MRI": "08:58"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5056",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "08:46",
+                    "KAT": "08:55",
+                    "SUDR": "08:57",
+                    "SUD": "08:58",
+                    "MRI": "09:04"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5058",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "08:56",
+                    "KAT": "09:05",
+                    "SUDR": "09:07",
+                    "SUD": "09:08",
+                    "MRI": "09:14"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5060",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "09:03",
+                    "KAT": "09:12",
+                    "SUDR": "09:14",
+                    "SUD": "09:15",
+                    "MRI": "09:21"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5062",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "09:11",
+                    "KAT": "09:20",
+                    "SUDR": "09:22",
+                    "SUD": "09:23",
+                    "MRI": "09:29"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5064",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "09:19",
+                    "KAT": "09:28",
+                    "SUDR": "09:30",
+                    "SUD": "09:31",
+                    "MRI": "09:37"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5066",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "09:26",
+                    "KAT": "09:35",
+                    "SUDR": "09:37",
+                    "SUD": "09:38",
+                    "MRI": "09:44"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5068",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "09:33",
+                    "KAT": "09:42",
+                    "SUDR": "09:44",
+                    "SUD": "09:45",
+                    "MRI": "09:51"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5070",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "09:41",
+                    "KAT": "09:50",
+                    "SUDR": "09:52",
+                    "SUD": "09:53",
+                    "MRI": "09:59"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5072",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "09:46",
+                    "KAT": "09:55",
+                    "SUDR": "09:57",
+                    "SUD": "09:58",
+                    "MRI": "10:04"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5074",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "09:56",
+                    "KAT": "10:05",
+                    "SUDR": "10:07",
+                    "SUD": "10:08",
+                    "MRI": "10:14"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5076",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "10:01",
+                    "KAT": "10:10",
+                    "SUDR": "10:12",
+                    "SUD": "10:13",
+                    "MRI": "10:19"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5078",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "10:11",
+                    "KAT": "10:20",
+                    "SUDR": "10:22",
+                    "SUD": "10:23",
+                    "MRI": "10:29"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5080",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "10:16",
+                    "KAT": "10:25",
+                    "SUDR": "10:27",
+                    "SUD": "10:28",
+                    "MRI": "10:34"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5082",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "10:26",
+                    "KAT": "10:35",
+                    "SUDR": "10:37",
+                    "SUD": "10:38",
+                    "MRI": "10:44"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5084",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "10:31",
+                    "KAT": "10:40",
+                    "SUDR": "10:42",
+                    "SUD": "10:43",
+                    "MRI": "10:49"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5086",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "10:41",
+                    "KAT": "10:50",
+                    "SUDR": "10:52",
+                    "SUD": "10:53",
+                    "MRI": "10:59"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5088",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "10:46",
+                    "KAT": "10:55",
+                    "SUDR": "10:57",
+                    "SUD": "10:58",
+                    "MRI": "11:04"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5090",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "10:56",
+                    "KAT": "11:05",
+                    "SUDR": "11:07",
+                    "SUD": "11:08",
+                    "MRI": "11:14"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5092",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "11:01",
+                    "KAT": "11:10",
+                    "SUDR": "11:12",
+                    "SUD": "11:13",
+                    "MRI": "11:19"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5094",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "11:11",
+                    "KAT": "11:20",
+                    "SUDR": "11:22",
+                    "SUD": "11:23",
+                    "MRI": "11:29"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5096",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "11:16",
+                    "KAT": "11:25",
+                    "SUDR": "11:27",
+                    "SUD": "11:28",
+                    "MRI": "11:34"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5098",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "11:26",
+                    "KAT": "11:35",
+                    "SUDR": "11:37",
+                    "SUD": "11:38",
+                    "MRI": "11:44"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5100",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "11:31",
+                    "KAT": "11:40",
+                    "SUDR": "11:42",
+                    "SUD": "11:43",
+                    "MRI": "11:49"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5102",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "11:41",
+                    "KAT": "11:50",
+                    "SUDR": "11:52",
+                    "SUD": "11:53",
+                    "MRI": "11:59"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5104",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "11:46",
+                    "KAT": "11:55",
+                    "SUDR": "11:57",
+                    "SUD": "11:58",
+                    "MRI": "12:04"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5106",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "11:56",
+                    "KAT": "12:05",
+                    "SUDR": "12:07",
+                    "SUD": "12:08",
+                    "MRI": "12:14"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5108",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "12:01",
+                    "KAT": "12:10",
+                    "SUDR": "12:12",
+                    "SUD": "12:13",
+                    "MRI": "12:19"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5110",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "12:11",
+                    "KAT": "12:20",
+                    "SUDR": "12:22",
+                    "SUD": "12:23",
+                    "MRI": "12:29"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5112",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "12:16",
+                    "KAT": "12:25",
+                    "SUDR": "12:27",
+                    "SUD": "12:28",
+                    "MRI": "12:34"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5114",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "12:26",
+                    "KAT": "12:35",
+                    "SUDR": "12:37",
+                    "SUD": "12:38",
+                    "MRI": "12:44"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5116",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "12:31",
+                    "KAT": "12:40",
+                    "SUDR": "12:42",
+                    "SUD": "12:43",
+                    "MRI": "12:49"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5118",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "12:41",
+                    "KAT": "12:50",
+                    "SUDR": "12:52",
+                    "SUD": "12:53",
+                    "MRI": "12:59"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5120",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "12:46",
+                    "KAT": "12:55",
+                    "SUDR": "12:57",
+                    "SUD": "12:58",
+                    "MRI": "13:04"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5122",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "12:56",
+                    "KAT": "13:05",
+                    "SUDR": "13:07",
+                    "SUD": "13:08",
+                    "MRI": "13:14"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5124",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "13:01",
+                    "KAT": "13:10",
+                    "SUDR": "13:12",
+                    "SUD": "13:13",
+                    "MRI": "13:19"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5126",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "13:11",
+                    "KAT": "13:20",
+                    "SUDR": "13:22",
+                    "SUD": "13:23",
+                    "MRI": "13:29"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5128",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "13:17",
+                    "KAT": "13:26",
+                    "SUDR": "13:28",
+                    "SUD": "13:29",
+                    "MRI": "13:35"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5130",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "13:26",
+                    "KAT": "13:35",
+                    "SUDR": "13:37",
+                    "SUD": "13:38",
+                    "MRI": "13:44"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5132",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "13:31",
+                    "KAT": "13:40",
+                    "SUDR": "13:42",
+                    "SUD": "13:43",
+                    "MRI": "13:49"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5134",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "13:41",
+                    "KAT": "13:50",
+                    "SUDR": "13:52",
+                    "SUD": "13:53",
+                    "MRI": "13:59"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5136",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "13:46",
+                    "KAT": "13:55",
+                    "SUDR": "13:57",
+                    "SUD": "13:58",
+                    "MRI": "14:04"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5138",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "13:56",
+                    "KAT": "14:05",
+                    "SUDR": "14:07",
+                    "SUD": "14:08",
+                    "MRI": "14:14"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5140",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "14:01",
+                    "KAT": "14:10",
+                    "SUDR": "14:12",
+                    "SUD": "14:13",
+                    "MRI": "14:19"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5142",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "14:11",
+                    "KAT": "14:20",
+                    "SUDR": "14:22",
+                    "SUD": "14:23",
+                    "MRI": "14:29"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5144",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "14:16",
+                    "KAT": "14:25",
+                    "SUDR": "14:27",
+                    "SUD": "14:28",
+                    "MRI": "14:34"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5146",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "14:26",
+                    "KAT": "14:35",
+                    "SUDR": "14:37",
+                    "SUD": "14:38",
+                    "MRI": "14:44"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5148",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "14:31",
+                    "KAT": "14:40",
+                    "SUDR": "14:42",
+                    "SUD": "14:43",
+                    "MRI": "14:49"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5150",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "14:41",
+                    "KAT": "14:50",
+                    "SUDR": "14:52",
+                    "SUD": "14:53",
+                    "MRI": "14:59"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5152",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "14:46",
+                    "KAT": "14:55",
+                    "SUDR": "14:57",
+                    "SUD": "14:58",
+                    "MRI": "15:04"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5154",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "14:56",
+                    "KAT": "15:05",
+                    "SUDR": "15:07",
+                    "SUD": "15:08",
+                    "MRI": "15:14"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5156",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "15:01",
+                    "KAT": "15:10",
+                    "SUDR": "15:12",
+                    "SUD": "15:13",
+                    "MRI": "15:19"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5158",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "15:11",
+                    "KAT": "15:20",
+                    "SUDR": "15:22",
+                    "SUD": "15:23",
+                    "MRI": "15:29"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5160",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "15:16",
+                    "KAT": "15:25",
+                    "SUDR": "15:27",
+                    "SUD": "15:28",
+                    "MRI": "15:34"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5162",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "15:26",
+                    "KAT": "15:35",
+                    "SUDR": "15:37",
+                    "SUD": "15:38",
+                    "MRI": "15:44"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5164",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "15:31",
+                    "KAT": "15:40",
+                    "SUDR": "15:42",
+                    "SUD": "15:43",
+                    "MRI": "15:49"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5166",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "15:41",
+                    "KAT": "15:50",
+                    "SUDR": "15:52",
+                    "SUD": "15:53",
+                    "MRI": "15:59"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5168",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "15:46",
+                    "KAT": "15:55",
+                    "SUDR": "15:57",
+                    "SUD": "15:58",
+                    "MRI": "16:04"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5170",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "15:56",
+                    "KAT": "16:05",
+                    "SUDR": "16:07",
+                    "SUD": "16:08",
+                    "MRI": "16:14"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5172",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "16:01",
+                    "KAT": "16:10",
+                    "SUDR": "16:12",
+                    "SUD": "16:13",
+                    "MRI": "16:19"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5174",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "16:11",
+                    "KAT": "16:20",
+                    "SUDR": "16:22",
+                    "SUD": "16:23",
+                    "MRI": "16:29"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5176",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "16:16",
+                    "KAT": "16:25",
+                    "SUDR": "16:27",
+                    "SUD": "16:28",
+                    "MRI": "16:34"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5178",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "16:26",
+                    "KAT": "16:35",
+                    "SUDR": "16:37",
+                    "SUD": "16:38",
+                    "MRI": "16:44"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5180",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "16:31",
+                    "KAT": "16:40",
+                    "SUDR": "16:42",
+                    "SUD": "16:43",
+                    "MRI": "16:49"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5182",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "16:41",
+                    "KAT": "16:50",
+                    "SUDR": "16:52",
+                    "SUD": "16:53",
+                    "MRI": "16:59"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5184",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "16:46",
+                    "KAT": "16:55",
+                    "SUDR": "16:57",
+                    "SUD": "16:58",
+                    "MRI": "17:04"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5186",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "16:56",
+                    "KAT": "17:05",
+                    "SUDR": "17:07",
+                    "SUD": "17:08",
+                    "MRI": "17:14"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5188",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "17:01",
+                    "KAT": "17:10",
+                    "SUDR": "17:12",
+                    "SUD": "17:13",
+                    "MRI": "17:19"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5190",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "17:11",
+                    "KAT": "17:20",
+                    "SUDR": "17:22",
+                    "SUD": "17:23",
+                    "MRI": "17:29"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5192",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "17:16",
+                    "KAT": "17:25",
+                    "SUDR": "17:27",
+                    "SUD": "17:28",
+                    "MRI": "17:34"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5194",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "17:26",
+                    "KAT": "17:35",
+                    "SUDR": "17:37",
+                    "SUD": "17:38",
+                    "MRI": "17:44"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5196",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "17:31",
+                    "KAT": "17:40",
+                    "SUDR": "17:42",
+                    "SUD": "17:43",
+                    "MRI": "17:49"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5198",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "17:41",
+                    "KAT": "17:50",
+                    "SUDR": "17:52",
+                    "SUD": "17:53",
+                    "MRI": "17:59"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5200",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "17:46",
+                    "KAT": "17:55",
+                    "SUDR": "17:57",
+                    "SUD": "17:58",
+                    "MRI": "18:04"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5202",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "17:56",
+                    "KAT": "18:05",
+                    "SUDR": "18:07",
+                    "SUD": "18:08",
+                    "MRI": "18:14"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5204",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "18:01",
+                    "KAT": "18:10",
+                    "SUDR": "18:12",
+                    "SUD": "18:13",
+                    "MRI": "18:19"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5206",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "18:11",
+                    "KAT": "18:20",
+                    "SUDR": "18:22",
+                    "SUD": "18:23",
+                    "MRI": "18:29"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5208",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "18:16",
+                    "KAT": "18:25",
+                    "SUDR": "18:27",
+                    "SUD": "18:28",
+                    "MRI": "18:34"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5210",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "18:26",
+                    "KAT": "18:35",
+                    "SUDR": "18:37",
+                    "SUD": "18:38",
+                    "MRI": "18:44"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5212",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "18:31",
+                    "KAT": "18:40",
+                    "SUDR": "18:42",
+                    "SUD": "18:43",
+                    "MRI": "18:49"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5214",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "18:41",
+                    "KAT": "18:50",
+                    "SUDR": "18:52",
+                    "SUD": "18:53",
+                    "MRI": "18:59"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5216",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "18:46",
+                    "KAT": "18:55",
+                    "SUDR": "18:57",
+                    "SUD": "18:58",
+                    "MRI": "19:04"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5218",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "18:56",
+                    "KAT": "19:05",
+                    "SUDR": "19:07",
+                    "SUD": "19:08",
+                    "MRI": "19:14"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5220",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "19:01",
+                    "KAT": "19:10",
+                    "SUDR": "19:12",
+                    "SUD": "19:13",
+                    "MRI": "19:19"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5222",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "19:11",
+                    "KAT": "19:20",
+                    "SUDR": "19:22",
+                    "SUD": "19:23",
+                    "MRI": "19:29"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5224",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "19:16",
+                    "KAT": "19:25",
+                    "SUDR": "19:27",
+                    "SUD": "19:28",
+                    "MRI": "19:34"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5226",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "19:26",
+                    "KAT": "19:35",
+                    "SUDR": "19:37",
+                    "SUD": "19:38",
+                    "MRI": "19:44"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5228",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "19:31",
+                    "KAT": "19:40",
+                    "SUDR": "19:42",
+                    "SUD": "19:43",
+                    "MRI": "19:49"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5230",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "19:41",
+                    "KAT": "19:50",
+                    "SUDR": "19:52",
+                    "SUD": "19:53",
+                    "MRI": "19:59"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5232",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "19:46",
+                    "KAT": "19:55",
+                    "SUDR": "19:57",
+                    "SUD": "19:58",
+                    "MRI": "20:04"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5234",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "19:56",
+                    "KAT": "20:05",
+                    "SUDR": "20:07",
+                    "SUD": "20:08",
+                    "MRI": "20:14"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5236",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "20:01",
+                    "KAT": "20:10",
+                    "SUDR": "20:12",
+                    "SUD": "20:13",
+                    "MRI": "20:19"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5238",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "20:11",
+                    "KAT": "20:20",
+                    "SUDR": "20:22",
+                    "SUD": "20:23",
+                    "MRI": "20:29"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5240",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "20:16",
+                    "KAT": "20:25",
+                    "SUDR": "20:27",
+                    "SUD": "20:28",
+                    "MRI": "20:34"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5242",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "20:26",
+                    "KAT": "20:35",
+                    "SUDR": "20:37",
+                    "SUD": "20:38",
+                    "MRI": "20:44"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5244",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "20:31",
+                    "KAT": "20:40",
+                    "SUDR": "20:42",
+                    "SUD": "20:43",
+                    "MRI": "20:49"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5246",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "20:41",
+                    "KAT": "20:50",
+                    "SUDR": "20:52",
+                    "SUD": "20:53",
+                    "MRI": "20:59"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5248",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "20:46",
+                    "KAT": "20:55",
+                    "SUDR": "20:57",
+                    "SUD": "20:58",
+                    "MRI": "21:04"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5250",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "20:56",
+                    "KAT": "21:05",
+                    "SUDR": "21:07",
+                    "SUD": "21:08",
+                    "MRI": "21:14"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5252",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "21:01",
+                    "KAT": "21:10",
+                    "SUDR": "21:12",
+                    "SUD": "21:13",
+                    "MRI": "21:19"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5254",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "21:11",
+                    "KAT": "21:20",
+                    "SUDR": "21:22",
+                    "SUD": "21:23",
+                    "MRI": "21:29"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5256",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "21:16",
+                    "KAT": "21:25",
+                    "SUDR": "21:27",
+                    "SUD": "21:28",
+                    "MRI": "21:34"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5258",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "21:26",
+                    "KAT": "21:35",
+                    "SUDR": "21:37",
+                    "SUD": "21:38",
+                    "MRI": "21:44"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5260",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "21:31",
+                    "KAT": "21:40",
+                    "SUDR": "21:42",
+                    "SUD": "21:43",
+                    "MRI": "21:49"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5262",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "21:41",
+                    "KAT": "21:50",
+                    "SUDR": "21:52",
+                    "SUD": "21:53",
+                    "MRI": "21:59"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5264",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "21:46",
+                    "KAT": "21:55",
+                    "SUDR": "21:57",
+                    "SUD": "21:58",
+                    "MRI": "22:04"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5266",
+                "relasi": "Angke - Bekasi",
+                "stasiun": {
+                    "THB": "21:56",
+                    "KAT": "22:05",
+                    "SUDR": "22:07",
+                    "SUD": "22:08",
+                    "MRI": "22:14"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "5268",
+                "relasi": "Angke - Cikarang",
+                "stasiun": {
+                    "THB": "22:06",
+                    "KAT": "22:15",
+                    "SUDR": "22:17",
+                    "SUD": "22:18",
+                    "MRI": "22:24"
+                },
+                "keterangan": "Full Racket"
+            },
+            {
+                "nomor_ka": "1001B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "05:05",
+                    "SUD": "05:11",
+                    "KAT": "05:14",
+                    "THB": "05:22"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1003B",
+                "relasi": "Depok - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "04:35",
+                    "SUD": "04:41",
+                    "KAT": "04:44",
+                    "THB": "04:52"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1005B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "05:25",
+                    "SUD": "05:31",
+                    "KAT": "05:34",
+                    "THB": "05:42"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1007B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "05:35",
+                    "SUD": "05:41",
+                    "KAT": "05:44",
+                    "THB": "05:52"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1009B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "05:45",
+                    "SUD": "05:51",
+                    "KAT": "05:54",
+                    "THB": "06:02"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1011B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "05:55",
+                    "SUD": "06:01",
+                    "KAT": "06:04",
+                    "THB": "06:12"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1013B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "06:05",
+                    "SUD": "06:11",
+                    "KAT": "06:14",
+                    "THB": "06:22"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1015B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "06:15",
+                    "SUD": "06:21",
+                    "KAT": "06:24",
+                    "THB": "06:32"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1017B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "06:25",
+                    "SUD": "06:31",
+                    "KAT": "06:34",
+                    "THB": "06:42"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1019B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "06:35",
+                    "SUD": "06:41",
+                    "KAT": "06:44",
+                    "THB": "06:52"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1021B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "06:45",
+                    "SUD": "06:51",
+                    "KAT": "06:54",
+                    "THB": "07:02"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1023B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "06:55",
+                    "SUD": "07:01",
+                    "KAT": "07:04",
+                    "THB": "07:12"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1025B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "07:05",
+                    "SUD": "07:11",
+                    "KAT": "07:14",
+                    "THB": "07:22"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1027B",
+                "relasi": "Depok - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "07:15",
+                    "SUD": "07:21",
+                    "KAT": "07:24",
+                    "THB": "07:32"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1029B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "07:25",
+                    "SUD": "07:31",
+                    "KAT": "07:34",
+                    "THB": "07:42"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1031B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "07:35",
+                    "SUD": "07:41",
+                    "KAT": "07:44",
+                    "THB": "07:52"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1033B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "07:45",
+                    "SUD": "07:51",
+                    "KAT": "07:54",
+                    "THB": "08:02"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1035B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "07:55",
+                    "SUD": "08:01",
+                    "KAT": "08:04",
+                    "THB": "08:12"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1037B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "08:05",
+                    "SUD": "08:11",
+                    "KAT": "08:14",
+                    "THB": "08:22"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1039B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "08:15",
+                    "SUD": "08:21",
+                    "KAT": "08:24",
+                    "THB": "08:32"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1041B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "08:25",
+                    "SUD": "08:31",
+                    "KAT": "08:34",
+                    "THB": "08:42"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1043B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "08:35",
+                    "SUD": "08:41",
+                    "KAT": "08:44",
+                    "THB": "08:52"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1045B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "08:45",
+                    "SUD": "08:51",
+                    "KAT": "08:54",
+                    "THB": "09:02"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1047B",
+                "relasi": "Depok - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "08:55",
+                    "SUD": "09:01",
+                    "KAT": "09:04",
+                    "THB": "09:12"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1049B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "09:05",
+                    "SUD": "09:11",
+                    "KAT": "09:14",
+                    "THB": "09:22"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1051B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "09:15",
+                    "SUD": "09:21",
+                    "KAT": "09:24",
+                    "THB": "09:32"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1053B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "09:25",
+                    "SUD": "09:31",
+                    "KAT": "09:34",
+                    "THB": "09:42"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1055B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "09:35",
+                    "SUD": "09:41",
+                    "KAT": "09:44",
+                    "THB": "09:52"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1057B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "09:45",
+                    "SUD": "09:51",
+                    "KAT": "09:54",
+                    "THB": "10:02"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1059B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "09:55",
+                    "SUD": "10:01",
+                    "KAT": "10:04",
+                    "THB": "10:12"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1061B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "10:05",
+                    "SUD": "10:11",
+                    "KAT": "10:14",
+                    "THB": "10:22"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1063B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "10:15",
+                    "SUD": "10:21",
+                    "KAT": "10:24",
+                    "THB": "10:32"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1065B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "10:25",
+                    "SUD": "10:31",
+                    "KAT": "10:34",
+                    "THB": "10:42"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1067B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "10:35",
+                    "SUD": "10:41",
+                    "KAT": "10:44",
+                    "THB": "10:52"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1069B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "10:45",
+                    "SUD": "10:51",
+                    "KAT": "10:54",
+                    "THB": "11:02"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1071B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "10:55",
+                    "SUD": "11:01",
+                    "KAT": "11:04",
+                    "THB": "11:12"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1073B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "11:05",
+                    "SUD": "11:11",
+                    "KAT": "11:14",
+                    "THB": "11:22"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1075B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "11:15",
+                    "SUD": "11:21",
+                    "KAT": "11:24",
+                    "THB": "11:32"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1077B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "11:25",
+                    "SUD": "11:31",
+                    "KAT": "11:34",
+                    "THB": "11:42"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1079B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "11:35",
+                    "SUD": "11:41",
+                    "KAT": "11:44",
+                    "THB": "11:52"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1081B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "11:45",
+                    "SUD": "11:51",
+                    "KAT": "11:54",
+                    "THB": "12:02"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1083B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "11:55",
+                    "SUD": "12:01",
+                    "KAT": "12:04",
+                    "THB": "12:12"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1085B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "12:05",
+                    "SUD": "12:11",
+                    "KAT": "12:14",
+                    "THB": "12:22"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1087B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "12:15",
+                    "SUD": "12:21",
+                    "KAT": "12:24",
+                    "THB": "12:32"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1089B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "12:25",
+                    "SUD": "12:31",
+                    "KAT": "12:34",
+                    "THB": "12:42"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1091B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "12:35",
+                    "SUD": "12:41",
+                    "KAT": "12:44",
+                    "THB": "12:52"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1093B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "12:45",
+                    "SUD": "12:51",
+                    "KAT": "12:54",
+                    "THB": "13:02"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1095B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "12:55",
+                    "SUD": "13:01",
+                    "KAT": "13:04",
+                    "THB": "13:12"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1097B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "13:05",
+                    "SUD": "13:11",
+                    "KAT": "13:14",
+                    "THB": "13:22"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1099B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "13:15",
+                    "SUD": "13:21",
+                    "KAT": "13:24",
+                    "THB": "13:32"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1101B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "13:25",
+                    "SUD": "13:31",
+                    "KAT": "13:34",
+                    "THB": "13:42"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1103B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "13:35",
+                    "SUD": "13:41",
+                    "KAT": "13:44",
+                    "THB": "13:52"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1105B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "13:45",
+                    "SUD": "13:51",
+                    "KAT": "13:54",
+                    "THB": "14:02"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1107B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "13:55",
+                    "SUD": "14:01",
+                    "KAT": "14:04",
+                    "THB": "14:12"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1109B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "14:05",
+                    "SUD": "14:11",
+                    "KAT": "14:14",
+                    "THB": "14:22"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1111B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "14:15",
+                    "SUD": "14:21",
+                    "KAT": "14:24",
+                    "THB": "14:32"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1113B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "14:25",
+                    "SUD": "14:31",
+                    "KAT": "14:34",
+                    "THB": "14:42"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1115B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "14:35",
+                    "SUD": "14:41",
+                    "KAT": "14:44",
+                    "THB": "14:52"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1117B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "14:45",
+                    "SUD": "14:51",
+                    "KAT": "14:54",
+                    "THB": "15:02"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1119B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "14:55",
+                    "SUD": "15:01",
+                    "KAT": "15:04",
+                    "THB": "15:12"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1121B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "15:05",
+                    "SUD": "15:11",
+                    "KAT": "15:14",
+                    "THB": "15:22"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1123B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "15:15",
+                    "SUD": "15:21",
+                    "KAT": "15:24",
+                    "THB": "15:32"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1125B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "15:25",
+                    "SUD": "15:31",
+                    "KAT": "15:34",
+                    "THB": "15:42"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1127B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "15:35",
+                    "SUD": "15:41",
+                    "KAT": "15:44",
+                    "THB": "15:52"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1129B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "15:45",
+                    "SUD": "15:51",
+                    "KAT": "15:54",
+                    "THB": "16:02"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1131B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "15:55",
+                    "SUD": "16:01",
+                    "KAT": "16:04",
+                    "THB": "16:12"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1133B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "16:05",
+                    "SUD": "16:11",
+                    "KAT": "16:14",
+                    "THB": "16:22"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1135B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "16:15",
+                    "SUD": "16:21",
+                    "KAT": "16:24",
+                    "THB": "16:32"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1137B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "16:25",
+                    "SUD": "16:31",
+                    "KAT": "16:34",
+                    "THB": "16:42"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1139B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "16:35",
+                    "SUD": "16:41",
+                    "KAT": "16:44",
+                    "THB": "16:52"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1141B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "16:45",
+                    "SUD": "16:51",
+                    "KAT": "16:54",
+                    "THB": "17:02"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1143B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "16:55",
+                    "SUD": "17:01",
+                    "KAT": "17:04",
+                    "THB": "17:12"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1145B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "17:05",
+                    "SUD": "17:11",
+                    "KAT": "17:14",
+                    "THB": "17:22"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1147B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "17:15",
+                    "SUD": "17:21",
+                    "KAT": "17:24",
+                    "THB": "17:32"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1149B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "17:25",
+                    "SUD": "17:31",
+                    "KAT": "17:34",
+                    "THB": "17:42"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1151B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "17:35",
+                    "SUD": "17:41",
+                    "KAT": "17:44",
+                    "THB": "17:52"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1153B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "17:45",
+                    "SUD": "17:51",
+                    "KAT": "17:54",
+                    "THB": "18:02"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1155B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "17:55",
+                    "SUD": "18:01",
+                    "KAT": "18:04",
+                    "THB": "18:12"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1157B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "18:05",
+                    "SUD": "18:11",
+                    "KAT": "18:14",
+                    "THB": "18:22"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1159B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "18:15",
+                    "SUD": "18:21",
+                    "KAT": "18:24",
+                    "THB": "18:32"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1141B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "16:45",
+                    "SUD": "16:51",
+                    "KAT": "16:54",
+                    "THB": "17:02"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1143B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "16:55",
+                    "SUD": "17:01",
+                    "KAT": "17:04",
+                    "THB": "17:12"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1145B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "17:05",
+                    "SUD": "17:11",
+                    "KAT": "17:14",
+                    "THB": "17:22"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1147B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "17:15",
+                    "SUD": "17:21",
+                    "KAT": "17:24",
+                    "THB": "17:32"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1149B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "17:25",
+                    "SUD": "17:31",
+                    "KAT": "17:34",
+                    "THB": "17:42"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1151B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "17:35",
+                    "SUD": "17:41",
+                    "KAT": "17:44",
+                    "THB": "17:52"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1153B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "17:45",
+                    "SUD": "17:51",
+                    "KAT": "17:54",
+                    "THB": "18:02"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1155B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "17:55",
+                    "SUD": "18:01",
+                    "KAT": "18:04",
+                    "THB": "18:12"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1157B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "18:05",
+                    "SUD": "18:11",
+                    "KAT": "18:14",
+                    "THB": "18:22"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1159B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "18:15",
+                    "SUD": "18:21",
+                    "KAT": "18:24",
+                    "THB": "18:32"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1181B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "20:05",
+                    "SUD": "20:11",
+                    "KAT": "20:14",
+                    "THB": "20:22"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1183B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "20:15",
+                    "SUD": "20:21",
+                    "KAT": "20:24",
+                    "THB": "20:32"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1185B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "20:25",
+                    "SUD": "20:31",
+                    "KAT": "20:34",
+                    "THB": "20:42"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1187B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "20:35",
+                    "SUD": "20:41",
+                    "KAT": "20:44",
+                    "THB": "20:52"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1189B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "20:45",
+                    "SUD": "20:51",
+                    "KAT": "20:54",
+                    "THB": "21:02"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1191B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "20:55",
+                    "SUD": "21:01",
+                    "KAT": "21:04",
+                    "THB": "21:12"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1193B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "21:05",
+                    "SUD": "21:11",
+                    "KAT": "21:14",
+                    "THB": "21:22"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1195B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "21:15",
+                    "SUD": "21:21",
+                    "KAT": "21:24",
+                    "THB": "21:32"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1197B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "21:25",
+                    "SUD": "21:31",
+                    "KAT": "21:34",
+                    "THB": "21:42"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1199B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "21:35",
+                    "SUD": "21:41",
+                    "KAT": "21:44",
+                    "THB": "21:52"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1201B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "21:45",
+                    "SUD": "21:51",
+                    "KAT": "21:54",
+                    "THB": "22:02"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1203B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "21:55",
+                    "SUD": "22:01",
+                    "KAT": "22:04",
+                    "THB": "22:12"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1205B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "22:05",
+                    "SUD": "22:11",
+                    "KAT": "22:14",
+                    "THB": "22:22"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1207B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "22:15",
+                    "SUD": "22:21",
+                    "KAT": "22:24",
+                    "THB": "22:32"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1209B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "22:25",
+                    "SUD": "22:31",
+                    "KAT": "22:34",
+                    "THB": "22:42"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1211B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "22:35",
+                    "SUD": "22:41",
+                    "KAT": "22:44",
+                    "THB": "22:52"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1213B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "22:45",
+                    "SUD": "22:51",
+                    "KAT": "22:54",
+                    "THB": "23:02"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1215B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "22:55",
+                    "SUD": "23:01",
+                    "KAT": "23:04",
+                    "THB": "23:12"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1217B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "23:05",
+                    "SUD": "23:11",
+                    "KAT": "23:14",
+                    "THB": "23:22"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1219B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "23:20",
+                    "SUD": "23:26",
+                    "KAT": "23:29",
+                    "THB": "23:37"
+                },
+                "keterangan": "Bogor Line"
+            },
+            {
+                "nomor_ka": "1221B",
+                "relasi": "Bogor - Jakarta Kota",
+                "stasiun": {
+                    "MRI": "23:45",
+                    "SUD": "23:51",
+                    "KAT": "23:54",
+                    "THB": "00:02"
+                },
+                "keterangan": "Bogor Line (Last Train)"
+            }
+        ];
+
+        const displayStations = [
+            { id: "MRI", name: "Manggarai" },
+            { id: "SUD", name: "Sudirman" },
+            { id: "THB", name: "Tanah Abang" }
+        ];
+
+
+        function formatDiff(totalMin) {
+            if (totalMin <= 0) return "Telah Tiba";
+            if (totalMin >= 60) {
+                const h = Math.floor(totalMin / 60);
+                const m = totalMin % 60;
+                return m > 0 ? `${h} jam ${m} m` : `${h} jam`;
+            }
+            return `${totalMin} menit lagi`;
+        }
+
+        function renderLiveBoards() {
+            const container = document.getElementById('boards-container');
+            if (!container) return;
+
+            const now = new Date();
+            const currentHour = now.getHours();
+            const currentMin = currentHour * 60 + now.getMinutes();
+
+            // Logika Penentuan Status Waktu
+            const isMaintenanceTime = (currentHour === 1 && now.getMinutes() >= 1) || (currentHour === 2);
+            const isShowAllTime = (currentHour >= 21 || currentHour === 0);
+
+            container.innerHTML = displayStations.map(st => {
+                if (isMaintenanceTime) {
+                    return `
+                <div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+                    <div class="bg-slate-50 px-6 py-4 border-b border-slate-200 flex justify-between items-center">
+                        <h3 class="text-xs font-semibold text-slate-900 uppercase tracking-[0.15em]">${st.name}</h3>
+                        <span class="text-[10px] font-medium text-slate-400 bg-white px-2 py-0.5 border border-slate-200 rounded">${st.id}</span>
+                    </div>
+                    <div class="p-10 text-center">
+                        <p class="text-slate-400 text-[10px] font-semibold uppercase tracking-widest italic">Informasi Belum Tersedia</p>
+                    </div>
+                </div>`;
+                }
+
+                let list = trainData
+                    .filter(t => t.stasiun[st.id])
+                    .map(t => {
+                        const [h, m] = t.stasiun[st.id].split(':').map(Number);
+                        return {
+                            ...t,
+                            schedTime: t.stasiun[st.id],
+                            schedMin: (h * 60) + m
+                        };
+                    })
+                    .filter(t => t.schedMin >= currentMin - 1)
+                    .sort((a, b) => a.schedMin - b.schedMin);
+
+                if (!isShowAllTime) {
+                    list = list.slice(0, 4);
+                }
+
+                const rows = list.map(tr => {
+                    const diff = tr.schedMin - currentMin;
+                    const isArrived = diff <= 0;
+
+
+                    const statusTextColor = isArrived ? 'text-emerald-600' : 'text-slate-400';
+                    const animationClass = isArrived ? 'animate-pulse' : '';
+
+                    return `
+        <div class="train-row py-4 border-b border-slate-100 last:border-0 flex justify-between items-center">
+            <div class="flex flex-col gap-0.5">
+                <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-widest">${tr.nomor_ka}</span>
+                <span class="text-sm font-semibold text-slate-700">${tr.relasi}</span>
+            </div>
+            <div class="text-right flex flex-col items-end">
+                <span class="text-xl font-semibold text-slate-900 tabular-nums leading-none mb-1">${tr.schedTime}</span>
+                <span class="text-[9px] font-bold ${statusTextColor} ${animationClass} uppercase tracking-tighter">
+                    ${formatDiff(diff)}
+                </span>
+            </div>
+        </div>`;
+                }).join('');
+
+                return `
+            <div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+                <div class="bg-slate-50 px-6 py-4 border-b border-slate-200 flex justify-between items-center">
+                    <h3 class="text-xs font-semibold text-slate-900 uppercase tracking-[0.15em]">${st.name}</h3>
+                    <span class="text-[10px] font-medium text-slate-400 bg-white px-2 py-0.5 border border-slate-200 rounded">${st.id}</span>
+                </div>
+                <div class="p-6">
+                    ${rows || '<p class="py-10 text-center text-slate-300 text-[10px] font-semibold uppercase tracking-widest">Tidak ada jadwal</p>'}
+                </div>
+            </div>`;
+            }).join('');
+        }
+
+        function updateClock() {
+            const now = new Date();
+            const h = String(now.getHours()).padStart(2, '0');
+            const m = String(now.getMinutes()).padStart(2, '0');
+            const s = String(now.getSeconds()).padStart(2, '0');
+
+            const clockEl = document.getElementById('live-clock-main');
+            if (clockEl) clockEl.innerText = `${h}:${m}:${s}`;
+            if (s === "00") renderLiveBoards();
+        }
+
+        setInterval(updateClock, 1000);
+        window.onload = () => {
+            renderLiveBoards();
+            updateClock();
+        };
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btnMenu = document.getElementById('btn-menu');
+            const btnClose = document.getElementById('btn-close');
+            const navScreen = document.getElementById('nav-screen');
+            const navLinks = navScreen.querySelectorAll('a');
+
+
+            const openMenu = () => {
+                navScreen.classList.remove('translate-x-full');
+                navScreen.classList.add('translate-x-0');
+
+                document.body.style.overflow = 'hidden';
+            };
+
+
+            const closeMenu = () => {
+                navScreen.classList.remove('translate-x-0');
+                navScreen.classList.add('translate-x-full');
+
+                document.body.style.overflow = '';
+            };
+
+
+            if (btnMenu) btnMenu.addEventListener('click', openMenu);
+            if (btnClose) btnClose.addEventListener('click', closeMenu);
+
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !navScreen.classList.contains('translate-x-full')) {
+                    closeMenu();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

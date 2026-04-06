@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Jadwal KRL Bogor Terbaru - Commuter Line Jabodetabek</title>
+    <meta name="description"
+        content="Jadwal KRL lintas Bogor terbaru dari Stasiun Pasar Senen menuju Bogor, Depok, dan Jakarta Kota. Informasi keberangkatan Commuter Line Jabodetabek terbaru dan lengkap." />
+    <meta name="keywords"
+        content="jadwal KRL Bogor, jadwal commuter line Bogor, jadwal KRL Jakarta Kota Bogor, jadwal KRL Depok Bogor, jadwal kereta Bogor Jakarta, stasiun Pasar Senen, commuter line jabodetabek" />
+    <meta name="author" content="Pasar Senen" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://stasiunpasarsenen.com/kereta/commuter-line/jalur-bogor" />
+    <link rel="icon" type="image/png" href="https://stasiunpasarsenen.com/public/icons/favicon.png" />
+    <link rel="apple-touch-icon" href="https://stasiunpasarsenen.com/public/icons/favicon.png" />
+    <meta name="theme-color" content="#E11D48" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Jadwal KRL Bogor Terbaru - Commuter Line Jabodetabek" />
+    <meta property="og:description"
+        content="Lihat jadwal KRL lintas Bogor terbaru. Informasi keberangkatan Commuter Line menuju Bogor, Depok, dan Jakarta Kota dari Stasiun Pasar Senen." />
+    <meta property="og:url" content="https://stasiunpasarsenen.com/kereta/commuter-line/jalur-bogor" />
+    <meta property="og:site_name" content="Pasar Senen" />
+    <meta property="og:image" content="https://stasiunpasarsenen.com/public/icons/favicon.png" />
+    <meta property="og:locale" content="id_ID" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Jadwal KRL Bogor Terbaru - Commuter Line Jabodetabek" />
+    <meta name="twitter:description"
+        content="Jadwal terbaru KRL lintas Bogor untuk perjalanan Jakarta Kota, Depok, dan Bogor." />
+    <meta name="twitter:image" content="https://stasiunpasarsenen.com/public/icons/favicon.png" />
+    <meta name="geo.region" content="ID-JK" />
+    <meta name="geo.placename" content="Jakarta" />
+    <meta name="geo.position" content="-6.1702;106.8470" />
+    <meta name="ICBM" content="-6.1702,106.8470" />
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Jadwal KRL Bogor Terbaru - Commuter Line Jabodetabek",
+  "description": "Informasi jadwal keberangkatan KRL lintas Bogor terbaru dari Stasiun Pasar Senen menuju Jakarta Kota, Depok, dan Bogor.",
+  "url": "#",
+  "inLanguage": "id",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Pasar Senen",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://stasiunpasarsenen.com/public/icons/favicon.png"
+    }
+  }
+}
+</script>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TrainTrip",
+  "name": "Jadwal KRL Lintas Bogor",
+  "departureStation": {
+    "@type": "TrainStation",
+    "name": "Stasiun Pasar Senen"
+  },
+  "arrivalStation": {
+    "@type": "TrainStation",
+    "name": "Bogor / Depok / Jakarta Kota"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "KAI Commuter"
+  }
+}
+</script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        html,
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #001220;
+        }
+
+
+        .sharp-card {
+            background: white;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+
+        }
+
+        .btn-sharp {
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+
+        .route-step {
+            position: relative;
+            padding-left: 2.5rem;
+            padding-bottom: 2rem;
+        }
+
+        .route-step::before {
+            content: '';
+            position: absolute;
+            left: 0.45rem;
+            top: 1.2rem;
+            bottom: 0;
+            width: 1px;
+
+            background: #e2e8f0;
+        }
+
+        .route-step:last-child::before {
+            display: none;
+        }
+
+        .dot-wrapper {
+            position: absolute;
+            left: 0.15rem;
+            top: 0.35rem;
+            width: 0.7rem;
+            height: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        
+        .nav-dot {
+            width: 8px;
+            height: 8px;
+            background: #E11D48;
+            border-radius: 2px;
+
+        }
+
+        .nav-dot-end {
+            width: 8px;
+            height: 8px;
+            background: #001220;
+            border-radius: 2px;
+        }
+
+
+        .highlight-green {
+            background: #ecfdf5;
+            color: #065f46;
+            border-left: 3px solid #10b981;
+            border-radius: 2px;
+        }
+
+        .highlight-orange {
+            background: #fff7ed;
+            color: #9a3412;
+            border-left: 3px solid #f97316;
+            border-radius: 2px;
+        }
+
+       
+
+        .glass-header {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-link-modern {
+            position: relative;
+            color: #1e293b;
+
+            transition: color 0.3s ease;
+        }
+
+        .nav-link-modern:hover {
+            color: #E11D48;
+        }
+
+        .nav-link-modern::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #E11D48;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link-modern:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+<header class="fixed top-0 w-full z-[100] glass-header">
+    <div class="max-w-7xl mx-auto flex justify-between items-center h-20 px-6">
+        <a href="https://stasiunpasarsenen.com" class="flex items-center gap-3 no-underline group">
+            <div class="w-10 h-10 bg-[#E11D48] flex items-center justify-center rounded-sm group-hover:rotate-6 transition-transform shadow-md">
+                <i class="fas fa-train-subway text-white text-xl"></i>
+            </div>
+            <div class="flex flex-col text-left">
+                <span class="text-lg font-semibold uppercase tracking-tighter leading-none text-slate-900">PASAR SENEN</span>
+                <span class="text-[8px] font-mono text-slate-500 font-semibold tracking-[0.2em] uppercase mt-0.5">Informasi Stasiun</span>
+            </div>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-8">
+            <a href="https://stasiunpasarsenen.com/kereta/commuter-line/real-time-krl" class="nav-link-modern text-[11px] font-semibold uppercase tracking-widest">Jadwal Real-Time</a>
+            <a href="https://stasiunpasarsenen.com/kereta/commuter-line/rute-krl" class="nav-link-modern text-[11px] font-semibold uppercase tracking-widest">Rute KRL</a>
+            <a href="https://stasiunpasarsenen.com/jadwal-kereta/" class="nav-link-modern text-[11px] font-semibold uppercase tracking-widest">Antar Kota</a>
+            <a href="https://stasiunpasarsenen.com" class="nav-link-modern text-[11px] font-semibold uppercase tracking-widest">Layanan Stasiun</a>
+        </nav>
+
+       <button id="btn-menu" class="lg:hidden text-slate-900 text-2xl p-2 cursor-pointer">
+    <i class="fas fa-bars-staggered"></i>
+</button>
+    </div>
+</header>
+
+<div id="nav-screen" 
+     class="fixed inset-0 z-[200] bg-[#E11D48] flex flex-col justify-center p-8 translate-x-full transition-transform duration-500 ease-in-out">
+    
+    <button id="btn-close" class="absolute top-6 right-6 text-white text-3xl p-2">
+        <i class="fas fa-xmark"></i>
+    </button>
+
+    <div class="mb-10 text-white/40 text-[10px] font-semibold tracking-[0.4em] uppercase">Navigation Menu</div>
+
+    <nav class="flex flex-col space-y-6">
+        <a href="https://stasiunpasarsenen.com" class="text-white text-xl font-bold uppercase tracking-widest border-b border-white/10 pb-4">Beranda</a>
+        <a href="https://stasiunpasarsenen.com/kereta/commuter-line/real-time-krl" class="text-white text-xl font-bold uppercase tracking-widest border-b border-white/10 pb-4">Jadwal Real-Time</a>
+        <a href="https://stasiunpasarsenen.com/kereta/commuter-line/rute-krl" class="text-white text-xl font-bold uppercase tracking-widest border-b border-white/10 pb-4">Rute KRL</a>
+        <a href="https://stasiunpasarsenen.com/jadwal-kereta/" class="text-white text-xl font-bold uppercase tracking-widest border-b border-white/10 pb-4">Antar Kota</a>
+    </nav>
+</div>
+
+    <main class="max-w-4xl mx-auto px-6 mt-40 pb-40">
+        <section class="mb-12 border-l-4 border-[#E11D48] pl-6">
+            <h1 class="text-3xl md:text-5xl font-black tracking-tighter text-[#001220] uppercase leading-none mb-3">
+                JADWAL KRL <br><span class="text-[#E11D48]">LINTAS BOGOR</span>
+            </h1>
+            <p class="text-[11px] font-bold text-slate-400 uppercase tracking-[0.3em]">Efektif Beroperasi: 1 Juni 2025
+            </p>
+        </section>
+
+        <div class="mb-12 p-6 bg-slate-50 border border-slate-200 rounded-sm">
+            <p class="text-sm font-bold text-[#001220] uppercase tracking-tight mb-2">Informasi Perjalanan</p>
+            <p class="text-xs text-slate-600 leading-relaxed">
+                Data di bawah ini merupakan jadwal keberangkatan kereta api Commuter Line untuk relasi Bogor, Depok, dan
+                Jakarta Kota berdasarkan update terbaru Juni 2025.
+            </p>
+        </div>
+
+        <div class="overflow-x-auto shadow-sm border border-slate-100 rounded-sm">
+            <table class="w-full border-collapse bg-white text-left">
+                <thead>
+                    <tr class="bg-[#001220] text-white">
+                        <th class="px-6 py-5 text-[10px] font-black uppercase tracking-widest">No. Kereta</th>
+                        <th class="px-6 py-5 text-[10px] font-black uppercase tracking-widest">Relasi Perjalanan</th>
+                        <th class="px-6 py-5 text-[10px] font-black uppercase tracking-widest text-right">Keberangkatan
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="text-sm">
+                    <tr class="border-b border-slate-100 hover:bg-rose-50/50 transition-colors">
+                        <td class="px-6 py-4 font-bold text-[#001220]">1155</td>
+                        <td class="px-6 py-4 text-slate-600 font-medium uppercase tracking-tight text-xs">Depok –
+                            Jakarta Kota</td>
+                        <td class="px-6 py-4 text-right font-black text-[#E11D48]">04.20 WIB</td>
+                    </tr>
+                    <tr class="border-b border-slate-100 hover:bg-rose-50/50 transition-colors">
+                        <td class="px-6 py-4 font-bold text-[#001220]">1152</td>
+                        <td class="px-6 py-4 text-slate-600 font-medium uppercase tracking-tight text-xs">Jakarta Kota –
+                            Bogor</td>
+                        <td class="px-6 py-4 text-right font-black text-[#E11D48]">05.28 WIB</td>
+                    </tr>
+                    <tr class="border-b border-slate-100 hover:bg-rose-50/50 transition-colors">
+                        <td class="px-6 py-4 font-bold text-[#001220]">1128</td>
+                        <td class="px-6 py-4 text-slate-600 font-medium uppercase tracking-tight text-xs">Depok – Bogor
+                        </td>
+                        <td class="px-6 py-4 text-right font-black text-[#E11D48]">05.59 WIB</td>
+                    </tr>
+                    <tr class="border-b border-slate-100 hover:bg-rose-50/50 transition-colors">
+                        <td class="px-6 py-4 font-bold text-[#001220]">1203</td>
+                        <td class="px-6 py-4 text-slate-600 font-medium uppercase tracking-tight text-xs">Bogor –
+                            Jakarta Kota</td>
+                        <td class="px-6 py-4 text-right font-black text-[#E11D48]">06.38 WIB</td>
+                    </tr>
+                    <tr class="border-b border-slate-100 hover:bg-rose-50/50 transition-colors">
+                        <td class="px-6 py-4 font-bold text-[#001220]">1213</td>
+                        <td class="px-6 py-4 text-slate-600 font-medium uppercase tracking-tight text-xs">Bogor –
+                            Jakarta Kota</td>
+                        <td class="px-6 py-4 text-right font-black text-[#E11D48]">07.08 WIB</td>
+                    </tr>
+                    <tr class="border-b border-slate-100 hover:bg-rose-50/50 transition-colors">
+                        <td class="px-6 py-4 font-bold text-[#001220]">1445</td>
+                        <td class="px-6 py-4 text-slate-600 font-medium uppercase tracking-tight text-xs">Bogor – Depok
+                        </td>
+                        <td class="px-6 py-4 text-right font-black text-[#E11D48]">07.08 WIB</td>
+                    </tr>
+                    <tr class="border-b border-slate-100 hover:bg-rose-50/50 transition-colors">
+                        <td class="px-6 py-4 font-bold text-[#001220]">1200</td>
+                        <td class="px-6 py-4 text-slate-600 font-medium uppercase tracking-tight text-xs">Jakarta Kota –
+                            Bogor</td>
+                        <td class="px-6 py-4 text-right font-black text-[#E11D48]">08.18 WIB</td>
+                    </tr>
+                    <tr class="border-b border-slate-100 hover:bg-rose-50/50 transition-colors">
+                        <td class="px-6 py-4 font-bold text-[#001220]">1210</td>
+                        <td class="px-6 py-4 text-slate-600 font-medium uppercase tracking-tight text-xs">Jakarta Kota –
+                            Bogor</td>
+                        <td class="px-6 py-4 text-right font-black text-[#E11D48]">08.55 WIB</td>
+                    </tr>
+                    <tr class="border-b border-slate-100 hover:bg-rose-50/50 transition-colors">
+                        <td class="px-6 py-4 font-bold text-[#001220]">1263</td>
+                        <td class="px-6 py-4 text-slate-600 font-medium uppercase tracking-tight text-xs">Bogor –
+                            Jakarta Kota</td>
+                        <td class="px-6 py-4 text-right font-black text-[#E11D48]">09.52 WIB</td>
+                    </tr>
+                    <tr class="border-b border-slate-100 hover:bg-rose-50/50 transition-colors">
+                        <td class="px-6 py-4 font-bold text-[#001220]">1275</td>
+                        <td class="px-6 py-4 text-slate-600 font-medium uppercase tracking-tight text-xs">Bogor –
+                            Jakarta Kota</td>
+                        <td class="px-6 py-4 text-right font-black text-[#E11D48]">10.31 WIB</td>
+                    </tr>
+                    <tr class="border-b border-slate-100 hover:bg-rose-50/50 transition-colors">
+                        <td class="px-6 py-4 font-bold text-[#001220]">1260</td>
+                        <td class="px-6 py-4 text-slate-600 font-medium uppercase tracking-tight text-xs">Jakarta Kota –
+                            Bogor</td>
+                        <td class="px-6 py-4 text-right font-black text-[#E11D48]">11.26 WIB</td>
+                    </tr>
+                    <tr class="border-b border-slate-100 hover:bg-rose-50/50 transition-colors">
+                        <td class="px-6 py-4 font-bold text-[#001220]">1272</td>
+                        <td class="px-6 py-4 text-slate-600 font-medium uppercase tracking-tight text-xs">Jakarta Kota –
+                            Bogor</td>
+                        <td class="px-6 py-4 text-right font-black text-[#E11D48]">12.14 WIB</td>
+                    </tr>
+                    <tr class="border-b border-slate-100 hover:bg-rose-50/50 transition-colors">
+                        <td class="px-6 py-4 font-bold text-[#001220]">1325</td>
+                        <td class="px-6 py-4 text-slate-600 font-medium uppercase tracking-tight text-xs">Bogor –
+                            Jakarta Kota</td>
+                        <td class="px-6 py-4 text-right font-black text-[#E11D48]">13.00 WIB</td>
+                    </tr>
+                    <tr class="border-b border-slate-100 hover:bg-rose-50/50 transition-colors">
+                        <td class="px-6 py-4 font-bold text-[#001220]">1339</td>
+                        <td class="px-6 py-4 text-slate-600 font-medium uppercase tracking-tight text-xs">Bogor –
+                            Jakarta Kota</td>
+                        <td class="px-6 py-4 text-right font-black text-[#E11D48]">13.51 WIB</td>
+                    </tr>
+                    <tr class="border-b border-slate-100 hover:bg-rose-50/50 transition-colors">
+                        <td class="px-6 py-4 font-bold text-[#001220]">1322</td>
+                        <td class="px-6 py-4 text-slate-600 font-medium uppercase tracking-tight text-xs">Jakarta Kota –
+                            Bogor</td>
+                        <td class="px-6 py-4 text-right font-black text-[#E11D48]">14.37 WIB</td>
+                    </tr>
+                    <tr class="border-b border-slate-100 hover:bg-rose-50/50 transition-colors">
+                        <td class="px-6 py-4 font-bold text-[#001220]">1336</td>
+                        <td class="px-6 py-4 text-slate-600 font-medium uppercase tracking-tight text-xs">Jakarta Kota –
+                            Bogor</td>
+                        <td class="px-6 py-4 text-right font-black text-[#E11D48]">15.25 WIB</td>
+                    </tr>
+                    <tr class="border-b border-slate-100 hover:bg-rose-50/50 transition-colors">
+                        <td class="px-6 py-4 font-bold text-[#001220]">1381</td>
+                        <td class="px-6 py-4 text-slate-600 font-medium uppercase tracking-tight text-xs">Bogor –
+                            Jakarta Kota</td>
+                        <td class="px-6 py-4 text-right font-black text-[#E11D48]">16.14 WIB</td>
+                    </tr>
+                    <tr class="border-b border-slate-100 hover:bg-rose-50/50 transition-colors">
+                        <td class="px-6 py-4 font-bold text-[#001220]">1293</td>
+                        <td class="px-6 py-4 text-slate-600 font-medium uppercase tracking-tight text-xs">Bogor –
+                            Jakarta Kota</td>
+                        <td class="px-6 py-4 text-right font-black text-[#E11D48]">17.00 WIB</td>
+                    </tr>
+                    <tr class="border-b border-slate-100 hover:bg-rose-50/50 transition-colors">
+                        <td class="px-6 py-4 font-bold text-[#001220]">1378</td>
+                        <td class="px-6 py-4 text-slate-600 font-medium uppercase tracking-tight text-xs">Jakarta Kota –
+                            Bogor</td>
+                        <td class="px-6 py-4 text-right font-black text-[#E11D48]">17.49 WIB</td>
+                    </tr>
+                    <tr class="border-b border-slate-100 hover:bg-rose-50/50 transition-colors">
+                        <td class="px-6 py-4 font-bold text-[#001220]">1392</td>
+                        <td class="px-6 py-4 text-slate-600 font-medium uppercase tracking-tight text-xs">Jakarta Kota –
+                            Bogor</td>
+                        <td class="px-6 py-4 text-right font-black text-[#E11D48]">18.41 WIB</td>
+                    </tr>
+                    <tr class="border-b border-slate-100 hover:bg-rose-50/50 transition-colors">
+                        <td class="px-6 py-4 font-bold text-[#001220]">1433</td>
+                        <td class="px-6 py-4 text-slate-600 font-medium uppercase tracking-tight text-xs">Bogor –
+                            Jakarta Kota</td>
+                        <td class="px-6 py-4 text-right font-black text-[#E11D48]">19.26 WIB</td>
+                    </tr>
+                    <tr class="border-b border-slate-100 hover:bg-rose-50/50 transition-colors">
+                        <td class="px-6 py-4 font-bold text-[#001220]">1431</td>
+                        <td class="px-6 py-4 text-slate-600 font-medium uppercase tracking-tight text-xs">Jakarta Kota –
+                            Bogor</td>
+                        <td class="px-6 py-4 text-right font-black text-[#E11D48]">21.03 WIB</td>
+                    </tr>
+                    <tr class="hover:bg-rose-50/50 transition-colors">
+                        <td class="px-6 py-4 font-bold text-[#001220]">1129</td>
+                        <td class="px-6 py-4 text-slate-600 font-medium uppercase tracking-tight text-xs">Bogor – Depok
+                        </td>
+                        <td class="px-6 py-4 text-right font-black text-[#E11D48]">22.38 WIB</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mt-20 text-center">
+            <a href="https://stasiunpasarsenen.com/kereta/commuter-line/rute-krl"
+                class="inline-block border-2 border-[#001220] text-[#001220] px-12 py-5 rounded-sm font-black uppercase tracking-[0.3em] text-[10px] hover:bg-[#E11D48] hover:border-[#E11D48] hover:text-white transition-all">
+                Kembali ke Daftar Rute
+            </a>
+        </div>
+    </main>
+
+    <footer class="bg-[#001220] border-t-4 border-[#E11D48] pt-16 pb-8 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 bg-[#E11D48] flex items-center justify-center rounded-sm">
+                            <i class="fas fa-train-subway text-white text-sm"></i>
+                        </div>
+                        <span class="text-white font-black tracking-tighter uppercase italic">Pasar Senen</span>
+                    </div>
+                    <p class="text-slate-400 text-[11px] leading-relaxed font-medium">
+                        Portal informasi untuk kemudahan perjalanan Commuter Line terencana di wilayah Jabodetabek.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <h4
+                        class="text-white text-[10px] font-black uppercase tracking-[0.2em] border-b border-white/10 pb-2">
+                        Jalur Utama</h4>
+                    <ul class="space-y-2">
+                        <li><a href="https://stasiunpasarsenen.com/kereta/commuter-line/jalur-bogor"
+                                class="text-slate-400 hover:text-[#E11D48] text-[11px] font-bold uppercase transition-colors">Bogor
+                                Line</a></li>
+                        <li><a href="https://stasiunpasarsenen.com/kereta/commuter-line/jalur-cikarang"
+                                class="text-slate-400 hover:text-[#E11D48] text-[11px] font-bold uppercase transition-colors">Cikarang
+                                Line</a></li>
+                        <li><a href="#"
+                                class="text-slate-400 hover:text-[#E11D48] text-[11px] font-bold uppercase transition-colors">Rangkasbitung
+                                Line</a></li>
+                        <li><a href="https://stasiunpasarsenen.com/kereta/commuter-line/jalur-tangerang"
+                                class="text-slate-400 hover:text-[#E11D48] text-[11px] font-bold uppercase transition-colors">Tangerang
+                                Line</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4">
+                    <h4
+                        class="text-white text-[10px] font-black uppercase tracking-[0.2em] border-b border-white/10 pb-2">
+                        Informasi</h4>
+                    <ul class="space-y-2">
+                        <li><a href="https://stasiunpasarsenen.com/kereta/"
+                                class="text-slate-400 hover:text-white text-[11px] font-bold uppercase transition-colors">Jadwal
+                                KA</a></li>
+                        <li><a href="#"
+                                class="text-slate-400 hover:text-white text-[11px] font-bold uppercase transition-colors">Peta
+                                Stasiun</a></li>
+                        <li><a href="https://stasiunpasarsenen.com/kereta/commuter-line/rute-krl"
+                                class="text-slate-400 hover:text-white text-[11px] font-bold uppercase transition-colors">Rute
+                                KRL Jabodetabek</a></li>
+                        <li><a href="#"
+                                class="text-slate-400 hover:text-white text-[11px] font-bold uppercase transition-colors">Wisata
+                                Sekitar</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4">
+                    <h4
+                        class="text-white text-[10px] font-black uppercase tracking-[0.2em] border-b border-white/10 pb-2">
+                        Insight</h4>
+                    <ul class="space-y-2">
+                        <li><a href="https://stasiunpasarsenen.com/tentang-kami"
+                                class="text-slate-400 hover:text-white text-[11px] font-bold uppercase transition-colors">Tentang
+                                Kami</a></li>
+                        <li><a href="https://stasiunpasarsenen.com/syarat-dan-ketentuan"
+                                class="text-slate-400 hover:text-white text-[11px] font-bold uppercase transition-colors">Ketentuan</a>
+                        </li>
+                        <li><a href="https://stasiunpasarsenen.com/privasi"
+                                class="text-slate-400 hover:text-white text-[11px] font-bold uppercase transition-colors">Privasi</a>
+                        </li>
+                        <li><a href="https://stasiunpasarsenen.com/blog"
+                                class="text-slate-400 hover:text-white text-[11px] font-bold uppercase transition-colors">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-[10px] font-mono text-slate-500 uppercase tracking-[0.3em]">
+                    © 2026 PASAR SENEN
+                </p>
+                <div class="flex gap-6">
+                    <a href="#" class="text-slate-500 hover:text-white text-xs"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-slate-500 hover:text-white text-xs"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-slate-500 hover:text-white text-xs"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+    // Pastikan DOM sudah termuat
+    document.addEventListener('DOMContentLoaded', () => {
+        const btnMenu = document.getElementById('btn-menu');
+        const btnClose = document.getElementById('btn-close');
+        const navScreen = document.getElementById('nav-screen');
+
+        if (btnMenu && navScreen) {
+            btnMenu.onclick = (e) => {
+                e.preventDefault();
+                navScreen.classList.remove('translate-x-full');
+                navScreen.classList.add('translate-x-0');
+                document.body.style.overflow = 'hidden'; 
+            };
+        }
+
+        const closeAction = () => {
+            if (navScreen) {
+                navScreen.classList.remove('translate-x-0');
+                navScreen.classList.add('translate-x-full');
+                document.body.style.overflow = ''; 
+            }
+        };
+
+        if (btnClose) btnClose.onclick = closeAction;
+
+        // Menutup menu saat link diklik
+        const links = navScreen ? navScreen.querySelectorAll('a') : [];
+        links.forEach(link => {
+            link.onclick = closeAction;
+        });
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Jadwal Kereta Api di Stasiun Pasar Senen</title>
+    <meta desc="description" content="Cek jadwal perjalanan kereta api terbaru keberangkatan dari Jakarta ke seluruh daerah">
+    <link rel="canonical" href="https://stasiunpasarsenen.com/jadwal-kereta/">
+    <link rel="icon" type="image/png" href="https://stasiunpasarsenen.com/public/icons/favicon.png">
+    <link rel="apple-touch-icon" href="https://stasiunpasarsenen.com/public/icons/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        html,
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            /* PERBAIKAN: Gunakan warna gelap untuk teks body agar terlihat di background putih */
+            background: #ffffff;
+            color: #001220;
+        }
+
+        #nav-screen {
+            transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+            transform: translateY(-100%);
+        }
+    </style>
+</head>
+
+<body class="antialiased min-h-screen">
+
+    <header class="fixed top-0 w-full z-[100] bg-[#001220]/90 backdrop-blur-lg border-b border-white/10">
+        <div class="max-w-7xl mx-auto flex justify-between items-center h-24 px-6">
+
+            <a href="https://stasiunpasarsenen.com" class="flex items-center gap-3 no-underline group">
+                <div
+                    class="w-10 h-10 bg-white flex items-center justify-center border-2 border-[#001220] group-hover:bg-[#FF851B] transition-colors">
+                    <i class="fas fa-train-subway text-[#001220] text-xl"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-lg font-black uppercase tracking-tighter leading-none italic text-white">PASAR
+                        SENEN</span>
+                    <span
+                        class="text-[8px] font-mono text-[#FF851B] font-bold tracking-[0.2em] uppercase mt-0.5">Stasiun
+                        Kereta</span>
+                </div>
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-8">
+                    <a href="https://stasiunpasarsenen.com"
+                    class="text-white text-[11px] font-bold uppercase tracking-widest hover:text-[#FF851B] transition-colors">Beranda</a>
+                <a href="https://stasiunpasarsenen.com/kereta/"
+                    class="text-white text-[11px] font-bold uppercase tracking-widest hover:text-[#FF851B] transition-colors">Tiket
+                    Kereta</a>
+                <a href="https://stasiunpasarsenen.com/kereta/commuter-line/navigasi-krl-jabodetabek"
+                    class="text-white text-[11px] font-bold uppercase tracking-widest hover:text-[#FF851B] transition-colors">Commuter Line</a>
+                <a href="#"
+                    class="text-white text-[11px] font-bold uppercase tracking-widest hover:text-[#FF851B] transition-colors">Sewa
+                    Motor</a>
+                     <a href="#"
+                    class="text-white text-[11px] font-bold uppercase tracking-widest hover:text-[#FF851B] transition-colors">Sewa
+                    Mobil</a>
+                <a href="#itinerary"
+                    class="text-white text-[11px] font-bold uppercase tracking-widest hover:text-[#FF851B] transition-colors">Wisata</a>
+                <a href="#"
+                    class="text-white text-[11px] font-bold uppercase tracking-widest hover:text-[#FF851B] transition-colors">Blog</a>
+            </nav>
+
+            <button onclick="toggleNav()"
+                class="lg:hidden text-[#FF851B] text-2xl p-2 outline-none hover:scale-110 transition-transform">
+                <i class="fas fa-bars-staggered"></i>
+            </button>
+        </div>
+    </header>
+
+    <div id="nav-screen" class="fixed inset-0 z-[150] bg-[#001220] p-8 flex flex-col justify-center">
+        <button onclick="toggleNav()" class="absolute top-8 right-6 text-white text-3xl">
+            <i class="fas fa-xmark"></i>
+        </button>
+        <nav class="flex flex-col w-full max-w-sm">
+            <a href="https://stasiunpasarsenen.com"
+                class="py-4 text-white text-xl font-black uppercase border-b border-white/5 hover:text-[#FF851B] transition-colors">Beranda</a>
+            <a href="https://stasiunpasarsenen.com/kereta/"
+                class="py-4 text-white text-xl font-black uppercase border-b border-white/5 hover:text-[#FF851B] transition-colors">Tiket
+                Kereta</a>
+            <a href="https://stasiunpasarsenen.com/kereta/commuter-line/navigasi-krl-jabodetabek"
+                class="py-4 text-white text-xl font-black uppercase border-b border-white/5 hover:text-[#FF851B] transition-colors">Commuter Line</a>
+            <a href="#"
+                class="py-4 text-white text-xl font-black uppercase border-b border-white/5 hover:text-[#FF851B] transition-colors">Sewa
+                Motor</a>
+            <a href="#"
+                class="py-4 text-white text-xl font-black uppercase border-b border-white/5 hover:text-[#FF851B] transition-colors">Sewa
+                Mobil</a>
+            <a href="#itinerary"
+                class="py-4 text-white text-xl font-black uppercase border-b border-white/5 hover:text-[#FF851B] transition-colors">Wisata</a>
+            <a href="#"
+                class="py-4 text-white text-xl font-black uppercase border-b border-white/5 hover:text-[#FF851B] transition-colors">Kuliner</a>
+            <a href="#"
+                class="py-4 text-white text-xl font-black uppercase border-b border-white/5 hover:text-[#FF851B] transition-colors">Blog</a>
+            
+        </nav>
+    </div>
+
+    <section class="bg-[#001220] text-white pt-40 pb-16 px-6 md:px-8 border-b-4 border-orange-600">
+        <div class="max-w-6xl mx-auto">
+            <h1 class="text-3xl md:text-8xl font-black uppercase tracking-tighter leading-[0.85] mb-6">
+                Jadwal <span class="text-orange-600">Kereta</span>
+            </h1>
+            <p class="text-slate-400 text-[10px] md:text-lg font-medium uppercase tracking-widest max-w-2xl leading-relaxed">
+                Data operasional keberangkatan dari Stasiun Pasar Senen Jakarta. Update Maret 2026.
+            </p>
+        </div>
+    </section>
+
+    <script>
+        function toggleNav() {
+            const nav = document.getElementById('nav-screen');
+            const isClosed = nav.style.transform === 'translateY(-100%)' || nav.style.transform === '';
+
+            if (isClosed) {
+                nav.style.transform = 'translateY(0%)';
+                document.body.style.overflow = 'hidden';
+            } else {
+                nav.style.transform = 'translateY(-100%)';
+                document.body.style.overflow = 'auto';
+            }
+        }
+    </script>
+
+    <main class="max-w-6xl mx-auto px-2 md:px-8 py-8">
+
+        <div class="bg-white border border-slate-200 p-4 md:p-6 mb-8 shadow-sm">
+            <h2 class="text-[11px] font-black uppercase tracking-widest mb-6 border-b border-slate-100 pb-2">Filter
+                Perjalanan_</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="flex flex-col">
+                    <label class="text-[10px] font-black uppercase text-slate-400 mb-2">Dari</label>
+                    <select id="filterDari"
+                        class="bg-slate-50 border border-slate-200 text-[#001220] text-sm font-medium p-3 rounded-none appearance-none focus:outline-none focus:border-orange-600 transition-colors">
+                        <option value="">Semua Stasiun</option>
+                    </select>
+                </div>
+
+                <div class="flex flex-col">
+                    <label class="text-[10px] font-black uppercase text-slate-400 mb-2">Tujuan</label>
+                    <select id="filterTujuan"
+                        class="bg-slate-50 border border-slate-200 text-[#001220] text-sm font-medium p-3 rounded-none appearance-none focus:outline-none focus:border-orange-600 transition-colors">
+                        <option value="">Semua Tujuan</option>
+                    </select>
+                </div>
+
+                <div class="flex flex-col">
+                    <label class="text-[10px] font-black uppercase text-slate-400 mb-2">Nama Kereta</label>
+                    <select id="filterKereta"
+                        class="bg-slate-50 border border-slate-200 text-[#001220] text-sm font-medium p-3 rounded-none appearance-none focus:outline-none focus:border-orange-600 transition-colors">
+                        <option value="">Semua Kereta</option>
+                    </select>
+                </div>
+
+                <div class="flex items-end">
+                    <button id="btnFilter"
+                        class="w-full bg-[#001220] hover:bg-orange-600 text-white font-black uppercase text-[11px] tracking-[0.2em] py-4 transition-all duration-300">
+                        Cari Jadwal
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white border border-slate-200 overflow-hidden shadow-sm">
+            <div class="overflow-x-auto">
+                <table class="min-w-full border-collapse">
+                    <thead>
+                        <tr class="bg-slate-50 border-b border-slate-200">
+                            <th
+                                class="px-6 py-4 text-left text-[10px] font-black uppercase tracking-widest text-slate-500 whitespace-nowrap">
+                                Nama Kereta</th>
+                            <th
+                                class="px-6 py-4 text-left text-[10px] font-black uppercase tracking-widest text-slate-500 whitespace-nowrap">
+                                Asal</th>
+                            <th
+                                class="px-6 py-4 text-left text-[10px] font-black uppercase tracking-widest text-slate-500 whitespace-nowrap">
+                                Tujuan</th>
+                            <th
+                                class="px-6 py-4 text-left text-[10px] font-black uppercase tracking-widest text-slate-500 whitespace-nowrap">
+                                Keberangkatan</th>
+                            <th
+                                class="px-6 py-4 text-left text-[10px] font-black uppercase tracking-widest text-slate-500 whitespace-nowrap">
+                                Kelas</th>
+                        </tr>
+                    </thead>
+                    <tbody id="jadwalBody" class="divide-y divide-slate-100">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="mt-6 text-center">
+            <p class="text-[9px] font-bold text-slate-400 uppercase tracking-[0.3em]">
+                Jadwal Kereta per Maret 2026 • Semua Dalam Waktu lokal (WIB)
+            </p>
+        </div><br>
+        <section class="max-w-6xl mx-auto px-4 md:px-8 py-20 border-t border-slate-100 bg-white">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+
+                <aside class="lg:col-span-3">
+
+
+                    <div class="pt-6 border-t border-slate-100">
+                        <p class="text-[9px] font-black text-slate-400 uppercase tracking-[0.2em] mb-2">Penulis</p>
+                        <p class="text-xs font-black text-[#001220] uppercase">Tim Editorial Pasar Senen</p>
+                    </div>
+
+
+                </aside>
+
+                <article class="lg:col-span-9 max-w-3xl">
+                    <h2
+                        class="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-[0.9] mb-10 text-[#001220]">
+                        Tidak Ada Kata Terlambat, Kereta Datang Tepat Waktu 
+                    </h2>
+
+                    <div class="space-y-8 text-slate-700 leading-relaxed text-lg">
+                        <p class="font-medium">
+                            Kereta api Indonesia mengalami perkembangan pesat dalam menghadirkan layanan transportasi jarak jauh. Jadwal kereta api dari Stasiun Pasar Senen dan stasiun kota lainnya dapat dicek di halaman ini.
+                        </p>
+
+                        <p>
+                            Sekarang, ratusan kereta beroperasi di seluruh Indonesia, dengan jumlah terbesar berada di Pulau Jawa. Hal ini semakin memudahkan orang untuk bergerak dan berpindah tempat. Kunjungan ke daerah yang disinggahi kereta api tentu menjadi berkah tersendiri bagi warga setempat, karena dapat menggerakkan roda perekonomian.
+                        </p>
+
+                        <p>
+                            Tidak bisa dipungkiri, ketepatan waktu kereta api Indonesia mengalami perkembangan signifikan. Itulah yang mendorong setiap orang yakin untuk menggunakan moda transportasi ini. Pelayanannya pun semakin optimal.
+                        </p>
+
+                        <blockquote class="bg-slate-50 border-l-8 border-orange-600 p-8 my-12">
+                            <p class="text-2xl font-black text-[#001220] uppercase tracking-tight leading-none mb-4">
+                                "Transportasi bukan tentang berpindah tempat, tapi juga menggerakkan perekonomian."
+                            </p>
+                            <cite class="text-[10px] font-black uppercase tracking-widest text-slate-400 not-italic">—
+                                Editorial Pasar Senen</cite>
+                        </blockquote>
+
+                        <h3 class="text-2xl font-black uppercase tracking-tight text-[#001220] pt-6">Terus Berbenah</h3>
+                        <p>
+                            Warga lokal dan internasional juga dapat menikmati berbagai destinasi wisata, sehingga menjadikan kereta api terus berkembang dan berinovasi demi kenyamanan penumpang. Kehadiran gerbong ekonomi premium, New Generation, serta panoramic menjadi tanda bahwa kereta api di Indonesia menjadi prioritas.
+                        </p>
+                        <p>Jadwal kereta juga semakin teratur. Tidak ada lagi keterlambatan, mengingat jalur ganda yang disediakan memungkinkan setiap perjalanan kereta tiba tepat waktu di stasiun tujuan.</p>
+                    </div>
+
+                    <div
+                        class="mt-20 pt-10 border-t-2 border-[#001220] flex flex-col md:flex-row justify-between items-center gap-6">
+                        <div class="flex flex-wrap justify-center md:justify-start gap-8">
+                            <a href="#"
+                                class="text-[10px] font-black uppercase tracking-widest text-[#001220] hover:text-orange-600 transition-colors">
+                                Tarif Tiket
+                            </a>
+                            <a href="#"
+                                class="text-[10px] font-black uppercase tracking-widest text-[#001220] hover:text-orange-600 transition-colors">
+                                Transportasi dari Pasar Senen
+                            </a>
+                        </div>
+
+                        <a href="#" class="group flex items-center gap-2">
+                            <div
+                                class="w-2 h-2 bg-orange-600 rounded-full animate-pulse group-hover:bg-[#001220] transition-colors">
+                            </div>
+                            <span
+                                class="text-[10px] font-black uppercase tracking-widest text-slate-400 group-hover:text-orange-600 transition-colors">
+                                Jadwal Bus AKAP
+                            </span>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <!--FOOTER-->
+
+    <footer class="bg-[#FF851B] text-[#001220] pt-24 pb-12 px-6">
+        <div
+            class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 border-b border-[#001220]/10 pb-20">
+
+            <div class="space-y-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-[#001220] flex items-center justify-center text-white italic font-black">PS
+                    </div>
+                    <span class="font-black text-xl italic uppercase leading-none">PASAR SENEN</span>
+                </div>
+                <p class="text-xs font-bold uppercase leading-relaxed opacity-80">
+                    Portal navigasi transportasi dan kurasi wisata digital untuk mobilitas urban yang lebih cerdas dan
+                    efisien.
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <h5 class="font-black text-[10px] uppercase tracking-[0.2em] border-b border-[#001220]/20 pb-2">Rute
+                    Populer_</h5>
+                <ul class="text-[11px] font-bold uppercase space-y-2">
+                    <li><a href="https://stasiunpasarsenen.com/kereta/tiket-kereta-jakarta-malang" class="hover:underline decoration-2">Jakarta Malang</a></li>
+                    <li><a href="https://stasiunpasarsenen.com/kereta/tiket-kereta-jakarta-semarang" class="hover:underline decoration-2">Jakarta Semarang</a></li>
+                    <li><a href="https://stasiunpasarsenen.com/kereta/tiket-kereta-jakarta-solo" class="hover:underline decoration-2">Jakarta Solo</a></li>
+                    <li><a href="https://stasiunpasarsenen.com/kereta/tiket-kereta-jakarta-yogyakarta" class="hover:underline decoration-2">Jakarta Yogyakarta</a></li>
+                    <li><a href="https://stasiunpasarsenen.com/kereta/tiket-kereta-bandung-malang" class="hover:underline decoration-2">Bandung Malang</a></li>
+                    <li><a href="https://stasiunpasarsenen.com/kereta-tiket-kereta-bandung-surabaya" class="hover:underline decoration-2">Bandung Surabaya</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h5 class="font-black text-[10px] uppercase tracking-[0.2em] border-b border-[#001220]/20 pb-2">
+                    Destinasi_</h5>
+                <ul class="text-[11px] font-bold uppercase space-y-2">
+                    <li><a href="#" class="hover:underline decoration-2">Wisata Jakarta</a></li>
+                    <li><a href="#" class="hover:underline decoration-2">Wisata Bandung</a></li>
+                    <li><a href="#" class="hover:underline decoration-2">Wisata Semarang</a></li>
+                    <li><a href="#" class="hover:underline decoration-2">Wisata Surabaya</a></li>
+                    <li><a href="#" class="hover:underline decoration-2">Wisata Malang</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h5 class="font-black text-[10px] uppercase tracking-[0.2em] border-b border-[#001220]/20 pb-2">Social_
+                </h5>
+                <ul class="text-[11px] font-bold uppercase space-y-2">
+                    <li><a href="#" class="flex items-center gap-2 hover:translate-x-1 transition-transform"><i
+                                class="fab fa-facebook-f w-4"></i> Facebook</a></li>
+                    <li><a href="#" class="flex items-center gap-2 hover:translate-x-1 transition-transform"><i
+                                class="fab fa-tiktok w-4"></i> Tiktok</a></li>
+                    <li><a href="#" class="flex items-center gap-2 hover:translate-x-1 transition-transform"><i
+                                class="fab fa-instagram w-4"></i> Instagram</a></li>
+                    <li><a href="#" class="flex items-center gap-2 hover:translate-x-1 transition-transform"><i
+                                class="fab fa-x-twitter w-4"></i> Twitter/X</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div
+            class="max-w-7xl mx-auto pt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-black uppercase tracking-widest">
+            <div class="flex gap-6 opacity-70">
+                <a href="#" class="hover:text-white transition-colors">Siapa Kami</a>
+                <a href="#" class="hover:text-white transition-colors">Privasi</a>
+                <a href="#" class="hover:text-white transition-colors">Ketentuan</a>
+            </div>
+            <span class="opacity-70">© 2026 PASAR SENEN. All Rights Reserved.</span>
+        </div>
+    </footer>
+
+    <script src="https://stasiunpasarsenen.com/js/filter.js"></script>
+   <script>
+    function updateOptions(elementId, values, defaultValue = "Semua", currentSelected = "") {
+        const select = document.getElementById(elementId);
+        select.innerHTML = `<option value="">${defaultValue}</option>`;
+        
+        values.sort().forEach(val => {
+            const isSelected = val === currentSelected ? 'selected' : '';
+            select.innerHTML += `<option value="${val}" ${isSelected}>${val}</option>`;
+        });
+    }
+
+    function populateDropdowns() {
+        if (!window.dataKereta) return;
+
+        const dariSelect = document.getElementById('filterDari');
+        const tujuanSelect = document.getElementById('filterTujuan');
+        const keretaSelect = document.getElementById('filterKereta');
+
+        const selectedDari = dariSelect.value;
+        const selectedTujuan = tujuanSelect.value;
+        const selectedKereta = keretaSelect.value;
+
+        const semuaDari = [...new Set(window.dataKereta.map(k => k.dari))];
+        const semuaTujuan = [...new Set(window.dataKereta.map(k => k.tujuan))];
+
+        const keretaTersedia = window.dataKereta.filter(k => {
+            const matchDari = selectedDari === '' || k.dari === selectedDari;
+            const matchTujuan = selectedTujuan === '' || k.tujuan === selectedTujuan;
+            return matchDari && matchTujuan;
+        });
+        const daftarKereta = [...new Set(keretaTersedia.map(k => k.nama_kereta))];
+
+        if (dariSelect.options.length <= 1) {
+            updateOptions('filterDari', semuaDari, "Pilih Stasiun Asal", selectedDari);
+        }
+        if (tujuanSelect.options.length <= 1) {
+            updateOptions('filterTujuan', semuaTujuan, "Pilih Stasiun Tujuan", selectedTujuan);
+        }
+
+        updateOptions('filterKereta', daftarKereta, "Pilih Kereta", selectedKereta);
+    }
+
+    function renderTable(data) {
+        const tbody = document.getElementById('jadwalBody');
+        tbody.innerHTML = '';
+        
+        // Jika data kosong (karena belum cari atau memang tidak ada)
+        if (!data || data.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="5" class="px-6 py-12 text-center text-slate-400 italic font-medium">Silakan tentukan rute dan klik Cari Jadwal.</td></tr>';
+            return;
+        }
+
+        data.forEach(k => {
+            tbody.innerHTML += `
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="px-6 py-4 font-black text-sm uppercase tracking-tight text-[#001220]">${k.nama_kereta}</td>
+              <td class="px-6 py-4 font-medium text-sm text-slate-600">${k.dari}</td>
+              <td class="px-6 py-4 font-medium text-sm text-slate-600">${k.tujuan}</td>
+              <td class="px-6 py-4">
+                <span class="bg-[#001220] text-white text-[10px] font-bold px-2 py-1">${k.waktu_berangkat}</span>
+              </td>
+              <td class="px-6 py-4 font-medium text-sm text-slate-600">${k.kelas}</td>
+            </tr>`;
+        });
+    }
+
+    function filterData() {
+        if (!window.dataKereta) return;
+        
+        const dari = document.getElementById('filterDari').value;
+        const tujuan = document.getElementById('filterTujuan').value;
+        const kereta = document.getElementById('filterKereta').value;
+
+        // Validasi: Jika user belum memilih stasiun tapi nekat klik cari
+        if (dari === '' && tujuan === '' && kereta === '') {
+            alert('Silakan pilih stasiun asal atau tujuan terlebih dahulu.');
+            return;
+        }
+
+        const filtered = window.dataKereta.filter(k =>
+            (dari === '' || k.dari === dari) &&
+            (tujuan === '' || k.tujuan === tujuan) &&
+            (kereta === '' || k.nama_kereta === kereta)
+        );
+
+        renderTable(filtered);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const startApp = () => {
+            populateDropdowns();
+            
+            // PENTING: Jangan panggil filterData() di sini agar tabel kosong saat start
+            renderTable([]); 
+
+            // Listener Dropdown: Hanya update pilihan kereta, JANGAN panggil filterData
+            document.getElementById('filterDari').addEventListener('change', populateDropdowns);
+            document.getElementById('filterTujuan').addEventListener('change', populateDropdowns);
+            
+            // Listener Tombol: Data baru muncul hanya saat ini diklik
+            const btnFilter = document.getElementById('btnFilter');
+            if (btnFilter) {
+                btnFilter.addEventListener('click', filterData);
+            }
+        };
+
+        if (window.dataKereta) {
+            startApp();
+        } else {
+            let checkData = setInterval(() => {
+                if (window.dataKereta) {
+                    startApp();
+                    clearInterval(checkData);
+                }
+            }, 100);
+        }
+    });
+</script>
+    <script>
+        const body = document.body;
+        const btnMenu = document.getElementById('btn-menu');
+        const btnClose = document.getElementById('btn-close');
+        btnMenu.onclick = () => body.classList.add('menu-active');
+        btnClose.onclick = () => body.classList.remove('menu-active');
+    </script>
+
+</body>
+
+</html>

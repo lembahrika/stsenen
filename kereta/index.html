@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Stasiun Pasar Senen - Info Kereta Api Jarak Jauh Pulau Jawa</title>
+<meta name="title" content="Stasiun Pasar Senen - Info Kereta Api Jarak Jauh Pulau Jawa" />
+<meta name="description" content="Informasi lengkap jadwal, rute, dan harga tiket perjalanan kereta api dari stasiun Pasar Senen Jakarta" />
+<meta name="keywords" content="stasiun pasar senen, stasiun jakarta, tiket kereta api, jadwal kereta api pasar senen, tiket kereta jakarta jogja, krl commuter line" />
+
+<link rel="canonical" href="https://stasiunpasarsenen.com/kereta" />
+<link rel="icon" type="image/png" href="https://stasiunpasarsenen.com/public/icons/favicon.png" />
+<link rel="apple-touch-icon" href="https://stasiunpasarsenen.com/public/icons/favicon.png" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://stasiunpasarsenen.com/kereta" />
+<meta property="og:title" content="Stasiun Pasar Senen - Info Kereta Api Jarak Jauh Pulau Jawa" />
+<meta property="og:description" content="Informasi lengkap jadwal, rute, dan harga tiket perjalanan kereta api dari stasiun Pasar Senen Jakarta" />
+<meta property="og:image" content="https://stasiunpasarsenen.com/public/images/kereta/fajar-utama-yogya.jpg" />
+
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="https://stasiunpasarsenen.com/kereta" />
+<meta property="twitter:title" content="Stasiun Pasar Senen - Info Kereta Api Jarak Jauh Pulau Jawa" />
+<meta property="twitter:description" content="Informasi lengkap jadwal, rute, dan harga tiket perjalanan kereta api dari stasiun Pasar Senen Jakarta" />
+<meta property="twitter:image" content="https://stasiunpasarsenen.com/public/images/kereta/fajar-utama-yogya.jpg" />
+
+<meta name="robots" content="index, follow" />
+<meta name="geo.region" content="ID-JK" />
+<meta name="geo.placename" content="Jakarta" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        html,
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            /* Deep Navy */
+            color: #ffffff;
+        }
+
+        .title-manifesto {
+            font-size: clamp(3.5rem, 18vw, 12rem);
+            font-weight: 900;
+            line-height: 0.8;
+            letter-spacing: -0.08em;
+            text-transform: uppercase;
+        }
+
+        .bg-accent {
+            background-color: #FF851B;
+        }
+
+        /* Orange */
+        .text-accent {
+            color: #FF851B;
+        }
+
+        /* Underline Nav */
+        .nav-link {
+            position: relative;
+            font-size: 10px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            padding: 0.5rem 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #FF851B;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .diagonal-cut {
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+
+        #nav-screen {
+            transition: transform 0.5s ease-in-out;
+            transform: translateY(-100%);
+            text-align: left;
+        }
+
+        .menu-active #nav-screen {
+            transform: translateY(0);
+        }
+
+        .dropdown-link {
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: white;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.068);
+            transition: color 0.3s, background 0.3s;
+            text-align: left;
+        }
+
+        .dropdown-link:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-link:hover {
+            color: #FF851B;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        #nav-screen button {
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <header class="fixed top-0 w-full z-[100] bg-[#001220]/90 backdrop-blur-lg border-b border-white/5">
+        <div class="max-w-7xl mx-auto flex justify-between items-center h-24 px-6">
+            <a href="https://stasiunpasarsenen.com" class="flex items-center gap-3 no-underline group">
+                <div
+                    class="w-10 h-10 bg-white flex items-center justify-center border-2 border-navy-900 group-hover:bg-[#FF851B] transition-colors">
+                    <i class="fas fa-train-subway text-[#001220] text-xl"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-lg font-black uppercase tracking-tighter leading-none italic">PASAR SENEN</span>
+                    <span
+                        class="text-[8px] font-mono text-[#FF851B] font-bold tracking-[0.2em] uppercase mt-0.5">Stasiun
+                        Kereta</span>
+                </div>
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-8">
+                <a href="https://stasiunpasarsenen.com/kereta/" class="nav-link">Tiket Kereta</a>
+                <a href="https://stasiunpasarsenen.com/kereta/commuter-line/navigasi-krl-jabodetabek" class="nav-link">Commuter Line</a>
+                <a href="#" class="nav-link">Tiket Bus</a>
+                <a href="#" class="nav-link">Sewa Motor</a>
+                <a href="#" class="nav-link">Sewa Mobil</a>
+                <a href="#" class="nav-link">Wisata</a>
+                <a href="#" class="nav-link">Blog</a>
+            </nav>
+
+            <button id="btn-menu" class="lg:hidden text-accent text-2xl">
+                <i class="fas fa-bars-staggered"></i>
+            </button>
+        </div>
+    </header>
+
+    <div id="nav-screen" class="fixed inset-0 z-[150] flex flex-col justify-center bg-[#001220] p-8">
+        <button id="btn-close" class="absolute top-6 right-6 text-white text-2xl font-black">
+            <i class="fas fa-xmark"></i>
+        </button>
+        <nav class="flex flex-col w-full max-w-sm">
+            <a href="https://stasiunpasarsenen.com" class="dropdown-link">Beranda</a>
+<a href="https://stasiunpasarsenen.com/kereta/" class="dropdown-link">Tiket Kereta</a>
+<a href="https://stasiunpasarsenen.com/jadwal-kereta/" class="dropdown-link">Jadwal Kereta</a>
+<a href="https://stasiunpasarsenen.com/kereta/commuter-line/navigasi-krl-jabodetabek" class="dropdown-link">Commuter Line</a>
+<a href="#" class="dropdown-link">Tiket Bus</a>
+<a href="#" class="dropdown-link">Sewa Motor</a>
+<a href="#" class="dropdown-link">Sewa Mobil</a>
+<a href="#" class="dropdown-link">Wisata</a>
+<a href="#" class="dropdown-link">Kuliner</a>
+<a href="#" class="dropdown-link">Blog</a>
+<a href="#" class="dropdown-link">Kontak</a>
+        </nav>
+    </div>
+
+
+
+  <section class="max-w-7xl mx-auto px-4 md:px-10 mt-24 mb-20 lg:mt-32 lg:mb-32">
+  <div class="border border-slate-200 bg-white">
+    
+    
+    <div class="p-4 md:p-8">
+      <div class="relative w-full aspect-[21/9] md:aspect-[2.4/1] overflow-hidden border border-slate-200">
+        <img 
+          src="https://stasiunpasarsenen.com/public/images/kereta/fajar-utama-yogya.jpg" 
+          alt="KA Fajar Utama Landscape" 
+          class="w-full h-full object-cover grayscale-[0.2] hover:grayscale-0 transition-all duration-700"
+        />
+        <div class="absolute bottom-4 left-4 bg-[#001220] text-white text-[8px] font-bold px-3 py-1 uppercase tracking-[0.2em]">
+          PSE - YK
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-10">
+        
+        <div class="lg:col-span-4">
+          <h1 class="text-xl md:text-2xl font-black text-[#001220] uppercase tracking-tight leading-none mb-4">
+            Fajar Utama Yogya
+          </h1>
+          <div class="w-12 h-1 bg-orange-600"></div>
+        </div>
+
+        <div class="lg:col-span-5 border-l border-slate-100 lg:pl-10">
+          <p class="text-xs md:text-sm text-slate-500 leading-relaxed font-medium uppercase tracking-wide">
+            Layanan kereta populer yang melintasi kota utama dan destinasi wisata di pulau Jawa.
+          </p>
+        </div>
+
+        <div class="lg:col-span-3 flex flex-col justify-between items-start lg:items-end">
+          <div class="flex gap-6 mb-6 lg:mb-0">
+            <div class="text-left lg:text-right">
+              <span class="block text-[8px] font-bold text-slate-300 uppercase mb-1">Class</span>
+              <span class="text-xs font-black text-[#001220]">Eksekutif/Ekonomi</span>
+            </div>
+            <div class="text-left lg:text-right">
+              <span class="block text-[8px] font-bold text-slate-300 uppercase mb-1">Freq</span>
+              <span class="text-xs font-black text-[#001220]">2x Sehari</span>
+            </div>
+          </div>
+          
+          <a href="https://stasiunpasarsenen.com/kereta" class="inline-flex items-center gap-4 text-[#001220] hover:text-orange-600 transition-colors py-2 group">
+            <span class="text-[10px] font-black uppercase tracking-[0.3em]">Lihat</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    
+</section>
+
+<section class="mt-10 md:mt-20 mb-16 px-4">
+  <div class="max-w-6xl mx-auto bg-[#001220] rounded-lg overflow-hidden border border-[#001220]/20">
+    
+    <div class="py-10 md:py-16 px-4 md:px-8">
+      
+      <div class="mb-10 px-2 border-b border-slate-800 pb-8 md:pb-10">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-10 md:w-12 h-px bg-orange-600"></div>
+          <p class="text-[9px] md:text-[10px] font-black text-orange-500 uppercase tracking-[0.3em] md:tracking-[0.4em]">Informasi Jadwal Rute</p>
+        </div>
+        <h2 class="text-2xl md:text-5xl font-bold text-white tracking-tighter leading-tight">Rute Tiket Kereta Populer</h2>
+      </div>
+
+      <div class="space-y-3 lg:space-y-1">
+        
+        <div class="group flex flex-col lg:flex-row bg-white border border-slate-100 transition-colors duration-300">
+          
+          <div class="flex-1 p-5 md:p-8 flex items-center justify-between lg:justify-start gap-4 md:gap-12">
+            
+            <div class="flex-1 lg:flex-none lg:w-56 text-left">
+              <p class="text-[8px] md:text-[9px] font-bold text-slate-400 uppercase tracking-widest mb-1">Keberangkatan</p>
+              <h3 class="text-lg md:text-2xl font-bold text-[#1e293b]">Jakarta</h3>
+            </div>
+
+            <div class="flex flex-col items-center gap-1 opacity-40 group-hover:opacity-100 transition-opacity">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+              <div class="hidden md:block w-24 h-px bg-slate-200"></div>
+            </div>
+
+            <div class="flex-1 lg:flex-none lg:w-56 text-right lg:text-left">
+              <p class="text-[8px] md:text-[9px] font-bold text-slate-400 uppercase tracking-widest mb-1">Tujuan</p>
+              <h3 class="text-lg md:text-2xl font-bold text-[#1e293b]">Bandung</h3>
+            </div>
+          </div>
+
+          <div class="bg-slate-50 lg:bg-white flex items-center justify-between lg:justify-end gap-6 md:gap-10 p-5 md:p-8 border-t lg:border-t-0 lg:border-l border-slate-100 lg:w-[400px]">
+            <div class="text-left lg:text-right">
+              <p class="text-[8px] md:text-[9px] font-bold text-slate-400 uppercase tracking-tighter">Mulai Dari</p>
+              <p class="text-lg md:text-2xl font-medium text-[#475569]">IDR 45.000</p>
+            </div>
+            <a href="#" class="bg-[#001220] hover:bg-orange-600 text-white px-5 md:px-8 py-3 text-[9px] md:text-[10px] font-black uppercase tracking-widest rounded-sm transition-colors whitespace-nowrap">
+              Beli Tiket
+            </a>
+          </div>
+        </div>
+
+        <div class="group flex flex-col lg:flex-row bg-white border border-slate-100 transition-colors duration-300">
+          <div class="flex-1 p-5 md:p-8 flex items-center justify-between lg:justify-start gap-4 md:gap-12">
+            <div class="flex-1 lg:flex-none lg:w-56 text-left">
+              <p class="text-[8px] md:text-[9px] font-bold text-slate-400 uppercase tracking-widest mb-1">Keberangkatan</p>
+              <h3 class="text-lg md:text-2xl font-bold text-[#1e293b]">Jakarta</h3>
+            </div>
+            <div class="flex flex-col items-center gap-1 opacity-40 group-hover:opacity-100 transition-opacity">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 md:h-5 md:w-5 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+              <div class="hidden md:block w-24 h-px bg-slate-200"></div>
+            </div>
+            <div class="flex-1 lg:flex-none lg:w-56 text-right lg:text-left">
+              <p class="text-[8px] md:text-[9px] font-bold text-slate-400 uppercase tracking-widest mb-1">Tujuan</p>
+              <h3 class="text-lg md:text-2xl font-bold text-[#1e293b]">Surabaya</h3>
+            </div>
+          </div>
+          <div class="bg-slate-50 lg:bg-white flex items-center justify-between lg:justify-end gap-6 md:gap-10 p-5 md:p-8 border-t lg:border-t-0 lg:border-l border-slate-100 lg:w-[400px]">
+            <div class="text-left lg:text-right">
+              <p class="text-[8px] md:text-[9px] font-bold text-slate-400 uppercase tracking-tighter">Mulai Dari</p>
+              <p class="text-lg md:text-2xl font-medium text-[#475569]">IDR 104.000</p>
+            </div>
+            <a href="#" class="bg-[#001220] hover:bg-orange-600 text-white px-5 md:px-8 py-3 text-[9px] md:text-[10px] font-black uppercase tracking-widest rounded-sm transition-colors whitespace-nowrap">
+              Beli Tiket
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+ 
+<main class="max-w-7xl mx-auto px-4 md:px-10 mt-20 py-16 bg-[#f8fafc] text-[#001220] font-sans selection:bg-amber-100">
+  <section class="bg-amber-50 rounded-2xl p-8 md:p-12 border border-amber-100 mb-24 relative overflow-hidden">
+    <div class="absolute right-0 top-0 w-64 h-64 bg-amber-200/20 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+    
+    <div class="flex flex-col lg:flex-row gap-12 items-center relative z-10">
+      <div class="lg:w-1/3 text-center lg:text-left">
+        <h2 class="text-3xl font-black tracking-tight text-[#001220] leading-none mb-4 uppercase">Commuter <br><span class="text-amber-600">Line</span></h2>
+        <p class="text-slate-600 text-sm leading-relaxed mb-8 font-medium">Informasi rute, jadwal KRL, dan integrasi transportasi lokal Jabodetabek.</p>
+        <a href="https://stasiunpasarsenen.com/kereta/commuter-line/navigasi-krl-jabodetabek" class="inline-block bg-[#001220] text-white px-8 py-3 text-[10px] font-black uppercase tracking-widest rounded shadow-lg shadow-amber-900/10">Panduan Perjalanan</a>
+      </div>
+      
+      <div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-amber-200/50">
+          <div class="w-8 h-8 bg-amber-100 rounded flex items-center justify-center mb-4 text-amber-700 font-bold text-xs">C</div>
+          <h4 class="font-bold text-[#001220] mb-2">Line Cikarang (Loop Line)</h4>
+          <p class="text-xs text-slate-500 leading-relaxed">Melayani koneksi utama dari Bekasi/Cikarang menuju Jakarta Kota atau Angke via Pasar Senen.</p>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-amber-200/50">
+          <div class="w-8 h-8 bg-amber-100 rounded flex items-center justify-center mb-4 text-amber-700 font-bold text-xs">I</div>
+          <h4 class="font-bold text-[#001220] mb-2">Integrasi Antar Moda</h4>
+          <p class="text-xs text-slate-500 leading-relaxed">Terhubung langsung dengan Transjakarta Koridor 2, JakLingko, dan area Terminal Senen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <section class="mb-24 px-2">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 border-b border-slate-200 pb-6">
+      <div>
+        <h2 class="text-2xl font-black uppercase tracking-tight text-[#001220]">Kereta Api Pasar Senen</h2>
+        <p class="text-sm text-slate-500 mt-1">Daftar layanan kereta jarak jauh keberangkatan Stasiun Pasar Senen.</p>
+      </div>
+      <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Update: Maret 2026</span>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="group bg-white border border-slate-100 p-6 rounded-xl flex items-center justify-between hover:border-amber-500 hover:shadow-md transition-all">
+        <div>
+          <h3 class="font-bold text-lg group-hover:text-amber-600 transition-colors">KA Sawunggalih</h3>
+          <p class="text-[10px] text-slate-400 uppercase font-bold tracking-widest mt-1">Pasar Senen - Kutoarjo (PP)</p>
+        </div>
+        <a href="https://stasiunpasarsenen.com/kereta/sawunggalih" class="border border-slate-200 px-5 py-2 text-[10px] font-black uppercase tracking-widest rounded hover:bg-[#001220] hover:text-white transition-all">Detil</a>
+      </div>
+
+      <div class="group bg-white border border-slate-100 p-6 rounded-xl flex items-center justify-between hover:border-amber-500 hover:shadow-md transition-all">
+        <div>
+          <h3 class="font-bold text-lg group-hover:text-amber-600 transition-colors">KA Matarmaja</h3>
+          <p class="text-[10px] text-slate-400 uppercase font-bold tracking-widest mt-1">Pasar Senen - Malang (PP)</p>
+        </div>
+        <a href="https://stasiunpasarsenen.com/kereta/matarmaja" class="border border-slate-200 px-5 py-2 text-[10px] font-black uppercase tracking-widest rounded hover:bg-[#001220] hover:text-white transition-all">Detil</a>
+      </div>
+
+      <div class="group bg-white border border-slate-100 p-6 rounded-xl flex items-center justify-between hover:border-amber-500 hover:shadow-md transition-all">
+        <div>
+          <h3 class="font-bold text-lg group-hover:text-amber-600 transition-colors">KA Gajahwong</h3>
+          <p class="text-[10px] text-slate-400 uppercase font-bold tracking-widest mt-1">Pasar Senen - Lempuyangan (PP)</p>
+        </div>
+        <a href="https://stasiunpasarsenen.com/kereta/gajahwong" class="border border-slate-200 px-5 py-2 text-[10px] font-black uppercase tracking-widest rounded hover:bg-[#001220] hover:text-white transition-all">Detil</a>
+      </div>
+
+      <div class="group bg-white border border-slate-100 p-6 rounded-xl flex items-center justify-between hover:border-amber-500 hover:shadow-md transition-all">
+        <div>
+          <h3 class="font-bold text-lg group-hover:text-amber-600 transition-colors">KA Blambangan Ekspres</h3>
+          <p class="text-[10px] text-slate-400 uppercase font-bold tracking-widest mt-1">Pasar Senen - Banyuwangi (PP)</p>
+        </div>
+        <a href="https://stasiunpasarsenen.com/kereta/blambangan-ekspres" class="border border-slate-200 px-5 py-2 text-[10px] font-black uppercase tracking-widest rounded hover:bg-[#001220] hover:text-white transition-all">Detil</a>
+      </div>
+    </div>
+  </section>
+  
+  <section>
+    <div class="flex items-center justify-between mb-12 px-2">
+      <h2 class="text-2xl font-black uppercase tracking-tight text-[#001220]">Eksplorasi Perjalanan</h2>
+      <a href="https://stasiunpasarsenen.com/blog" class="text-[10px] font-black uppercase tracking-widest text-amber-600 hover:text-[#001220] transition-colors border-b border-amber-200 pb-1">Lihat Semua Artikel →</a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <article class="group cursor-pointer">
+        <div class="aspect-video rounded-xl bg-slate-200 overflow-hidden mb-5 border border-slate-100 relative">
+          <img src="https://images.pexels.com/photos/673018/pexels-photo-673018.jpeg" alt="Tips Kursi Kereta" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+        </div>
+        <p class="text-[10px] font-black text-amber-600 uppercase tracking-widest mb-3">Tips Travel</p>
+        <h3 class="text-xl font-bold leading-snug group-hover:text-amber-600 transition-colors">
+          <a href="#">Cara Memilih Kursi Kereta Ekonomi Agar Tidak Hadap Belakang</a>
+        </h3>
+      </article>
+
+      <article class="group cursor-pointer">
+        <div class="aspect-video rounded-xl bg-slate-200 overflow-hidden mb-5 border border-slate-100 relative">
+          <img src="https://images.pexels.com/photos/10054566/pexels-photo-10054566.jpeg" alt="Kuliner Stasiun" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+        </div>
+        <p class="text-[10px] font-black text-amber-600 uppercase tracking-widest mb-3">Kuliner</p>
+        <h3 class="text-xl font-bold leading-snug group-hover:text-amber-600 transition-colors">
+          <a href="#">5 Kuliner Legendaris di Sekitar Stasiun Pasar Senen</a>
+        </h3>
+      </article>
+
+      <article class="group cursor-pointer">
+        <div class="aspect-video rounded-xl bg-slate-200 overflow-hidden mb-5 border border-slate-100 relative">
+          <img src="https://images.pexels.com/photos/673018/pexels-photo-673018.jpeg" alt="Fasilitas Stasiun" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+          <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+        </div>
+        <p class="text-[10px] font-black text-amber-600 uppercase tracking-widest mb-3">Fasilitas</p>
+        <h3 class="text-xl font-bold leading-snug group-hover:text-amber-600 transition-colors">
+          <a href="#">Mengenal Ruang Tunggu Luxury & Priority di Stasiun Besar</a>
+        </h3>
+      </article>
+    </div>
+  </section>
+
+</main>
+
+    <!--FOOTER-->
+
+    <footer class="bg-[#FF851B] text-[#001220] pt-24 pb-12 px-6">
+        <div
+            class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 border-b border-[#001220]/10 pb-20">
+
+            <div class="space-y-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-[#001220] flex items-center justify-center text-white italic font-black">PS
+                    </div>
+                    <span class="font-black text-xl italic uppercase leading-none">PASAR SENEN</span>
+                </div>
+                <p class="text-xs font-bold uppercase leading-relaxed opacity-80">
+                    Portal navigasi transportasi dan kurasi wisata untuk mobilitas wisatawan.
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <h5 class="font-black text-[10px] uppercase tracking-[0.2em] border-b border-[#001220]/20 pb-2">Rute
+                    Populer_</h5>
+                <ul class="text-[11px] font-bold uppercase space-y-2">
+                    <li><a href="https://stasiunpasarsenen.com/kereta/tiket-kereta-jakarta-malang" class="hover:underline decoration-2">Jakarta
+                            Malang</a></li>
+                    <li><a href="https://stasiunpasarsenen.com/kereta/tiket-kereta-jakarta-semarang" class="hover:underline decoration-2">Jakarta
+                            Semarang</a></li>
+                    <li><a href="https://stasiunpasarsenen.com/kereta/tiket-kereta-jakarta-solo" class="hover:underline decoration-2">Jakarta
+                            Solo</a></li>
+                    <li><a href="https://stasiunpasarsenen.com/kereta/tiket-kereta-jakarta-yogyakarta" class="hover:underline decoration-2">Jakarta
+                            Yogyakarta</a></li>
+                    <li><a href="https://stasiunpasarsenen.com/kereta/tiket-kereta-bandung-malang" class="hover:underline decoration-2">Bandung
+                            Malang</a></li>
+                    <li><a href="https://stasiunpasarsenen.com/kereta-tiket-kereta-bandung-surabaya" class="hover:underline decoration-2">Bandung
+                            Surabaya</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h5 class="font-black text-[10px] uppercase tracking-[0.2em] border-b border-[#001220]/20 pb-2">
+                    Destinasi_</h5>
+                <ul class="text-[11px] font-bold uppercase space-y-2">
+                    <li><a href="#" class="hover:underline decoration-2">Wisata Jakarta</a></li>
+                    <li><a href="#" class="hover:underline decoration-2">Wisata Bandung</a></li>
+                    <li><a href="#" class="hover:underline decoration-2">Wisata Semarang</a></li>
+                    <li><a href="#" class="hover:underline decoration-2">Wisata Surabaya</a></li>
+                    <li><a href="#" class="hover:underline decoration-2">Wisata Malang</a></li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h5 class="font-black text-[10px] uppercase tracking-[0.2em] border-b border-[#001220]/20 pb-2">Social_
+                </h5>
+                <ul class="text-[11px] font-bold uppercase space-y-2">
+                    <li><a href="#" class="flex items-center gap-2 hover:translate-x-1 transition-transform"><i
+                                class="fab fa-facebook-f w-4"></i> Facebook</a></li>
+                    <li><a href="#" class="flex items-center gap-2 hover:translate-x-1 transition-transform"><i
+                                class="fab fa-tiktok w-4"></i> Tiktok</a></li>
+                    <li><a href="#" class="flex items-center gap-2 hover:translate-x-1 transition-transform"><i
+                                class="fab fa-instagram w-4"></i> Instagram</a></li>
+                    <li><a href="#" class="flex items-center gap-2 hover:translate-x-1 transition-transform"><i
+                                class="fab fa-x-twitter w-4"></i> Twitter/X</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div
+            class="max-w-7xl mx-auto pt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-black uppercase tracking-widest">
+            <div class="flex gap-6 opacity-70">
+                <a href="https://stasiunpasarsenen.com/tentang-kami" class="hover:text-white transition-colors">Siapa Kami</a>
+                <a href="https://stasiunpasarsenen.com/privasi" class="hover:text-white transition-colors">Privacy</a>
+                <a href="https://stasiunpasarsenen.com/syarat-dan-ketentuan" class="hover:text-white transition-colors">Ketentuan</a>
+            </div>
+            <span class="opacity-70">© 2026 PASAR SENEN. All Rights Reserved.</span>
+        </div>
+    </footer>
+
+    <script>
+        const body = document.body;
+        const btnMenu = document.getElementById('btn-menu');
+        const btnClose = document.getElementById('btn-close');
+        btnMenu.onclick = () => body.classList.add('menu-active');
+        btnClose.onclick = () => body.classList.remove('menu-active');
+    </script>
+
+</body>
+
+</html>
